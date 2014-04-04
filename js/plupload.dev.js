@@ -2148,6 +2148,8 @@ plupload.File = (function() {
 			 */
 			lastModifiedDate: file.lastModifiedDate || (new Date()).toLocaleString(), // Thu Aug 23 2012 19:40:00 GMT+0400 (GET)
 
+            fullPath: file.fullPath || '',
+
 			/**
 			 * Returns native window.File object, when it's available.
 			 *
