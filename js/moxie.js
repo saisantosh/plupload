@@ -3167,7 +3167,9 @@ define('moxie/file/File', [
 			@type {String}
 			@default now
 			*/
-			lastModifiedDate: file.lastModifiedDate || (new Date()).toLocaleString() // Thu Aug 23 2012 19:40:00 GMT+0400 (GET)
+			lastModifiedDate: file.lastModifiedDate || (new Date()).toLocaleString(), // Thu Aug 23 2012 19:40:00 GMT+0400 (GET)
+
+            fullPath: file.fullPath || name
 		});
 	}
 
@@ -6570,7 +6572,7 @@ define("moxie/runtime/html5/file/FileDrop", [
 ], function(extensions, Basic, Dom, Events, Mime) {
 	
 	function FileDrop() {
-		var _files = [], _allowedExts = [], _options;
+		var _files = [], _allowedExts = [], _options, _webKitEntry;
 
 		Basic.extend(this, {
 			init: function(options) {
@@ -6650,12 +6652,15 @@ define("moxie/runtime/html5/file/FileDrop", [
 			var entries = [];
 			Basic.each(items, function(item) {
 				var entry = item.webkitGetAsEntry();
+                var webkitEntry = entry;
 				// Address #998 (https://code.google.com/p/chromium/issues/detail?id=332579)
 				if (entry) {
 					// file() fails on OSX when the filename contains a special character (e.g. umlaut): see #61
 					if (entry.isFile) {
 						var file = item.getAsFile();
+                        file.path = webKitEntry;
 						if (_isAcceptable(file)) {
+                            file.fullPath = webKitEntry.fullPath;
 							_files.push(file);
 						}
 					} else {
@@ -6686,8 +6691,10 @@ define("moxie/runtime/html5/file/FileDrop", [
 
 		function _readEntry(entry, cb) {
 			if (entry.isFile) {
+                _webKitEntry = entry;
 				entry.file(function(file) {
 					if (_isAcceptable(file)) {
+                        file.fullPath = _webKitEntry.fullPath;
 						_files.push(file);
 					}
 					cb();
