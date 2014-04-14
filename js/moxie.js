@@ -6647,7 +6647,6 @@ define("moxie/runtime/html5/file/FileDrop", [
 			return !ext || !_allowedExts.length || Basic.inArray(ext, _allowedExts) !== -1;
 		}
 
-
 		function _readItems(items, cb) {
 			var entries = [];
 			Basic.each(items, function(item) {
@@ -6658,9 +6657,12 @@ define("moxie/runtime/html5/file/FileDrop", [
 					// file() fails on OSX when the filename contains a special character (e.g. umlaut): see #61
 					if (entry.isFile) {
 						var file = item.getAsFile();
-                        file.path = webKitEntry;
 						if (_isAcceptable(file)) {
-                            file.fullPath = webKitEntry.fullPath;
+						    if (typeof webKitEntry === undefined) {
+						        file.fullPath = webKitEntry.fullPath;
+						    } else {
+						        file.name = file.name;
+						    }
 							_files.push(file);
 						}
 					} else {
@@ -6675,6 +6677,8 @@ define("moxie/runtime/html5/file/FileDrop", [
 				cb();
 			}
 		}
+
+
 
 
 		function _readEntries(entries, cb) {
