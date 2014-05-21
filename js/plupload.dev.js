@@ -1934,9 +1934,7 @@ plupload.Uploader = function(options) {
 			if (queue.length) {
 				o.inSeries(queue, function() {
 					// if any files left after filtration, trigger FilesAdded
-					if (files.length) {
-						self.trigger("FilesAdded", files);
-					}
+					self.trigger("FilesAdded", files);
 				});
 			}
 		},
