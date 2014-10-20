@@ -106,15 +106,15 @@
 
     define('moxie/core/utils/Basic', [], function () {
         /**
-        Gets the true type of the built-in object (better version of typeof).
-        @author Angus Croll (http://javascriptweblog.wordpress.com/)
-    
-        @method typeOf
-        @for Utils
-        @static
-        @param {Object} o Object to check.
-        @return {String} Object [[Class]]
-        */
+         Gets the true type of the built-in object (better version of typeof).
+         @author Angus Croll (http://javascriptweblog.wordpress.com/)
+
+         @method typeOf
+         @for Utils
+         @static
+         @param {Object} o Object to check.
+         @return {String} Object [[Class]]
+         */
         var typeOf = function (o) {
             var undef;
 
@@ -131,14 +131,14 @@
         };
 
         /**
-        Extends the specified object with another object.
-    
-        @method extend
-        @static
-        @param {Object} target Object to extend.
-        @param {Object} [obj]* Multiple objects to extend with.
-        @return {Object} Same as target, the extended object.
-        */
+         Extends the specified object with another object.
+
+         @method extend
+         @static
+         @param {Object} target Object to extend.
+         @param {Object} [obj]* Multiple objects to extend with.
+         @return {Object} Same as target, the extended object.
+         */
         var extend = function (target) {
             var undef;
 
@@ -159,14 +159,14 @@
         };
 
         /**
-        Executes the callback function for each item in array/object. If you return false in the
-        callback it will break the loop.
-    
-        @method each
-        @static
-        @param {Object} obj Object to iterate.
-        @param {function} callback Callback function to execute for each item.
-        */
+         Executes the callback function for each item in array/object. If you return false in the
+         callback it will break the loop.
+
+         @method each
+         @static
+         @param {Object} obj Object to iterate.
+         @param {function} callback Callback function to execute for each item.
+         */
         var each = function (obj, callback) {
             var length, key, i, undef;
 
@@ -198,13 +198,13 @@
         };
 
         /**
-        Checks if object is empty.
-        
-        @method isEmptyObj
-        @static
-        @param {Object} o Object to check.
-        @return {Boolean}
-        */
+         Checks if object is empty.
+
+         @method isEmptyObj
+         @static
+         @param {Object} o Object to check.
+         @return {Boolean}
+         */
         var isEmptyObj = function (obj) {
             var prop;
 
@@ -220,17 +220,17 @@
         };
 
         /**
-        Recieve an array of functions (usually async) to call in sequence, each  function
-        receives a callback as first argument that it should call, when it completes. Finally,
-        after everything is complete, main callback is called. Passing truthy value to the
-        callback as a first argument will interrupt the sequence and invoke main callback
-        immediately.
-    
-        @method inSeries
-        @static
-        @param {Array} queue Array of functions to call in sequence
-        @param {Function} cb Main callback that is called in the end, or in case of erro
-        */
+         Recieve an array of functions (usually async) to call in sequence, each  function
+         receives a callback as first argument that it should call, when it completes. Finally,
+         after everything is complete, main callback is called. Passing truthy value to the
+         callback as a first argument will interrupt the sequence and invoke main callback
+         immediately.
+
+         @method inSeries
+         @static
+         @param {Array} queue Array of functions to call in sequence
+         @param {Function} cb Main callback that is called in the end, or in case of erro
+         */
         var inSeries = function (queue, cb) {
             var i = 0, length = queue.length;
 
@@ -255,17 +255,17 @@
 
 
         /**
-        Recieve an array of functions (usually async) to call in parallel, each  function
-        receives a callback as first argument that it should call, when it completes. After 
-        everything is complete, main callback is called. Passing truthy value to the
-        callback as a first argument will interrupt the process and invoke main callback
-        immediately.
-    
-        @method inParallel
-        @static
-        @param {Array} queue Array of functions to call in sequence
-        @param {Function} cb Main callback that is called in the end, or in case of erro
-        */
+         Recieve an array of functions (usually async) to call in parallel, each  function
+         receives a callback as first argument that it should call, when it completes. After
+         everything is complete, main callback is called. Passing truthy value to the
+         callback as a first argument will interrupt the process and invoke main callback
+         immediately.
+
+         @method inParallel
+         @static
+         @param {Array} queue Array of functions to call in sequence
+         @param {Function} cb Main callback that is called in the end, or in case of erro
+         */
         var inParallel = function (queue, cb) {
             var count = 0, num = queue.length, cbArgs = new Array(num);
 
@@ -291,14 +291,14 @@
 
 
         /**
-        Find an element in array and return it's index if present, otherwise return -1.
-        
-        @method inArray
-        @static
-        @param {Mixed} needle Element to find
-        @param {Array} array
-        @return {Int} Index of the element, or -1 if not found
-        */
+         Find an element in array and return it's index if present, otherwise return -1.
+
+         @method inArray
+         @static
+         @param {Mixed} needle Element to find
+         @param {Array} array
+         @return {Int} Index of the element, or -1 if not found
+         */
         var inArray = function (needle, array) {
             if (array) {
                 if (Array.prototype.indexOf) {
@@ -316,14 +316,14 @@
 
 
         /**
-        Returns elements of first array if they are not present in second. And false - otherwise.
-    
-        @private
-        @method arrayDiff
-        @param {Array} needles
-        @param {Array} array
-        @return {Array|Boolean}
-        */
+         Returns elements of first array if they are not present in second. And false - otherwise.
+
+         @private
+         @method arrayDiff
+         @param {Array} needles
+         @param {Array} array
+         @return {Array|Boolean}
+         */
         var arrayDiff = function (needles, array) {
             var diff = [];
 
@@ -345,14 +345,14 @@
 
 
         /**
-        Find intersection of two arrays.
-    
-        @private
-        @method arrayIntersect
-        @param {Array} array1
-        @param {Array} array2
-        @return {Array} Intersection of two arrays or null if there is none
-        */
+         Find intersection of two arrays.
+
+         @private
+         @method arrayIntersect
+         @param {Array} array1
+         @param {Array} array2
+         @return {Array} Intersection of two arrays or null if there is none
+         */
         var arrayIntersect = function (array1, array2) {
             var result = [];
             each(array1, function (item) {
@@ -365,13 +365,13 @@
 
 
         /**
-        Forces anything into an array.
-        
-        @method toArray
-        @static
-        @param {Object} obj Object with length field.
-        @return {Array} Array object containing all items.
-        */
+         Forces anything into an array.
+
+         @method toArray
+         @static
+         @param {Object} obj Object with length field.
+         @return {Array} Array object containing all items.
+         */
         var toArray = function (obj) {
             var i, arr = [];
 
@@ -384,17 +384,17 @@
 
 
         /**
-        Generates an unique ID. This is 99.99% unique since it takes the current time and 5 random numbers.
-        The only way a user would be able to get the same ID is if the two persons at the same exact milisecond manages
-        to get 5 the same random numbers between 0-65535 it also uses a counter so each call will be guaranteed to be page unique.
-        It's more probable for the earth to be hit with an ansteriod. Y
-        
-        @method guid
-        @static
-        @param {String} prefix to prepend (by default 'o' will be prepended).
-        @method guid
-        @return {String} Virtually unique id.
-        */
+         Generates an unique ID. This is 99.99% unique since it takes the current time and 5 random numbers.
+         The only way a user would be able to get the same ID is if the two persons at the same exact milisecond manages
+         to get 5 the same random numbers between 0-65535 it also uses a counter so each call will be guaranteed to be page unique.
+         It's more probable for the earth to be hit with an ansteriod. Y
+
+         @method guid
+         @static
+         @param {String} prefix to prepend (by default 'o' will be prepended).
+         @method guid
+         @return {String} Virtually unique id.
+         */
         var guid = (function () {
             var counter = 0;
 
@@ -411,13 +411,13 @@
 
 
         /**
-        Trims white spaces around the string
-        
-        @method trim
-        @static
-        @param {String} str
-        @return {String}
-        */
+         Trims white spaces around the string
+
+         @method trim
+         @static
+         @param {String} str
+         @return {String}
+         */
         var trim = function (str) {
             if (!str) {
                 return str;
@@ -427,24 +427,24 @@
 
 
         /**
-        Parses the specified size string into a byte value. For example 10kb becomes 10240.
-        
-        @method parseSizeStr
-        @static
-        @param {String/Number} size String to parse or number to just pass through.
-        @return {Number} Size in bytes.
-        */
+         Parses the specified size string into a byte value. For example 10kb becomes 10240.
+
+         @method parseSizeStr
+         @static
+         @param {String/Number} size String to parse or number to just pass through.
+         @return {Number} Size in bytes.
+         */
         var parseSizeStr = function (size) {
             if (typeof (size) !== 'string') {
                 return size;
             }
 
             var muls = {
-                t: 1099511627776,
-                g: 1073741824,
-                m: 1048576,
-                k: 1024
-            },
+                    t: 1099511627776,
+                    g: 1073741824,
+                    m: 1048576,
+                    k: 1024
+                },
                 mul;
 
             size = /^([0-9]+)([mgk]?)$/.exec(size.toLowerCase().replace(/[^0-9mkg]/g, ''));
@@ -965,17 +965,17 @@
                     // Mixed
                     /(kindle)\/((\d+)?[\w\.]+)/i,                                       // Kindle
                     /(lunascape|maxthon|netfront|jasmine|blazer)[\/\s]?((\d+)?[\w\.]+)*/i,
-                                                                                        // Lunascape/Maxthon/Netfront/Jasmine/Blazer
+                    // Lunascape/Maxthon/Netfront/Jasmine/Blazer
 
                     // Trident based
                     /(avant\s|iemobile|slim|baidu)(?:browser)?[\/\s]?((\d+)?[\w\.]*)/i,
-                                                                                        // Avant/IEMobile/SlimBrowser/Baidu
+                    // Avant/IEMobile/SlimBrowser/Baidu
                     /(?:ms|\()(ie)\s((\d+)?[\w\.]+)/i,                                  // Internet Explorer
 
                     // Webkit/KHTML based
                     /(rekonq)((?:\/)[\w\.]+)*/i,                                        // Rekonq
                     /(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron)\/((\d+)?[\w\.-]+)/i
-                                                                                        // Chromium/Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron
+                    // Chromium/Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron
                 ], [NAME, VERSION, MAJOR], [
 
                     /(trident).+rv[:\s]((\d+)?[\w\.]+).+like\sgecko/i                   // IE11
@@ -988,7 +988,7 @@
                 ], [[NAME, /_/g, ' '], VERSION, MAJOR], [
 
                     /(chrome|omniweb|arora|[tizenoka]{5}\s?browser)\/v?((\d+)?[\w\.]+)/i
-                                                                                        // Chrome/OmniWeb/Arora/Tizen/Nokia
+                    // Chrome/OmniWeb/Arora/Tizen/Nokia
                 ], [NAME, VERSION, MAJOR], [
 
                     /(dolfin)\/((\d+)?[\w\.]+)/i                                        // Dolphin
@@ -1018,14 +1018,14 @@
                 ], [[NAME, 'Netscape'], VERSION, MAJOR], [
                     /(swiftfox)/i,                                                      // Swiftfox
                     /(icedragon|iceweasel|camino|chimera|fennec|maemo\sbrowser|minimo|conkeror)[\/\s]?((\d+)?[\w\.\+]+)/i,
-                                                                                        // IceDragon/Iceweasel/Camino/Chimera/Fennec/Maemo/Minimo/Conkeror
+                    // IceDragon/Iceweasel/Camino/Chimera/Fennec/Maemo/Minimo/Conkeror
                     /(firefox|seamonkey|k-meleon|icecat|iceape|firebird|phoenix)\/((\d+)?[\w\.-]+)/i,
-                                                                                        // Firefox/SeaMonkey/K-Meleon/IceCat/IceApe/Firebird/Phoenix
+                    // Firefox/SeaMonkey/K-Meleon/IceCat/IceApe/Firebird/Phoenix
                     /(mozilla)\/((\d+)?[\w\.]+).+rv\:.+gecko\/\d+/i,                    // Mozilla
 
                     // Other
                     /(uc\s?browser|polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|qqbrowser)[\/\s]?((\d+)?[\w\.]+)/i,
-                                                                                        // UCBrowser/Polaris/Lynx/Dillo/iCab/Doris/Amaya/w3m/NetSurf/QQBrowser
+                    // UCBrowser/Polaris/Lynx/Dillo/iCab/Doris/Amaya/w3m/NetSurf/QQBrowser
                     /(links)\s\(((\d+)?[\w\.]+)/i,                                      // Links
                     /(gobrowser)\/?((\d+)?[\w\.]+)*/i,                                  // GoBrowser
                     /(ice\s?browser)\/v?((\d+)?[\w\._]+)/i,                             // ICE Browser
@@ -1060,7 +1060,7 @@
                     /(blackberry)\w*\/?([\w\.]+)*/i,                                    // Blackberry
                     /(tizen)\/([\w\.]+)/i,                                              // Tizen
                     /(android|webos|palm\os|qnx|bada|rim\stablet\sos|meego)[\/\s-]?([\w\.]+)*/i
-                                                                                        // Android/WebOS/Palm/QNX/Bada/RIM/MeeGo
+                    // Android/WebOS/Palm/QNX/Bada/RIM/MeeGo
                 ], [NAME, VERSION], [
                     /(symbian\s?os|symbos|s60(?=;))[\/\s-]?([\w\.]+)*/i                 // Symbian
                 ], [[NAME, 'Symbian'], VERSION], [
@@ -1073,8 +1073,8 @@
                     // GNU/Linux based
                     /(mint)[\/\s\(]?(\w+)*/i,                                           // Mint
                     /(joli|[kxln]?ubuntu|debian|[open]*suse|gentoo|arch|slackware|fedora|mandriva|centos|pclinuxos|redhat|zenwalk)[\/\s-]?([\w\.-]+)*/i,
-                                                                                        // Joli/Ubuntu/Debian/SUSE/Gentoo/Arch/Slackware
-                                                                                        // Fedora/Mandriva/CentOS/PCLinuxOS/RedHat/Zenwalk
+                    // Joli/Ubuntu/Debian/SUSE/Gentoo/Arch/Slackware
+                    // Fedora/Mandriva/CentOS/PCLinuxOS/RedHat/Zenwalk
                     /(hurd|linux)\s?([\w\.]+)*/i,                                       // Hurd/Linux
                     /(gnu)\s?([\w\.]+)*/i                                               // GNU
                 ], [NAME, VERSION], [
@@ -1100,7 +1100,7 @@
                     /(haiku)\s(\w+)/i,                                                  // Haiku
                     /(aix)\s((\d)(?=\.|\)|\s)[\w\.]*)*/i,                               // AIX
                     /(macintosh|mac(?=_powerpc)|plan\s9|minix|beos|os\/2|amigaos|morphos|risc\sos)/i,
-                                                                                        // Plan9/Minix/BeOS/OS2/AmigaOS/MorphOS/RISCOS
+                    // Plan9/Minix/BeOS/OS2/AmigaOS/MorphOS/RISCOS
                     /(unix)\s?([\w\.]+)*/i                                              // UNIX
                 ], [NAME, VERSION]
                 ]
@@ -1166,48 +1166,48 @@
 
             // Important: compare must be initialized at 0.
             var i = 0,
-              x = 0,
-              compare = 0,
-              // vm maps textual PHP versions to negatives so they're less than 0.
-              // PHP currently defines these as CASE-SENSITIVE. It is important to
-              // leave these as negatives so that they can come before numerical versions
-              // and as if no letters were there to begin with.
-              // (1alpha is < 1 and < 1.1 but > 1dev1)
-              // If a non-numerical value can't be mapped to this table, it receives
-              // -7 as its value.
-              vm = {
-                  'dev': -6,
-                  'alpha': -5,
-                  'a': -5,
-                  'beta': -4,
-                  'b': -4,
-                  'RC': -3,
-                  'rc': -3,
-                  '#': -2,
-                  'p': 1,
-                  'pl': 1
-              },
-              // This function will be called to prepare each version argument.
-              // It replaces every _, -, and + with a dot.
-              // It surrounds any nonsequence of numbers/dots with dots.
-              // It replaces sequences of dots with a single dot.
-              //    version_compare('4..0', '4.0') == 0
-              // Important: A string of 0 length needs to be converted into a value
-              // even less than an unexisting value in vm (-7), hence [-8].
-              // It's also important to not strip spaces because of this.
-              //   version_compare('', ' ') == 1
-              prepVersion = function (v) {
-                  v = ('' + v).replace(/[_\-+]/g, '.');
-                  v = v.replace(/([^.\d]+)/g, '.$1.').replace(/\.{2,}/g, '.');
-                  return (!v.length ? [-8] : v.split('.'));
-              },
-              // This converts a version component to a number.
-              // Empty component becomes 0.
-              // Non-numerical component becomes a negative number.
-              // Numerical component becomes itself as an integer.
-              numVersion = function (v) {
-                  return !v ? 0 : (isNaN(v) ? vm[v] || -7 : parseInt(v, 10));
-              };
+                x = 0,
+                compare = 0,
+            // vm maps textual PHP versions to negatives so they're less than 0.
+            // PHP currently defines these as CASE-SENSITIVE. It is important to
+            // leave these as negatives so that they can come before numerical versions
+            // and as if no letters were there to begin with.
+            // (1alpha is < 1 and < 1.1 but > 1dev1)
+            // If a non-numerical value can't be mapped to this table, it receives
+            // -7 as its value.
+                vm = {
+                    'dev': -6,
+                    'alpha': -5,
+                    'a': -5,
+                    'beta': -4,
+                    'b': -4,
+                    'RC': -3,
+                    'rc': -3,
+                    '#': -2,
+                    'p': 1,
+                    'pl': 1
+                },
+            // This function will be called to prepare each version argument.
+            // It replaces every _, -, and + with a dot.
+            // It surrounds any nonsequence of numbers/dots with dots.
+            // It replaces sequences of dots with a single dot.
+            //    version_compare('4..0', '4.0') == 0
+            // Important: A string of 0 length needs to be converted into a value
+            // even less than an unexisting value in vm (-7), hence [-8].
+            // It's also important to not strip spaces because of this.
+            //   version_compare('', ' ') == 1
+                prepVersion = function (v) {
+                    v = ('' + v).replace(/[_\-+]/g, '.');
+                    v = v.replace(/([^.\d]+)/g, '.$1.').replace(/\.{2,}/g, '.');
+                    return (!v.length ? [-8] : v.split('.'));
+                },
+            // This converts a version component to a number.
+            // Empty component becomes 0.
+            // Non-numerical component becomes a negative number.
+            // Numerical component becomes itself as an integer.
+                numVersion = function (v) {
+                    return !v ? 0 : (isNaN(v) ? vm[v] || -7 : parseInt(v, 10));
+                };
 
             v1 = prepVersion(v1);
             v2 = prepVersion(v2);
@@ -1265,20 +1265,20 @@
             var caps = {
                 define_property: (function () {
                     /* // currently too much extra code required, not exactly worth it
-					try { // as of IE8, getters/setters are supported only on DOM elements
-						var obj = {};
-						if (Object.defineProperty) {
-							Object.defineProperty(obj, 'prop', {
-								enumerable: true,
-								configurable: true
-							});
-							return true;
-						}
-					} catch(ex) {}
+                     try { // as of IE8, getters/setters are supported only on DOM elements
+                     var obj = {};
+                     if (Object.defineProperty) {
+                     Object.defineProperty(obj, 'prop', {
+                     enumerable: true,
+                     configurable: true
+                     });
+                     return true;
+                     }
+                     } catch(ex) {}
 
-					if (Object.prototype.__defineGetter__ && Object.prototype.__defineSetter__) {
-						return true;
-					}*/
+                     if (Object.prototype.__defineGetter__ && Object.prototype.__defineSetter__) {
+                     return true;
+                     }*/
                     return false;
                 }()),
 
@@ -1384,13 +1384,13 @@
     define('moxie/core/utils/Dom', ['moxie/core/utils/Env'], function (Env) {
 
         /**
-        Get DOM Element by it's id.
-    
-        @method get
-        @for Utils
-        @param {String} id Identifier of the DOM Element
-        @return {DOMElement}
-        */
+         Get DOM Element by it's id.
+
+         @method get
+         @for Utils
+         @param {String} id Identifier of the DOM Element
+         @return {DOMElement}
+         */
         var get = function (id) {
             if (typeof id !== 'string') {
                 return id;
@@ -1399,13 +1399,13 @@
         };
 
         /**
-        Checks if specified DOM element has specified class.
-    
-        @method hasClass
-        @static
-        @param {Object} obj DOM element like object to add handler to.
-        @param {String} name Class name
-        */
+         Checks if specified DOM element has specified class.
+
+         @method hasClass
+         @static
+         @param {Object} obj DOM element like object to add handler to.
+         @param {String} name Class name
+         */
         var hasClass = function (obj, name) {
             if (!obj.className) {
                 return false;
@@ -1416,13 +1416,13 @@
         };
 
         /**
-        Adds specified className to specified DOM element.
-    
-        @method addClass
-        @static
-        @param {Object} obj DOM element like object to add handler to.
-        @param {String} name Class name
-        */
+         Adds specified className to specified DOM element.
+
+         @method addClass
+         @static
+         @param {Object} obj DOM element like object to add handler to.
+         @param {String} name Class name
+         */
         var addClass = function (obj, name) {
             if (!hasClass(obj, name)) {
                 obj.className = !obj.className ? name : obj.className.replace(/\s+$/, '') + ' ' + name;
@@ -1430,13 +1430,13 @@
         };
 
         /**
-        Removes specified className from specified DOM element.
-    
-        @method removeClass
-        @static
-        @param {Object} obj DOM element like object to add handler to.
-        @param {String} name Class name
-        */
+         Removes specified className from specified DOM element.
+
+         @method removeClass
+         @static
+         @param {Object} obj DOM element like object to add handler to.
+         @param {String} name Class name
+         */
         var removeClass = function (obj, name) {
             if (obj.className) {
                 var regExp = new RegExp("(^|\\s+)" + name + "(\\s+|$)");
@@ -1447,13 +1447,13 @@
         };
 
         /**
-        Returns a given computed style of a DOM element.
-    
-        @method getStyle
-        @static
-        @param {Object} obj DOM element like object.
-        @param {String} name Style you want to get from the DOM element
-        */
+         Returns a given computed style of a DOM element.
+
+         @method getStyle
+         @static
+         @param {Object} obj DOM element like object.
+         @param {String} name Style you want to get from the DOM element
+         */
         var getStyle = function (obj, name) {
             if (obj.currentStyle) {
                 return obj.currentStyle[name];
@@ -1464,14 +1464,14 @@
 
 
         /**
-        Returns the absolute x, y position of an Element. The position will be returned in a object with x, y fields.
-    
-        @method getPos
-        @static
-        @param {Element} node HTML element or element id to get x, y position from.
-        @param {Element} root Optional root element to stop calculations at.
-        @return {object} Absolute position of the specified element object with x, y fields.
-        */
+         Returns the absolute x, y position of an Element. The position will be returned in a object with x, y fields.
+
+         @method getPos
+         @static
+         @param {Element} node HTML element or element id to get x, y position from.
+         @param {Element} root Optional root element to stop calculations at.
+         @return {object} Absolute position of the specified element object with x, y fields.
+         */
         var getPos = function (node, root) {
             var x = 0, y = 0, parent, doc = document, nodeRect, rootRect;
 
@@ -1527,13 +1527,13 @@
         };
 
         /**
-        Returns the size of the specified node in pixels.
-    
-        @method getSize
-        @static
-        @param {Node} node Node to get the size of.
-        @return {Object} Object with a w and h property.
-        */
+         Returns the size of the specified node in pixels.
+
+         @method getSize
+         @static
+         @param {Node} node Node to get the size of.
+         @return {Object} Object with a w and h property.
+         */
         var getSize = function (node) {
             return {
                 w: node.offsetWidth || node.clientWidth,
@@ -1727,11 +1727,11 @@
         'moxie/core/utils/Basic'
     ], function (x, Basic) {
         /**
-        Parent object for all event dispatching components and objects
-    
-        @class EventTarget
-        @constructor EventTarget
-        */
+         Parent object for all event dispatching components and objects
+
+         @class EventTarget
+         @constructor EventTarget
+         */
         function EventTarget() {
             // hash of event listeners by object uid
             var eventpool = {};
@@ -1739,18 +1739,18 @@
             Basic.extend(this, {
 
                 /**
-                Unique id of the event dispatcher, usually overriden by children
-    
-                @property uid
-                @type String
-                */
+                 Unique id of the event dispatcher, usually overriden by children
+
+                 @property uid
+                 @type String
+                 */
                 uid: null,
 
                 /**
-                Can be called from within a child  in order to acquire uniqie id in automated manner
-    
-                @method init
-                */
+                 Can be called from within a child  in order to acquire uniqie id in automated manner
+
+                 @method init
+                 */
                 init: function () {
                     if (!this.uid) {
                         this.uid = Basic.guid('uid_');
@@ -1758,14 +1758,14 @@
                 },
 
                 /**
-                Register a handler to a specific event dispatched by the object
-    
-                @method addEventListener
-                @param {String} type Type or basically a name of the event to subscribe to
-                @param {Function} fn Callback function that will be called when event happens
-                @param {Number} [priority=0] Priority of the event handler - handlers with higher priorities will be called first
-                @param {Object} [scope=this] A scope to invoke event handler in
-                */
+                 Register a handler to a specific event dispatched by the object
+
+                 @method addEventListener
+                 @param {String} type Type or basically a name of the event to subscribe to
+                 @param {Function} fn Callback function that will be called when event happens
+                 @param {Number} [priority=0] Priority of the event handler - handlers with higher priorities will be called first
+                 @param {Object} [scope=this] A scope to invoke event handler in
+                 */
                 addEventListener: function (type, fn, priority, scope) {
                     var self = this, list;
 
@@ -1792,23 +1792,23 @@
                 },
 
                 /**
-                Check if any handlers were registered to the specified event
-    
-                @method hasEventListener
-                @param {String} type Type or basically a name of the event to check
-                @return {Mixed} Returns a handler if it was found and false, if - not
-                */
+                 Check if any handlers were registered to the specified event
+
+                 @method hasEventListener
+                 @param {String} type Type or basically a name of the event to check
+                 @return {Mixed} Returns a handler if it was found and false, if - not
+                 */
                 hasEventListener: function (type) {
                     return type ? !!(eventpool[this.uid] && eventpool[this.uid][type]) : !!eventpool[this.uid];
                 },
 
                 /**
-                Unregister the handler from the event, or if former was not specified - unregister all handlers
-    
-                @method removeEventListener
-                @param {String} type Type or basically a name of the event
-                @param {Function} [fn] Handler to unregister
-                */
+                 Unregister the handler from the event, or if former was not specified - unregister all handlers
+
+                 @method removeEventListener
+                 @param {String} type Type or basically a name of the event
+                 @param {Function} [fn] Handler to unregister
+                 */
                 removeEventListener: function (type, fn) {
                     type = type.toLowerCase();
 
@@ -1839,10 +1839,10 @@
                 },
 
                 /**
-                Remove all event handlers from the object
-    
-                @method removeAllEventListeners
-                */
+                 Remove all event handlers from the object
+
+                 @method removeAllEventListeners
+                 */
                 removeAllEventListeners: function () {
                     if (eventpool[this.uid]) {
                         delete eventpool[this.uid];
@@ -1850,13 +1850,13 @@
                 },
 
                 /**
-                Dispatch the event
-    
-                @method dispatchEvent
-                @param {String/Object} Type of event or event object to dispatch
-                @param {Mixed} [...] Variable number of arguments to be passed to a handlers
-                @return {Boolean} true by default and false if any handler returned false
-                */
+                 Dispatch the event
+
+                 @method dispatchEvent
+                 @param {String/Object} Type of event or event object to dispatch
+                 @param {Mixed} [...] Variable number of arguments to be passed to a handlers
+                 @return {Boolean} true by default and false if any handler returned false
+                 */
                 dispatchEvent: function (type) {
                     var uid, list, args, tmpEvt, evt = {}, result = true, undef;
 
@@ -1930,53 +1930,53 @@
                 },
 
                 /**
-                Alias for addEventListener
-    
-                @method bind
-                @protected
-                */
+                 Alias for addEventListener
+
+                 @method bind
+                 @protected
+                 */
                 bind: function () {
                     this.addEventListener.apply(this, arguments);
                 },
 
                 /**
-                Alias for removeEventListener
-    
-                @method unbind
-                @protected
-                */
+                 Alias for removeEventListener
+
+                 @method unbind
+                 @protected
+                 */
                 unbind: function () {
                     this.removeEventListener.apply(this, arguments);
                 },
 
                 /**
-                Alias for removeAllEventListeners
-    
-                @method unbindAll
-                @protected
-                */
+                 Alias for removeAllEventListeners
+
+                 @method unbindAll
+                 @protected
+                 */
                 unbindAll: function () {
                     this.removeAllEventListeners.apply(this, arguments);
                 },
 
                 /**
-                Alias for dispatchEvent
-    
-                @method trigger
-                @protected
-                */
+                 Alias for dispatchEvent
+
+                 @method trigger
+                 @protected
+                 */
                 trigger: function () {
                     return this.dispatchEvent.apply(this, arguments);
                 },
 
 
                 /**
-                Converts properties of on[event] type to corresponding event handlers,
-                is used to avoid extra hassle around the process of calling them back
-    
-                @method convertEventPropsToHandlers
-                @private
-                */
+                 Converts properties of on[event] type to corresponding event handlers,
+                 is used to avoid extra hassle around the process of calling them back
+
+                 @method convertEventPropsToHandlers
+                 @private
+                 */
                 convertEventPropsToHandlers: function (handlers) {
                     var h;
 
@@ -2018,39 +2018,39 @@
     define('moxie/core/utils/Encode', [], function () {
 
         /**
-        Encode string with UTF-8
-    
-        @method utf8_encode
-        @for Utils
-        @static
-        @param {String} str String to encode
-        @return {String} UTF-8 encoded string
-        */
+         Encode string with UTF-8
+
+         @method utf8_encode
+         @for Utils
+         @static
+         @param {String} str String to encode
+         @return {String} UTF-8 encoded string
+         */
         var utf8_encode = function (str) {
             return unescape(encodeURIComponent(str));
         };
 
         /**
-        Decode UTF-8 encoded string
-    
-        @method utf8_decode
-        @static
-        @param {String} str String to decode
-        @return {String} Decoded string
-        */
+         Decode UTF-8 encoded string
+
+         @method utf8_decode
+         @static
+         @param {String} str String to decode
+         @return {String} Decoded string
+         */
         var utf8_decode = function (str_data) {
             return decodeURIComponent(escape(str_data));
         };
 
         /**
-        Decode Base64 encoded string (uses browser's default method if available),
-        from: https://raw.github.com/kvz/phpjs/master/functions/url/base64_decode.js
-    
-        @method atob
-        @static
-        @param {String} data String to decode
-        @return {String} Decoded string
-        */
+         Decode Base64 encoded string (uses browser's default method if available),
+         from: https://raw.github.com/kvz/phpjs/master/functions/url/base64_decode.js
+
+         @method atob
+         @static
+         @param {String} data String to decode
+         @return {String} Decoded string
+         */
         var atob = function (data, utf8) {
             if (typeof (window.atob) === 'function') {
                 return utf8 ? utf8_decode(window.atob(data)) : window.atob(data);
@@ -2112,14 +2112,14 @@
         };
 
         /**
-        Base64 encode string (uses browser's default method if available),
-        from: https://raw.github.com/kvz/phpjs/master/functions/url/base64_encode.js
-    
-        @method btoa
-        @static
-        @param {String} data String to encode
-        @return {String} Base64 encoded string
-        */
+         Base64 encode string (uses browser's default method if available),
+         from: https://raw.github.com/kvz/phpjs/master/functions/url/base64_encode.js
+
+         @method btoa
+         @static
+         @param {String} data String to encode
+         @return {String} Base64 encoded string
+         */
         var btoa = function (data, utf8) {
             if (utf8) {
                 utf8_encode(data);
@@ -2203,36 +2203,36 @@
         var runtimeConstructors = {}, runtimes = {};
 
         /**
-        Common set of methods and properties for every runtime instance
-    
-        @class Runtime
-    
-        @param {Object} options
-        @param {String} type Sanitized name of the runtime
-        @param {Object} [caps] Set of capabilities that differentiate specified runtime
-        @param {Object} [modeCaps] Set of capabilities that do require specific operational mode
-        @param {String} [preferredMode='browser'] Preferred operational mode to choose if no required capabilities were requested
-        */
+         Common set of methods and properties for every runtime instance
+
+         @class Runtime
+
+         @param {Object} options
+         @param {String} type Sanitized name of the runtime
+         @param {Object} [caps] Set of capabilities that differentiate specified runtime
+         @param {Object} [modeCaps] Set of capabilities that do require specific operational mode
+         @param {String} [preferredMode='browser'] Preferred operational mode to choose if no required capabilities were requested
+         */
         function Runtime(options, type, caps, modeCaps, preferredMode) {
             /**
-            Dispatched when runtime is initialized and ready.
-            Results in RuntimeInit on a connected component.
-    
-            @event Init
-            */
+             Dispatched when runtime is initialized and ready.
+             Results in RuntimeInit on a connected component.
+
+             @event Init
+             */
 
             /**
-            Dispatched when runtime fails to initialize.
-            Results in RuntimeError on a connected component.
-    
-            @event Error
-            */
+             Dispatched when runtime fails to initialize.
+             Results in RuntimeError on a connected component.
+
+             @event Error
+             */
 
             var self = this
-            , _shim
-            , _uid = Basic.guid(type + '_')
-            , defaultMode = preferredMode || 'browser'
-            ;
+                , _shim
+                , _uid = Basic.guid(type + '_')
+                , defaultMode = preferredMode || 'browser'
+                ;
 
             options = options || {};
 
@@ -2240,12 +2240,12 @@
             runtimes[_uid] = this;
 
             /**
-            Default set of capabilities, which can be redifined later by specific runtime
-    
-            @private
-            @property caps
-            @type Object
-            */
+             Default set of capabilities, which can be redifined later by specific runtime
+
+             @private
+             @property caps
+             @type Object
+             */
             caps = Basic.extend({
                 // Runtime can: 
                 // provide access to raw binary data of the file
@@ -2343,72 +2343,72 @@
             // public methods
             Basic.extend(this, {
                 /**
-                Specifies whether runtime instance was initialized or not
-    
-                @property initialized
-                @type {Boolean}
-                @default false
-                */
+                 Specifies whether runtime instance was initialized or not
+
+                 @property initialized
+                 @type {Boolean}
+                 @default false
+                 */
                 initialized: false, // shims require this flag to stop initialization retries
 
                 /**
-                Unique ID of the runtime
-    
-                @property uid
-                @type {String}
-                */
+                 Unique ID of the runtime
+
+                 @property uid
+                 @type {String}
+                 */
                 uid: _uid,
 
                 /**
-                Runtime type (e.g. flash, html5, etc)
-    
-                @property type
-                @type {String}
-                */
+                 Runtime type (e.g. flash, html5, etc)
+
+                 @property type
+                 @type {String}
+                 */
                 type: type,
 
                 /**
-                Runtime (not native one) may operate in browser or client mode.
-    
-                @property mode
-                @private
-                @type {String|Boolean} current mode or false, if none possible
-                */
+                 Runtime (not native one) may operate in browser or client mode.
+
+                 @property mode
+                 @private
+                 @type {String|Boolean} current mode or false, if none possible
+                 */
                 mode: Runtime.getMode(modeCaps, (options.required_caps), defaultMode),
 
                 /**
-                id of the DOM container for the runtime (if available)
-    
-                @property shimid
-                @type {String}
-                */
+                 id of the DOM container for the runtime (if available)
+
+                 @property shimid
+                 @type {String}
+                 */
                 shimid: _uid + '_container',
 
                 /**
-                Number of connected clients. If equal to zero, runtime can be destroyed
-    
-                @property clients
-                @type {Number}
-                */
+                 Number of connected clients. If equal to zero, runtime can be destroyed
+
+                 @property clients
+                 @type {Number}
+                 */
                 clients: 0,
 
                 /**
-                Runtime initialization options
-    
-                @property options
-                @type {Object}
-                */
+                 Runtime initialization options
+
+                 @property options
+                 @type {Object}
+                 */
                 options: options,
 
                 /**
-                Checks if the runtime has specific capability
-    
-                @method can
-                @param {String} cap Name of capability to check
-                @param {Mixed} [value] If passed, capability should somehow correlate to the value
-                @param {Object} [refCaps] Set of capabilities to check the specified cap against (defaults to internal set)
-                @return {Boolean} true if runtime has such capability and false, if - not
-                */
+                 Checks if the runtime has specific capability
+
+                 @method can
+                 @param {String} cap Name of capability to check
+                 @param {Mixed} [value] If passed, capability should somehow correlate to the value
+                 @param {Object} [refCaps] Set of capabilities to check the specified cap against (defaults to internal set)
+                 @return {Boolean} true if runtime has such capability and false, if - not
+                 */
                 can: function (cap, value) {
                     var refCaps = arguments[2] || caps;
 
@@ -2435,11 +2435,11 @@
                 },
 
                 /**
-                Returns container for the runtime as DOM element
-    
-                @method getShimContainer
-                @return {DOMElement}
-                */
+                 Returns container for the runtime as DOM element
+
+                 @method getShimContainer
+                 @return {DOMElement}
+                 */
                 getShimContainer: function () {
                     var container, shimContainer = Dom.get(this.shimid);
 
@@ -2469,37 +2469,37 @@
                 },
 
                 /**
-                Returns runtime as DOM element (if appropriate)
-    
-                @method getShim
-                @return {DOMElement}
-                */
+                 Returns runtime as DOM element (if appropriate)
+
+                 @method getShim
+                 @return {DOMElement}
+                 */
                 getShim: function () {
                     return _shim;
                 },
 
                 /**
-                Invokes a method within the runtime itself (might differ across the runtimes)
-    
-                @method shimExec
-                @param {Mixed} []
-                @protected
-                @return {Mixed} Depends on the action and component
-                */
+                 Invokes a method within the runtime itself (might differ across the runtimes)
+
+                 @method shimExec
+                 @param {Mixed} []
+                 @protected
+                 @return {Mixed} Depends on the action and component
+                 */
                 shimExec: function (component, action) {
                     var args = [].slice.call(arguments, 2);
                     return self.getShim().exec.call(this, this.uid, component, action, args);
                 },
 
                 /**
-                Operaional interface that is used by components to invoke specific actions on the runtime
-                (is invoked in the scope of component)
-    
-                @method exec
-                @param {Mixed} []*
-                @protected
-                @return {Mixed} Depends on the action and component
-                */
+                 Operaional interface that is used by components to invoke specific actions on the runtime
+                 (is invoked in the scope of component)
+
+                 @method exec
+                 @param {Mixed} []*
+                 @protected
+                 @return {Mixed} Depends on the action and component
+                 */
                 exec: function (component, action) { // this is called in the context of component, not runtime
                     var args = [].slice.call(arguments, 2);
 
@@ -2510,10 +2510,10 @@
                 },
 
                 /**
-                Destroys the runtime (removes all events and deletes DOM structures)
-    
-                @method destroy
-                */
+                 Destroys the runtime (removes all events and deletes DOM structures)
+
+                 @method destroy
+                 */
                 destroy: function () {
                     if (!self) {
                         return; // obviously already destroyed
@@ -2543,37 +2543,37 @@
 
 
         /**
-        Default order to try different runtime types
-    
-        @property order
-        @type String
-        @static
-        */
+         Default order to try different runtime types
+
+         @property order
+         @type String
+         @static
+         */
         Runtime.order = 'html5,flash,silverlight,html4';
 
 
         /**
-        Retrieves runtime from private hash by it's uid
-    
-        @method getRuntime
-        @private
-        @static
-        @param {String} uid Unique identifier of the runtime
-        @return {Runtime|Boolean} Returns runtime, if it exists and false, if - not
-        */
+         Retrieves runtime from private hash by it's uid
+
+         @method getRuntime
+         @private
+         @static
+         @param {String} uid Unique identifier of the runtime
+         @return {Runtime|Boolean} Returns runtime, if it exists and false, if - not
+         */
         Runtime.getRuntime = function (uid) {
             return runtimes[uid] ? runtimes[uid] : false;
         };
 
 
         /**
-        Register constructor for the Runtime of new (or perhaps modified) type
-    
-        @method addConstructor
-        @static
-        @param {String} type Runtime type (e.g. flash, html5, etc)
-        @param {Function} construct Constructor for the Runtime type
-        */
+         Register constructor for the Runtime of new (or perhaps modified) type
+
+         @method addConstructor
+         @static
+         @param {String} type Runtime type (e.g. flash, html5, etc)
+         @param {Function} construct Constructor for the Runtime type
+         */
         Runtime.addConstructor = function (type, constructor) {
             constructor.prototype = EventTarget.instance;
             runtimeConstructors[type] = constructor;
@@ -2581,26 +2581,26 @@
 
 
         /**
-        Get the constructor for the specified type.
-    
-        method getConstructor
-        @static
-        @param {String} type Runtime type (e.g. flash, html5, etc)
-        @return {Function} Constructor for the Runtime type
-        */
+         Get the constructor for the specified type.
+
+         method getConstructor
+         @static
+         @param {String} type Runtime type (e.g. flash, html5, etc)
+         @return {Function} Constructor for the Runtime type
+         */
         Runtime.getConstructor = function (type) {
             return runtimeConstructors[type] || null;
         };
 
 
         /**
-        Get info about the runtime (uid, type, capabilities)
-    
-        @method getInfo
-        @static
-        @param {String} uid Unique identifier of the runtime
-        @return {Mixed} Info object or null if runtime doesn't exist
-        */
+         Get info about the runtime (uid, type, capabilities)
+
+         @method getInfo
+         @static
+         @param {String} uid Unique identifier of the runtime
+         @return {Mixed} Info object or null if runtime doesn't exist
+         */
         Runtime.getInfo = function (uid) {
             var runtime = Runtime.getRuntime(uid);
 
@@ -2619,13 +2619,13 @@
 
 
         /**
-        Convert caps represented by a comma-separated string to the object representation.
-    
-        @method parseCaps
-        @static
-        @param {String} capStr Comma-separated list of capabilities
-        @return {Object}
-        */
+         Convert caps represented by a comma-separated string to the object representation.
+
+         @method parseCaps
+         @static
+         @param {String} capStr Comma-separated list of capabilities
+         @return {Object}
+         */
         Runtime.parseCaps = function (capStr) {
             var capObj = {};
 
@@ -2641,19 +2641,19 @@
         };
 
         /**
-        Test the specified runtime for specific capabilities.
-    
-        @method can
-        @static
-        @param {String} type Runtime type (e.g. flash, html5, etc)
-        @param {String|Object} caps Set of capabilities to check
-        @return {Boolean} Result of the test
-        */
+         Test the specified runtime for specific capabilities.
+
+         @method can
+         @static
+         @param {String} type Runtime type (e.g. flash, html5, etc)
+         @param {String|Object} caps Set of capabilities to check
+         @return {Boolean} Result of the test
+         */
         Runtime.can = function (type, caps) {
             var runtime
-            , constructor = Runtime.getConstructor(type)
-            , mode
-            ;
+                , constructor = Runtime.getConstructor(type)
+                , mode
+                ;
             if (constructor) {
                 runtime = new constructor({
                     required_caps: caps
@@ -2667,14 +2667,14 @@
 
 
         /**
-        Figure out a runtime that supports specified capabilities.
-    
-        @method thatCan
-        @static
-        @param {String|Object} caps Set of capabilities to check
-        @param {String} [runtimeOrder] Comma-separated list of runtimes to check against
-        @return {String} Usable runtime identifier or null
-        */
+         Figure out a runtime that supports specified capabilities.
+
+         @method thatCan
+         @static
+         @param {String|Object} caps Set of capabilities to check
+         @param {String} [runtimeOrder] Comma-separated list of runtimes to check against
+         @return {String} Usable runtime identifier or null
+         */
         Runtime.thatCan = function (caps, runtimeOrder) {
             var types = (runtimeOrder || Runtime.order).split(/\s*,\s*/);
             for (var i in types) {
@@ -2687,15 +2687,15 @@
 
 
         /**
-        Figure out an operational mode for the specified set of capabilities.
-    
-        @method getMode
-        @static
-        @param {Object} modeCaps Set of capabilities that depend on particular runtime mode
-        @param {Object} [requiredCaps] Supplied set of capabilities to find operational mode for
-        @param {String|Boolean} [defaultMode='browser'] Default mode to use 
-        @return {String|Boolean} Compatible operational mode
-        */
+         Figure out an operational mode for the specified set of capabilities.
+
+         @method getMode
+         @static
+         @param {Object} modeCaps Set of capabilities that depend on particular runtime mode
+         @param {Object} [requiredCaps] Supplied set of capabilities to find operational mode for
+         @param {String|Boolean} [defaultMode='browser'] Default mode to use
+         @return {String|Boolean} Compatible operational mode
+         */
         Runtime.getMode = function (modeCaps, requiredCaps, defaultMode) {
             var mode = null;
 
@@ -2734,35 +2734,35 @@
 
 
         /**
-        Capability check that always returns true
-    
-        @private
-        @static
-        @return {True}
-        */
+         Capability check that always returns true
+
+         @private
+         @static
+         @return {True}
+         */
         Runtime.capTrue = function () {
             return true;
         };
 
         /**
-        Capability check that always returns false
-    
-        @private
-        @static
-        @return {False}
-        */
+         Capability check that always returns false
+
+         @private
+         @static
+         @return {False}
+         */
         Runtime.capFalse = function () {
             return false;
         };
 
         /**
-        Evaluate the expression to boolean value and create a function that always returns it.
-    
-        @private
-        @static
-        @param {Mixed} expr Expression to evaluate
-        @return {Function} Function returning the result of evaluation
-        */
+         Evaluate the expression to boolean value and create a function that always returns it.
+
+         @private
+         @static
+         @param {Mixed} expr Expression to evaluate
+         @return {Function} Function returning the result of evaluation
+         */
         Runtime.capTest = function (expr) {
             return function () {
                 return !!expr;
@@ -2790,21 +2790,21 @@
         'moxie/runtime/Runtime'
     ], function (x, Basic, Runtime) {
         /**
-        Set of methods and properties, required by a component to acquire ability to connect to a runtime
-    
-        @class RuntimeClient
-        */
+         Set of methods and properties, required by a component to acquire ability to connect to a runtime
+
+         @class RuntimeClient
+         */
         return function RuntimeClient() {
             var runtime;
 
             Basic.extend(this, {
                 /**
-                Connects to the runtime specified by the options. Will either connect to existing runtime or create a new one.
-                Increments number of clients connected to the specified runtime.
-    
-                @method connectRuntime
-                @param {Mixed} options Can be a runtme uid or a set of key-value pairs defining requirements and pre-requisites
-                */
+                 Connects to the runtime specified by the options. Will either connect to existing runtime or create a new one.
+                 Increments number of clients connected to the specified runtime.
+
+                 @method connectRuntime
+                 @param {Mixed} options Can be a runtme uid or a set of key-value pairs defining requirements and pre-requisites
+                 */
                 connectRuntime: function (options) {
                     var comp = this, ruid;
 
@@ -2879,11 +2879,11 @@
                 },
 
                 /**
-                Returns the runtime to which the client is currently connected.
-    
-                @method getRuntime
-                @return {Runtime} Runtime or null if client is not connected
-                */
+                 Returns the runtime to which the client is currently connected.
+
+                 @method getRuntime
+                 @return {Runtime} Runtime or null if client is not connected
+                 */
                 getRuntime: function () {
                     if (runtime && runtime.uid) {
                         return runtime;
@@ -2893,10 +2893,10 @@
                 },
 
                 /**
-                Disconnects from the runtime. Decrements number of clients connected to the specified runtime.
-    
-                @method disconnectRuntime
-                */
+                 Disconnects from the runtime. Decrements number of clients connected to the specified runtime.
+
+                 @method disconnectRuntime
+                 */
                 disconnectRuntime: function () {
                     if (runtime && --runtime.clients <= 0) {
                         runtime.destroy();
@@ -2931,11 +2931,11 @@
         var blobpool = {};
 
         /**
-        @class Blob
-        @constructor
-        @param {String} ruid Unique id of the runtime, to which this blob belongs to
-        @param {Object} blob Object "Native" blob object, as it is represented in the runtime
-        */
+         @class Blob
+         @constructor
+         @param {String} ruid Unique id of the runtime, to which this blob belongs to
+         @param {Object} blob Object "Native" blob object, as it is represented in the runtime
+         */
         function Blob(ruid, blob) {
 
             function _sliceDetached(start, end, type) {
@@ -2969,44 +2969,44 @@
             Basic.extend(this, {
 
                 /**
-                Unique id of the component
-    
-                @property uid
-                @type {String}
-                */
+                 Unique id of the component
+
+                 @property uid
+                 @type {String}
+                 */
                 uid: blob.uid || Basic.guid('uid_'),
 
                 /**
-                Unique id of the connected runtime, if falsy, then runtime will have to be initialized 
-                before this Blob can be used, modified or sent
-    
-                @property ruid
-                @type {String}
-                */
+                 Unique id of the connected runtime, if falsy, then runtime will have to be initialized
+                 before this Blob can be used, modified or sent
+
+                 @property ruid
+                 @type {String}
+                 */
                 ruid: ruid,
 
                 /**
-                Size of blob
-    
-                @property size
-                @type {Number}
-                @default 0
-                */
+                 Size of blob
+
+                 @property size
+                 @type {Number}
+                 @default 0
+                 */
                 size: blob.size || 0,
 
                 /**
-                Mime type of blob
-    
-                @property type
-                @type {String}
-                @default ''
-                */
+                 Mime type of blob
+
+                 @property type
+                 @type {String}
+                 @default ''
+                 */
                 type: blob.type || '',
 
                 /**
-                @method slice
-                @param {Number} [start=0]
-                */
+                 @method slice
+                 @param {Number} [start=0]
+                 */
                 slice: function (start, end, type) {
                     if (this.isDetached()) {
                         return _sliceDetached.apply(this, arguments);
@@ -3015,11 +3015,11 @@
                 },
 
                 /**
-                Returns "native" blob object (as it is represented in connected runtime) or null if not found
-    
-                @method getSource
-                @return {Blob} Returns "native" blob object or null if not found
-                */
+                 Returns "native" blob object (as it is represented in connected runtime) or null if not found
+
+                 @method getSource
+                 @return {Blob} Returns "native" blob object or null if not found
+                 */
                 getSource: function () {
                     if (!blobpool[this.uid]) {
                         return null;
@@ -3027,13 +3027,13 @@
                     return blobpool[this.uid];
                 },
 
-                /** 
-                Detaches blob from any runtime that it depends on and initialize with standalone value
-    
-                @method detach
-                @protected
-                @param {DOMString} [data=''] Standalone value
-                */
+                /**
+                 Detaches blob from any runtime that it depends on and initialize with standalone value
+
+                 @method detach
+                 @protected
+                 @param {DOMString} [data=''] Standalone value
+                 */
                 detach: function (data) {
                     if (this.ruid) {
                         this.getRuntime().exec.call(this, 'Blob', 'destroy', blobpool[this.uid]);
@@ -3056,21 +3056,21 @@
                 },
 
                 /**
-                Checks if blob is standalone (detached of any runtime)
-                
-                @method isDetached
-                @protected
-                @return {Boolean}
-                */
+                 Checks if blob is standalone (detached of any runtime)
+
+                 @method isDetached
+                 @protected
+                 @return {Boolean}
+                 */
                 isDetached: function () {
                     return !this.ruid && Basic.typeOf(blobpool[this.uid]) === 'string';
                 },
 
-                /** 
-                Destroy Blob and free any resources it was using
-    
-                @method destroy
-                */
+                /**
+                 Destroy Blob and free any resources it was using
+
+                 @method destroy
+                 */
                 destroy: function () {
                     this.detach();
                     delete blobpool[this.uid];
@@ -3106,12 +3106,12 @@
         'moxie/file/Blob'
     ], function (Basic, Mime, Blob) {
         /**
-        @class File
-        @extends Blob
-        @constructor
-        @param {String} ruid Unique id of the runtime, to which this blob belongs to
-        @param {Object} file Object "Native" file object, as it is represented in the runtime
-        */
+         @class File
+         @extends Blob
+         @constructor
+         @param {String} ruid Unique id of the runtime, to which this blob belongs to
+         @param {Object} file Object "Native" file object, as it is represented in the runtime
+         */
         function File(ruid, file) {
             var name, type;
 
@@ -3143,30 +3143,30 @@
 
             Basic.extend(this, {
                 /**
-                File mime type
-    
-                @property type
-                @type {String}
-                @default ''
-                */
+                 File mime type
+
+                 @property type
+                 @type {String}
+                 @default ''
+                 */
                 type: type || '',
 
                 /**
-                File name
-    
-                @property name
-                @type {String}
-                @default UID
-                */
+                 File name
+
+                 @property name
+                 @type {String}
+                 @default UID
+                 */
                 name: name || Basic.guid('file_'),
 
                 /**
-                Date of last modification
-    
-                @property lastModifiedDate
-                @type {String}
-                @default now
-                */
+                 Date of last modification
+
+                 @property lastModifiedDate
+                 @type {String}
+                 @default now
+                 */
                 lastModifiedDate: file.lastModifiedDate || (new Date()).toLocaleString(), // Thu Aug 23 2012 19:40:00 GMT+0400 (GET)
 
                 fullPath: file.fullPath || name
@@ -3202,31 +3202,31 @@
         'moxie/runtime/RuntimeClient'
     ], function (Basic, Mime, Dom, x, EventTarget, I18n, File, Runtime, RuntimeClient) {
         /**
-        Provides a convenient way to create cross-browser file-picker. Generates file selection dialog on click,
-        converts selected files to _File_ objects, to be used in conjunction with _Image_, preloaded in memory
-        with _FileReader_ or uploaded to a server through _XMLHttpRequest_.
-    
-        @class FileInput
-        @constructor
-        @extends EventTarget
-        @uses RuntimeClient
-        @param {Object|String|DOMElement} options If options is string or node, argument is considered as _browse\_button_.
-            @param {String|DOMElement} options.browse_button DOM Element to turn into file picker.
-            @param {Array} [options.accept] Array of mime types to accept. By default accepts all.
-            @param {String} [options.file='file'] Name of the file field (not the filename).
-            @param {Boolean} [options.multiple=false] Enable selection of multiple files.
-            @param {Boolean} [options.directory=false] Turn file input into the folder input (cannot be both at the same time).
-            @param {String|DOMElement} [options.container] DOM Element to use as a container for file-picker. Defaults to parentNode 
-            for _browse\_button_.
-            @param {Object|String} [options.required_caps] Set of required capabilities, that chosen runtime must support.
-    
-        @example
-            <div id="container">
-                <a id="file-picker" href="javascript:;">Browse...</a>
-            </div>
-    
-            <script>
-                var fileInput = new mOxie.FileInput({
+         Provides a convenient way to create cross-browser file-picker. Generates file selection dialog on click,
+         converts selected files to _File_ objects, to be used in conjunction with _Image_, preloaded in memory
+         with _FileReader_ or uploaded to a server through _XMLHttpRequest_.
+
+         @class FileInput
+         @constructor
+         @extends EventTarget
+         @uses RuntimeClient
+         @param {Object|String|DOMElement} options If options is string or node, argument is considered as _browse\_button_.
+         @param {String|DOMElement} options.browse_button DOM Element to turn into file picker.
+         @param {Array} [options.accept] Array of mime types to accept. By default accepts all.
+         @param {String} [options.file='file'] Name of the file field (not the filename).
+         @param {Boolean} [options.multiple=false] Enable selection of multiple files.
+         @param {Boolean} [options.directory=false] Turn file input into the folder input (cannot be both at the same time).
+         @param {String|DOMElement} [options.container] DOM Element to use as a container for file-picker. Defaults to parentNode
+         for _browse\_button_.
+         @param {Object|String} [options.required_caps] Set of required capabilities, that chosen runtime must support.
+
+         @example
+         <div id="container">
+         <a id="file-picker" href="javascript:;">Browse...</a>
+         </div>
+
+         <script>
+         var fileInput = new mOxie.FileInput({
                     browse_button: 'file-picker', // or document.getElementById('file-picker')
                     container: 'container',
                     accept: [
@@ -3234,74 +3234,74 @@
                     ],
                     multiple: true // allow multiple file selection
                 });
-    
-                fileInput.onchange = function(e) {
+
+         fileInput.onchange = function(e) {
                     // do something to files array
                     console.info(e.target.files); // or this.files or fileInput.files
                 };
-    
-                fileInput.init(); // initialize
-            </script>
-        */
+
+         fileInput.init(); // initialize
+         </script>
+         */
         var dispatches = [
-            /**
-            Dispatched when runtime is connected and file-picker is ready to be used.
-    
-            @event ready
-            @param {Object} event
-            */
+        /**
+         Dispatched when runtime is connected and file-picker is ready to be used.
+
+         @event ready
+         @param {Object} event
+         */
             'ready',
 
-            /**
-            Dispatched right after [ready](#event_ready) event, and whenever [refresh()](#method_refresh) is invoked. 
-            Check [corresponding documentation entry](#method_refresh) for more info.
-    
-            @event refresh
-            @param {Object} event
-            */
+        /**
+         Dispatched right after [ready](#event_ready) event, and whenever [refresh()](#method_refresh) is invoked.
+         Check [corresponding documentation entry](#method_refresh) for more info.
 
-            /**
-            Dispatched when selection of files in the dialog is complete.
-    
-            @event change
-            @param {Object} event
-            */
+         @event refresh
+         @param {Object} event
+         */
+
+        /**
+         Dispatched when selection of files in the dialog is complete.
+
+         @event change
+         @param {Object} event
+         */
             'change',
 
             'cancel', // TODO: might be useful
 
-            /**
-            Dispatched when mouse cursor enters file-picker area. Can be used to style element
-            accordingly.
-    
-            @event mouseenter
-            @param {Object} event
-            */
+        /**
+         Dispatched when mouse cursor enters file-picker area. Can be used to style element
+         accordingly.
+
+         @event mouseenter
+         @param {Object} event
+         */
             'mouseenter',
 
-            /**
-            Dispatched when mouse cursor leaves file-picker area. Can be used to style element
-            accordingly.
-    
-            @event mouseleave
-            @param {Object} event
-            */
+        /**
+         Dispatched when mouse cursor leaves file-picker area. Can be used to style element
+         accordingly.
+
+         @event mouseleave
+         @param {Object} event
+         */
             'mouseleave',
 
-            /**
-            Dispatched when functional mouse button is pressed on top of file-picker area.
-    
-            @event mousedown
-            @param {Object} event
-            */
+        /**
+         Dispatched when functional mouse button is pressed on top of file-picker area.
+
+         @event mousedown
+         @param {Object} event
+         */
             'mousedown',
 
-            /**
-            Dispatched when functional mouse button is released on top of file-picker area.
-    
-            @event mouseup
-            @param {Object} event
-            */
+        /**
+         Dispatched when functional mouse button is released on top of file-picker area.
+
+         @event mouseup
+         @param {Object} event
+         */
             'mouseup'
         ];
 
@@ -3362,48 +3362,48 @@
 
             Basic.extend(self, {
                 /**
-                Unique id of the component
-    
-                @property uid
-                @protected
-                @readOnly
-                @type {String}
-                @default UID
-                */
+                 Unique id of the component
+
+                 @property uid
+                 @protected
+                 @readOnly
+                 @type {String}
+                 @default UID
+                 */
                 uid: Basic.guid('uid_'),
 
                 /**
-                Unique id of the connected runtime, if any.
-    
-                @property ruid
-                @protected
-                @type {String}
-                */
+                 Unique id of the connected runtime, if any.
+
+                 @property ruid
+                 @protected
+                 @type {String}
+                 */
                 ruid: null,
 
                 /**
-                Unique id of the runtime container. Useful to get hold of it for various manipulations.
-    
-                @property shimid
-                @protected
-                @type {String}
-                */
+                 Unique id of the runtime container. Useful to get hold of it for various manipulations.
+
+                 @property shimid
+                 @protected
+                 @type {String}
+                 */
                 shimid: null,
 
                 /**
-                Array of selected mOxie.File objects
-    
-                @property files
-                @type {Array}
-                @default null
-                */
+                 Array of selected mOxie.File objects
+
+                 @property files
+                 @type {Array}
+                 @default null
+                 */
                 files: null,
 
                 /**
-                Initializes the file-picker, connects it to runtime and dispatches event ready when done.
-    
-                @method init
-                */
+                 Initializes the file-picker, connects it to runtime and dispatches event ready when done.
+
+                 @method init
+                 */
                 init: function () {
                     self.convertEventPropsToHandlers(dispatches);
 
@@ -3464,11 +3464,11 @@
                 },
 
                 /**
-                Disables file-picker element, so that it doesn't react to mouse clicks.
-    
-                @method disable
-                @param {Boolean} [state=true] Disable component if - true, enable if - false
-                */
+                 Disables file-picker element, so that it doesn't react to mouse clicks.
+
+                 @method disable
+                 @param {Boolean} [state=true] Disable component if - true, enable if - false
+                 */
                 disable: function (state) {
                     var runtime = this.getRuntime();
                     if (runtime) {
@@ -3478,20 +3478,20 @@
 
 
                 /**
-                Reposition and resize dialog trigger to match the position and size of browse_button element.
-    
-                @method refresh
-                */
+                 Reposition and resize dialog trigger to match the position and size of browse_button element.
+
+                 @method refresh
+                 */
                 refresh: function () {
                     self.trigger("Refresh");
                 },
 
 
                 /**
-                Destroy component.
-    
-                @method destroy
-                */
+                 Destroy component.
+
+                 @method destroy
+                 */
                 destroy: function () {
                     var runtime = this.getRuntime();
                     if (runtime) {
@@ -3538,77 +3538,77 @@
         'moxie/core/utils/Mime'
     ], function (I18n, Dom, x, Basic, File, RuntimeClient, EventTarget, Mime) {
         /**
-        Turn arbitrary DOM element to a drop zone accepting files. Converts selected files to _File_ objects, to be used 
-        in conjunction with _Image_, preloaded in memory with _FileReader_ or uploaded to a server through 
-        _XMLHttpRequest_.
-    
-        @example
-            <div id="drop_zone">
-                Drop files here
-            </div>
-            <br />
-            <div id="filelist"></div>
-    
-            <script type="text/javascript">
-                var fileDrop = new mOxie.FileDrop('drop_zone'), fileList = mOxie.get('filelist');
-    
-                fileDrop.ondrop = function() {
+         Turn arbitrary DOM element to a drop zone accepting files. Converts selected files to _File_ objects, to be used
+         in conjunction with _Image_, preloaded in memory with _FileReader_ or uploaded to a server through
+         _XMLHttpRequest_.
+
+         @example
+         <div id="drop_zone">
+         Drop files here
+         </div>
+         <br />
+         <div id="filelist"></div>
+
+         <script type="text/javascript">
+         var fileDrop = new mOxie.FileDrop('drop_zone'), fileList = mOxie.get('filelist');
+
+         fileDrop.ondrop = function() {
                     mOxie.each(this.files, function(file) {
                         fileList.innerHTML += '<div>' + file.name + '</div>';
                     });
                 };
-    
-                fileDrop.init();
-            </script>
-    
-        @class FileDrop
-        @constructor
-        @extends EventTarget
-        @uses RuntimeClient
-        @param {Object|String} options If options has typeof string, argument is considered as options.drop_zone
-            @param {String|DOMElement} options.drop_zone DOM Element to turn into a drop zone
-            @param {Array} [options.accept] Array of mime types to accept. By default accepts all
-            @param {Object|String} [options.required_caps] Set of required capabilities, that chosen runtime must support
-        */
+
+         fileDrop.init();
+         </script>
+
+         @class FileDrop
+         @constructor
+         @extends EventTarget
+         @uses RuntimeClient
+         @param {Object|String} options If options has typeof string, argument is considered as options.drop_zone
+         @param {String|DOMElement} options.drop_zone DOM Element to turn into a drop zone
+         @param {Array} [options.accept] Array of mime types to accept. By default accepts all
+         @param {Object|String} [options.required_caps] Set of required capabilities, that chosen runtime must support
+         */
         var dispatches = [
-            /**
-            Dispatched when runtime is connected and drop zone is ready to accept files.
-    
-            @event ready
-            @param {Object} event
-            */
+        /**
+         Dispatched when runtime is connected and drop zone is ready to accept files.
+
+         @event ready
+         @param {Object} event
+         */
             'ready',
 
-            /**
-            Dispatched when dragging cursor enters the drop zone.
-    
-            @event dragenter
-            @param {Object} event
-            */
+        /**
+         Dispatched when dragging cursor enters the drop zone.
+
+         @event dragenter
+         @param {Object} event
+         */
             'dragenter',
 
-            /**
-            Dispatched when dragging cursor leaves the drop zone.
-    
-            @event dragleave
-            @param {Object} event
-            */
+        /**
+         Dispatched when dragging cursor leaves the drop zone.
+
+         @event dragleave
+         @param {Object} event
+         */
             'dragleave',
 
-            /**
-            Dispatched when file is dropped onto the drop zone.
-    
-            @event drop
-            @param {Object} event
-            */
+        /**
+         Dispatched when file is dropped onto the drop zone.
+
+         @event drop
+         @param {Object} event
+         */
             'drop',
 
-            /**
-            Dispatched if error occurs.
-    
-            @event error
-            @param {Object} event
-            */
+        /**
+         Dispatched if error occurs.
+
+         @event error
+         @param {Object} event
+         */
             'error'
         ];
 
@@ -3715,14 +3715,14 @@
         "moxie/core/EventTarget"
     ], function (Basic, RuntimeClient, EventTarget) {
         /**
-        Instance of this class can be used as a target for the events dispatched by shims,
-        when allowing them onto components is for either reason inappropriate
-    
-        @class RuntimeTarget
-        @constructor
-        @protected
-        @extends EventTarget
-        */
+         Instance of this class can be used as a target for the events dispatched by shims,
+         when allowing them onto components is for either reason inappropriate
+
+         @class RuntimeTarget
+         @constructor
+         @protected
+         @extends EventTarget
+         */
         function RuntimeTarget() {
             this.uid = Basic.guid('uid_');
 
@@ -3761,62 +3761,62 @@
         'moxie/runtime/RuntimeTarget'
     ], function (Basic, Encode, x, EventTarget, Blob, File, RuntimeTarget) {
         /**
-        Utility for preloading o.Blob/o.File objects in memory. By design closely follows [W3C FileReader](http://www.w3.org/TR/FileAPI/#dfn-filereader)
-        interface. Where possible uses native FileReader, where - not falls back to shims.
-    
-        @class FileReader
-        @constructor FileReader
-        @extends EventTarget
-        @uses RuntimeClient
-        */
+         Utility for preloading o.Blob/o.File objects in memory. By design closely follows [W3C FileReader](http://www.w3.org/TR/FileAPI/#dfn-filereader)
+         interface. Where possible uses native FileReader, where - not falls back to shims.
+
+         @class FileReader
+         @constructor FileReader
+         @extends EventTarget
+         @uses RuntimeClient
+         */
         var dispatches = [
 
-            /** 
-            Dispatched when the read starts.
-    
-            @event loadstart
-            @param {Object} event
-            */
+        /**
+         Dispatched when the read starts.
+
+         @event loadstart
+         @param {Object} event
+         */
             'loadstart',
 
-            /** 
-            Dispatched while reading (and decoding) blob, and reporting partial Blob data (progess.loaded/progress.total).
-    
-            @event progress
-            @param {Object} event
-            */
+        /**
+         Dispatched while reading (and decoding) blob, and reporting partial Blob data (progess.loaded/progress.total).
+
+         @event progress
+         @param {Object} event
+         */
             'progress',
 
-            /** 
-            Dispatched when the read has successfully completed.
-    
-            @event load
-            @param {Object} event
-            */
+        /**
+         Dispatched when the read has successfully completed.
+
+         @event load
+         @param {Object} event
+         */
             'load',
 
-            /** 
-            Dispatched when the read has been aborted. For instance, by invoking the abort() method.
-    
-            @event abort
-            @param {Object} event
-            */
+        /**
+         Dispatched when the read has been aborted. For instance, by invoking the abort() method.
+
+         @event abort
+         @param {Object} event
+         */
             'abort',
 
-            /** 
-            Dispatched when the read has failed.
-    
-            @event error
-            @param {Object} event
-            */
+        /**
+         Dispatched when the read has failed.
+
+         @event error
+         @param {Object} event
+         */
             'error',
 
-            /** 
-            Dispatched when the request has completed (either in success or failure).
-    
-            @event loadend
-            @param {Object} event
-            */
+        /**
+         Dispatched when the request has completed (either in success or failure).
+
+         @event loadend
+         @param {Object} event
+         */
             'loadend'
         ];
 
@@ -3825,74 +3825,74 @@
 
             Basic.extend(this, {
                 /**
-                UID of the component instance.
-    
-                @property uid
-                @type {String}
-                */
+                 UID of the component instance.
+
+                 @property uid
+                 @type {String}
+                 */
                 uid: Basic.guid('uid_'),
 
                 /**
-                Contains current state of FileReader object. Can take values of FileReader.EMPTY, FileReader.LOADING
-                and FileReader.DONE.
-    
-                @property readyState
-                @type {Number}
-                @default FileReader.EMPTY
-                */
+                 Contains current state of FileReader object. Can take values of FileReader.EMPTY, FileReader.LOADING
+                 and FileReader.DONE.
+
+                 @property readyState
+                 @type {Number}
+                 @default FileReader.EMPTY
+                 */
                 readyState: FileReader.EMPTY,
 
                 /**
-                Result of the successful read operation.
-    
-                @property result
-                @type {String}
-                */
+                 Result of the successful read operation.
+
+                 @property result
+                 @type {String}
+                 */
                 result: null,
 
                 /**
-                Stores the error of failed asynchronous read operation.
-    
-                @property error
-                @type {DOMError}
-                */
+                 Stores the error of failed asynchronous read operation.
+
+                 @property error
+                 @type {DOMError}
+                 */
                 error: null,
 
                 /**
-                Initiates reading of File/Blob object contents to binary string.
-    
-                @method readAsBinaryString
-                @param {Blob|File} blob Object to preload
-                */
+                 Initiates reading of File/Blob object contents to binary string.
+
+                 @method readAsBinaryString
+                 @param {Blob|File} blob Object to preload
+                 */
                 readAsBinaryString: function (blob) {
                     _read.call(this, 'readAsBinaryString', blob);
                 },
 
                 /**
-                Initiates reading of File/Blob object contents to dataURL string.
-    
-                @method readAsDataURL
-                @param {Blob|File} blob Object to preload
-                */
+                 Initiates reading of File/Blob object contents to dataURL string.
+
+                 @method readAsDataURL
+                 @param {Blob|File} blob Object to preload
+                 */
                 readAsDataURL: function (blob) {
                     _read.call(this, 'readAsDataURL', blob);
                 },
 
                 /**
-                Initiates reading of File/Blob object contents to string.
-    
-                @method readAsText
-                @param {Blob|File} blob Object to preload
-                */
+                 Initiates reading of File/Blob object contents to string.
+
+                 @method readAsText
+                 @param {Blob|File} blob Object to preload
+                 */
                 readAsText: function (blob) {
                     _read.call(this, 'readAsText', blob);
                 },
 
                 /**
-                Aborts preloading process.
-    
-                @method abort
-                */
+                 Aborts preloading process.
+
+                 @method abort
+                 */
                 abort: function () {
                     this.result = null;
 
@@ -3911,10 +3911,10 @@
                 },
 
                 /**
-                Destroy component and release resources.
-    
-                @method destroy
-                */
+                 Destroy component and release resources.
+
+                 @method destroy
+                 */
                 destroy: function () {
                     this.abort();
 
@@ -3999,36 +3999,36 @@
         }
 
         /**
-        Initial FileReader state
-    
-        @property EMPTY
-        @type {Number}
-        @final
-        @static
-        @default 0
-        */
+         Initial FileReader state
+
+         @property EMPTY
+         @type {Number}
+         @final
+         @static
+         @default 0
+         */
         FileReader.EMPTY = 0;
 
         /**
-        FileReader switches to this state when it is preloading the source
-    
-        @property LOADING
-        @type {Number}
-        @final
-        @static
-        @default 1
-        */
+         FileReader switches to this state when it is preloading the source
+
+         @property LOADING
+         @type {Number}
+         @final
+         @static
+         @default 1
+         */
         FileReader.LOADING = 1;
 
         /**
-        Preloading is complete, this is a final state
-    
-        @property DONE
-        @type {Number}
-        @final
-        @static
-        @default 2
-        */
+         Preloading is complete, this is a final state
+
+         @property DONE
+         @type {Number}
+         @final
+         @static
+         @default 2
+         */
         FileReader.DONE = 2;
 
         FileReader.prototype = EventTarget.instance;
@@ -4050,26 +4050,26 @@
 
     define('moxie/core/utils/Url', [], function () {
         /**
-        Parse url into separate components and fill in absent parts with parts from current url,
-        based on https://raw.github.com/kvz/phpjs/master/functions/url/parse_url.js
-    
-        @method parseUrl
-        @for Utils
-        @static
-        @param {String} url Url to parse (defaults to empty string if undefined)
-        @return {Object} Hash containing extracted uri components
-        */
+         Parse url into separate components and fill in absent parts with parts from current url,
+         based on https://raw.github.com/kvz/phpjs/master/functions/url/parse_url.js
+
+         @method parseUrl
+         @for Utils
+         @static
+         @param {String} url Url to parse (defaults to empty string if undefined)
+         @return {Object} Hash containing extracted uri components
+         */
         var parseUrl = function (url, currentUrl) {
             var key = ['source', 'scheme', 'authority', 'userInfo', 'user', 'pass', 'host', 'port', 'relative', 'path', 'directory', 'file', 'query', 'fragment']
-            , i = key.length
-            , ports = {
-                http: 80,
-                https: 443
-            }
-            , uri = {}
-            , regex = /^(?:([^:\/?#]+):)?(?:\/\/()(?:(?:()(?:([^:@]*):?([^:@]*))?@)?([^:\/?#]*)(?::(\d*))?))?()(?:(()(?:(?:[^?#\/]*\/)*)()(?:[^?#]*))(?:\\?([^#]*))?(?:#(.*))?)/
-            , m = regex.exec(url || '')
-            ;
+                , i = key.length
+                , ports = {
+                    http: 80,
+                    https: 443
+                }
+                , uri = {}
+                , regex = /^(?:([^:\/?#]+):)?(?:\/\/()(?:(?:()(?:([^:@]*):?([^:@]*))?@)?([^:\/?#]*)(?::(\d*))?))?()(?:(()(?:(?:[^?#\/]*\/)*)()(?:[^?#]*))(?:\\?([^#]*))?(?:#(.*))?)/
+                , m = regex.exec(url || '')
+                ;
 
             while (i--) {
                 if (m[i]) {
@@ -4118,31 +4118,31 @@
         };
 
         /**
-        Resolve url - among other things will turn relative url to absolute
-    
-        @method resolveUrl
-        @static
-        @param {String} url Either absolute or relative
-        @return {String} Resolved, absolute url
-        */
+         Resolve url - among other things will turn relative url to absolute
+
+         @method resolveUrl
+         @static
+         @param {String} url Either absolute or relative
+         @return {String} Resolved, absolute url
+         */
         var resolveUrl = function (url) {
             var ports = { // we ignore default ports
-                http: 80,
-                https: 443
-            }
-            , urlp = parseUrl(url)
-            ;
+                    http: 80,
+                    https: 443
+                }
+                , urlp = parseUrl(url)
+                ;
 
             return urlp.scheme + '://' + urlp.host + (urlp.port !== ports[urlp.scheme] ? ':' + urlp.port : '') + urlp.path + (urlp.query ? urlp.query : '');
         };
 
         /**
-        Check if specified url has the same origin as the current document
-    
-        @method hasSameOrigin
-        @param {String|Object} url
-        @return {Boolean}
-        */
+         Check if specified url has the same origin as the current document
+
+         @method hasSameOrigin
+         @param {String|Object} url
+         @return {Boolean}
+         */
         var hasSameOrigin = function (url) {
             function origin(url) {
                 return [url.scheme, url.host, url.port].join('/');
@@ -4180,14 +4180,14 @@
         'moxie/core/utils/Encode'
     ], function (Basic, RuntimeClient, Encode) {
         /**
-        Synchronous FileReader implementation. Something like this is available in WebWorkers environment, here
-        it can be used to read only preloaded blobs/files and only below certain size (not yet sure what that'd be,
-        but probably < 1mb). Not meant to be used directly by user.
-    
-        @class FileReaderSync
-        @private
-        @constructor
-        */
+         Synchronous FileReader implementation. Something like this is available in WebWorkers environment, here
+         it can be used to read only preloaded blobs/files and only below certain size (not yet sure what that'd be,
+         but probably < 1mb). Not meant to be used directly by user.
+
+         @class FileReaderSync
+         @private
+         @constructor
+         */
         return function () {
             RuntimeClient.call(this);
 
@@ -4203,8 +4203,8 @@
                 },
 
                 /*readAsArrayBuffer: function(blob) {
-                    return _read.call(this, 'readAsArrayBuffer', blob);
-                },*/
+                 return _read.call(this, 'readAsArrayBuffer', blob);
+                 },*/
 
                 readAsText: function (blob) {
                     return _read.call(this, 'readAsText', blob);
@@ -4253,22 +4253,22 @@
         "moxie/file/Blob"
     ], function (x, Basic, Blob) {
         /**
-        FormData
-    
-        @class FormData
-        @constructor
-        */
+         FormData
+
+         @class FormData
+         @constructor
+         */
         function FormData() {
             var _blob, _fields = [];
 
             Basic.extend(this, {
                 /**
-                Append another key-value pair to the FormData object
-    
-                @method append
-                @param {String} name Name for the new field
-                @param {String|Blob|Array|Object} value Value for the field
-                */
+                 Append another key-value pair to the FormData object
+
+                 @method append
+                 @param {String} name Name for the new field
+                 @param {String|Blob|Array|Object} value Value for the field
+                 */
                 append: function (name, value) {
                     var self = this, valueType = Basic.typeOf(value);
 
@@ -4299,41 +4299,41 @@
                 },
 
                 /**
-                Checks if FormData contains Blob.
-    
-                @method hasBlob
-                @return {Boolean}
-                */
+                 Checks if FormData contains Blob.
+
+                 @method hasBlob
+                 @return {Boolean}
+                 */
                 hasBlob: function () {
                     return !!this.getBlob();
                 },
 
                 /**
-                Retrieves blob.
-    
-                @method getBlob
-                @return {Object} Either Blob if found or null
-                */
+                 Retrieves blob.
+
+                 @method getBlob
+                 @return {Object} Either Blob if found or null
+                 */
                 getBlob: function () {
                     return _blob && _blob.value || null;
                 },
 
                 /**
-                Retrieves blob field name.
-    
-                @method getBlobName
-                @return {String} Either Blob field name or null
-                */
+                 Retrieves blob field name.
+
+                 @method getBlobName
+                 @return {String} Either Blob field name or null
+                 */
                 getBlobName: function () {
                     return _blob && _blob.name || null;
                 },
 
                 /**
-                Loop over the fields in FormData and invoke the callback for each of them.
-    
-                @method each
-                @param {Function} cb Callback to call for each field
-                */
+                 Loop over the fields in FormData and invoke the callback for each of them.
+
+                 @method each
+                 @param {Function} cb Callback to call for each field
+                 */
                 each: function (cb) {
                     Basic.each(_fields, function (field) {
                         cb(field.value, field.name);
@@ -4446,115 +4446,115 @@
         XMLHttpRequestUpload.prototype = EventTarget.instance;
 
         /**
-        Implementation of XMLHttpRequest
-    
-        @class XMLHttpRequest
-        @constructor
-        @uses RuntimeClient
-        @extends EventTarget
-        */
+         Implementation of XMLHttpRequest
+
+         @class XMLHttpRequest
+         @constructor
+         @uses RuntimeClient
+         @extends EventTarget
+         */
         var dispatches = ['loadstart', 'progress', 'abort', 'error', 'load', 'timeout', 'loadend']; // & readystatechange (for historical reasons)
 
         var NATIVE = 1, RUNTIME = 2;
 
         function XMLHttpRequest() {
             var self = this,
-                // this (together with _p() @see below) is here to gracefully upgrade to setter/getter syntax where possible
+            // this (together with _p() @see below) is here to gracefully upgrade to setter/getter syntax where possible
                 props = {
                     /**
-                    The amount of milliseconds a request can take before being terminated. Initially zero. Zero means there is no timeout.
-    
-                    @property timeout
-                    @type Number
-                    @default 0
-                    */
+                     The amount of milliseconds a request can take before being terminated. Initially zero. Zero means there is no timeout.
+
+                     @property timeout
+                     @type Number
+                     @default 0
+                     */
                     timeout: 0,
 
                     /**
-                    Current state, can take following values:
-                    UNSENT (numeric value 0)
-                    The object has been constructed.
-    
-                    OPENED (numeric value 1)
-                    The open() method has been successfully invoked. During this state request headers can be set using setRequestHeader() and the request can be made using the send() method.
-    
-                    HEADERS_RECEIVED (numeric value 2)
-                    All redirects (if any) have been followed and all HTTP headers of the final response have been received. Several response members of the object are now available.
-    
-                    LOADING (numeric value 3)
-                    The response entity body is being received.
-    
-                    DONE (numeric value 4)
-    
-                    @property readyState
-                    @type Number
-                    @default 0 (UNSENT)
-                    */
+                     Current state, can take following values:
+                     UNSENT (numeric value 0)
+                     The object has been constructed.
+
+                     OPENED (numeric value 1)
+                     The open() method has been successfully invoked. During this state request headers can be set using setRequestHeader() and the request can be made using the send() method.
+
+                     HEADERS_RECEIVED (numeric value 2)
+                     All redirects (if any) have been followed and all HTTP headers of the final response have been received. Several response members of the object are now available.
+
+                     LOADING (numeric value 3)
+                     The response entity body is being received.
+
+                     DONE (numeric value 4)
+
+                     @property readyState
+                     @type Number
+                     @default 0 (UNSENT)
+                     */
                     readyState: XMLHttpRequest.UNSENT,
 
                     /**
-                    True when user credentials are to be included in a cross-origin request. False when they are to be excluded
-                    in a cross-origin request and when cookies are to be ignored in its response. Initially false.
-    
-                    @property withCredentials
-                    @type Boolean
-                    @default false
-                    */
+                     True when user credentials are to be included in a cross-origin request. False when they are to be excluded
+                     in a cross-origin request and when cookies are to be ignored in its response. Initially false.
+
+                     @property withCredentials
+                     @type Boolean
+                     @default false
+                     */
                     withCredentials: false,
 
                     /**
-                    Returns the HTTP status code.
-    
-                    @property status
-                    @type Number
-                    @default 0
-                    */
+                     Returns the HTTP status code.
+
+                     @property status
+                     @type Number
+                     @default 0
+                     */
                     status: 0,
 
                     /**
-                    Returns the HTTP status text.
-    
-                    @property statusText
-                    @type String
-                    */
+                     Returns the HTTP status text.
+
+                     @property statusText
+                     @type String
+                     */
                     statusText: "",
 
                     /**
-                    Returns the response type. Can be set to change the response type. Values are:
-                    the empty string (default), "arraybuffer", "blob", "document", "json", and "text".
-                    
-                    @property responseType
-                    @type String
-                    */
+                     Returns the response type. Can be set to change the response type. Values are:
+                     the empty string (default), "arraybuffer", "blob", "document", "json", and "text".
+
+                     @property responseType
+                     @type String
+                     */
                     responseType: "",
 
                     /**
-                    Returns the document response entity body.
-                    
-                    Throws an "InvalidStateError" exception if responseType is not the empty string or "document".
-    
-                    @property responseXML
-                    @type Document
-                    */
+                     Returns the document response entity body.
+
+                     Throws an "InvalidStateError" exception if responseType is not the empty string or "document".
+
+                     @property responseXML
+                     @type Document
+                     */
                     responseXML: null,
 
                     /**
-                    Returns the text response entity body.
-                    
-                    Throws an "InvalidStateError" exception if responseType is not the empty string or "text".
-    
-                    @property responseText
-                    @type String
-                    */
+                     Returns the text response entity body.
+
+                     Throws an "InvalidStateError" exception if responseType is not the empty string or "text".
+
+                     @property responseText
+                     @type String
+                     */
                     responseText: null,
 
                     /**
-                    Returns the response entity body (http://www.w3.org/TR/XMLHttpRequest/#response-entity-body).
-                    Can become: ArrayBuffer, Blob, Document, JSON, Text
-                    
-                    @property response
-                    @type Mixed
-                    */
+                     Returns the response entity body (http://www.w3.org/TR/XMLHttpRequest/#response-entity-body).
+                     Can become: ArrayBuffer, Blob, Document, JSON, Text
+
+                     @property response
+                     @type Mixed
+                     */
                     response: null
                 },
 
@@ -4567,7 +4567,7 @@
                 _encoding = null,
                 _mimeType = null,
 
-                // flags
+            // flags
                 _sync_flag = false,
                 _send_flag = false,
                 _upload_events_flag = false,
@@ -4575,7 +4575,7 @@
                 _error_flag = false,
                 _same_origin_flag = false,
 
-                // times
+            // times
                 _start_time,
                 _timeoutset_time,
 
@@ -4586,51 +4586,51 @@
                 _xhr,
                 _responseHeaders = '',
                 _responseHeadersBag
-            ;
+                ;
 
 
             Basic.extend(this, props, {
                 /**
-                Unique id of the component
-    
-                @property uid
-                @type String
-                */
+                 Unique id of the component
+
+                 @property uid
+                 @type String
+                 */
                 uid: Basic.guid('uid_'),
 
                 /**
-                Target for Upload events
-    
-                @property upload
-                @type XMLHttpRequestUpload
-                */
+                 Target for Upload events
+
+                 @property upload
+                 @type XMLHttpRequestUpload
+                 */
                 upload: new XMLHttpRequestUpload(),
 
 
                 /**
-                Sets the request method, request URL, synchronous flag, request username, and request password.
-    
-                Throws a "SyntaxError" exception if one of the following is true:
-    
-                method is not a valid HTTP method.
-                url cannot be resolved.
-                url contains the "user:password" format in the userinfo production.
-                Throws a "SecurityError" exception if method is a case-insensitive match for CONNECT, TRACE or TRACK.
-    
-                Throws an "InvalidAccessError" exception if one of the following is true:
-    
-                Either user or password is passed as argument and the origin of url does not match the XMLHttpRequest origin.
-                There is an associated XMLHttpRequest document and either the timeout attribute is not zero,
-                the withCredentials attribute is true, or the responseType attribute is not the empty string.
-    
-    
-                @method open
-                @param {String} method HTTP method to use on request
-                @param {String} url URL to request
-                @param {Boolean} [async=true] If false request will be done in synchronous manner. Asynchronous by default.
-                @param {String} [user] Username to use in HTTP authentication process on server-side
-                @param {String} [password] Password to use in HTTP authentication process on server-side
-                */
+                 Sets the request method, request URL, synchronous flag, request username, and request password.
+
+                 Throws a "SyntaxError" exception if one of the following is true:
+
+                 method is not a valid HTTP method.
+                 url cannot be resolved.
+                 url contains the "user:password" format in the userinfo production.
+                 Throws a "SecurityError" exception if method is a case-insensitive match for CONNECT, TRACE or TRACK.
+
+                 Throws an "InvalidAccessError" exception if one of the following is true:
+
+                 Either user or password is passed as argument and the origin of url does not match the XMLHttpRequest origin.
+                 There is an associated XMLHttpRequest document and either the timeout attribute is not zero,
+                 the withCredentials attribute is true, or the responseType attribute is not the empty string.
+
+
+                 @method open
+                 @param {String} method HTTP method to use on request
+                 @param {String} url URL to request
+                 @param {Boolean} [async=true] If false request will be done in synchronous manner. Asynchronous by default.
+                 @param {String} [user] Username to use in HTTP authentication process on server-side
+                 @param {String} [password] Password to use in HTTP authentication process on server-side
+                 */
                 open: function (method, url, async, user, password) {
                     var urlp;
 
@@ -4700,40 +4700,40 @@
                 },
 
                 /**
-                Appends an header to the list of author request headers, or if header is already
-                in the list of author request headers, combines its value with value.
-    
-                Throws an "InvalidStateError" exception if the state is not OPENED or if the send() flag is set.
-                Throws a "SyntaxError" exception if header is not a valid HTTP header field name or if value
-                is not a valid HTTP header field value.
-                
-                @method setRequestHeader
-                @param {String} header
-                @param {String|Number} value
-                */
+                 Appends an header to the list of author request headers, or if header is already
+                 in the list of author request headers, combines its value with value.
+
+                 Throws an "InvalidStateError" exception if the state is not OPENED or if the send() flag is set.
+                 Throws a "SyntaxError" exception if header is not a valid HTTP header field name or if value
+                 is not a valid HTTP header field value.
+
+                 @method setRequestHeader
+                 @param {String} header
+                 @param {String|Number} value
+                 */
                 setRequestHeader: function (header, value) {
                     var uaHeaders = [ // these headers are controlled by the user agent
-                            "accept-charset",
-                            "accept-encoding",
-                            "access-control-request-headers",
-                            "access-control-request-method",
-                            "connection",
-                            "content-length",
-                            "cookie",
-                            "cookie2",
-                            "content-transfer-encoding",
-                            "date",
-                            "expect",
-                            "host",
-                            "keep-alive",
-                            "origin",
-                            "referer",
-                            "te",
-                            "trailer",
-                            "transfer-encoding",
-                            "upgrade",
-                            "user-agent",
-                            "via"
+                        "accept-charset",
+                        "accept-encoding",
+                        "access-control-request-headers",
+                        "access-control-request-method",
+                        "connection",
+                        "content-length",
+                        "cookie",
+                        "cookie2",
+                        "content-transfer-encoding",
+                        "date",
+                        "expect",
+                        "host",
+                        "keep-alive",
+                        "origin",
+                        "referer",
+                        "te",
+                        "trailer",
+                        "transfer-encoding",
+                        "upgrade",
+                        "user-agent",
+                        "via"
                     ];
 
                     // 1-2
@@ -4748,9 +4748,9 @@
 
                     // 4
                     /* this step is seemingly bypassed in browsers, probably to allow various unicode characters in header values
-                    if (/[\u0100-\uffff]/.test(value) || Encode.utf8_encode(value) !== value) {
-                        throw new x.DOMException(x.DOMException.SYNTAX_ERR);
-                    }*/
+                     if (/[\u0100-\uffff]/.test(value) || Encode.utf8_encode(value) !== value) {
+                     throw new x.DOMException(x.DOMException.SYNTAX_ERR);
+                     }*/
 
                     header = Basic.trim(header).toLowerCase();
 
@@ -4773,23 +4773,23 @@
                 },
 
                 /**
-                Returns all headers from the response, with the exception of those whose field name is Set-Cookie or Set-Cookie2.
-    
-                @method getAllResponseHeaders
-                @return {String} reponse headers or empty string
-                */
+                 Returns all headers from the response, with the exception of those whose field name is Set-Cookie or Set-Cookie2.
+
+                 @method getAllResponseHeaders
+                 @return {String} reponse headers or empty string
+                 */
                 getAllResponseHeaders: function () {
                     return _responseHeaders || '';
                 },
 
                 /**
-                Returns the header field value from the response of which the field name matches header, 
-                unless the field name is Set-Cookie or Set-Cookie2.
-    
-                @method getResponseHeader
-                @param {String} header
-                @return {String} value(s) for the specified header or null
-                */
+                 Returns the header field value from the response of which the field name matches header,
+                 unless the field name is Set-Cookie or Set-Cookie2.
+
+                 @method getResponseHeader
+                 @param {String} header
+                 @return {String} value(s) for the specified header or null
+                 */
                 getResponseHeader: function (header) {
                     header = header.toLowerCase();
 
@@ -4820,13 +4820,13 @@
                 },
 
                 /**
-                Sets the Content-Type header for the response to mime.
-                Throws an "InvalidStateError" exception if the state is LOADING or DONE.
-                Throws a "SyntaxError" exception if mime is not a valid media type.
-    
-                @method overrideMimeType
-                @param String mime Mime type to set
-                */
+                 Sets the Content-Type header for the response to mime.
+                 Throws an "InvalidStateError" exception if the state is LOADING or DONE.
+                 Throws a "SyntaxError" exception if mime is not a valid media type.
+
+                 @method overrideMimeType
+                 @param String mime Mime type to set
+                 */
                 overrideMimeType: function (mime) {
                     var matches, charset;
 
@@ -4855,15 +4855,15 @@
                 },
 
                 /**
-                Initiates the request. The optional argument provides the request entity body.
-                The argument is ignored if request method is GET or HEAD.
-    
-                Throws an "InvalidStateError" exception if the state is not OPENED or if the send() flag is set.
-    
-                @method send
-                @param {Blob|Document|String|FormData} [data] Request entity body
-                @param {Object} [options] Set of requirements and pre-requisities for runtime initialization
-                */
+                 Initiates the request. The optional argument provides the request entity body.
+                 The argument is ignored if request method is GET or HEAD.
+
+                 Throws an "InvalidStateError" exception if the state is not OPENED or if the send() flag is set.
+
+                 @method send
+                 @param {Blob|Document|String|FormData} [data] Request entity body
+                 @param {Object} [options] Set of requirements and pre-requisities for runtime initialization
+                 */
                 send: function (data, options) {
                     if (Basic.typeOf(options) === 'string') {
                         _options = { ruid: options };
@@ -4888,7 +4888,7 @@
                         _mimeType = data.type || 'application/octet-stream';
                     }
 
-                        // FormData
+                    // FormData
                     else if (data instanceof FormData) {
                         if (data.hasBlob()) {
                             var blob = data.getBlob();
@@ -4897,7 +4897,7 @@
                         }
                     }
 
-                        // DOMString
+                    // DOMString
                     else if (typeof data === 'string') {
                         _encoding = 'UTF-8';
                         _mimeType = 'text/plain;charset=UTF-8';
@@ -4934,10 +4934,10 @@
                 },
 
                 /**
-                Cancels any network activity.
-                
-                @method abort
-                */
+                 Cancels any network activity.
+
+                 @method abort
+                 */
                 abort: function () {
                     _error_flag = true;
                     _sync_flag = false;
@@ -4976,154 +4976,154 @@
             });
 
             /* this is nice, but maybe too lengthy
-    
-            // if supported by JS version, set getters/setters for specific properties
-            o.defineProperty(this, 'readyState', {
-                configurable: false,
-    
-                get: function() {
-                    return _p('readyState');
-                }
-            });
-    
-            o.defineProperty(this, 'timeout', {
-                configurable: false,
-    
-                get: function() {
-                    return _p('timeout');
-                },
-    
-                set: function(value) {
-    
-                    if (_sync_flag) {
-                        throw new x.DOMException(x.DOMException.INVALID_ACCESS_ERR);
-                    }
-    
-                    // timeout still should be measured relative to the start time of request
-                    _timeoutset_time = (new Date).getTime();
-    
-                    _p('timeout', value);
-                }
-            });
-    
-            // the withCredentials attribute has no effect when fetching same-origin resources
-            o.defineProperty(this, 'withCredentials', {
-                configurable: false,
-    
-                get: function() {
-                    return _p('withCredentials');
-                },
-    
-                set: function(value) {
-                    // 1-2
-                    if (!~o.inArray(_p('readyState'), [XMLHttpRequest.UNSENT, XMLHttpRequest.OPENED]) || _send_flag) {
-                        throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
-                    }
-    
-                    // 3-4
-                    if (_anonymous_flag || _sync_flag) {
-                        throw new x.DOMException(x.DOMException.INVALID_ACCESS_ERR);
-                    }
-    
-                    // 5
-                    _p('withCredentials', value);
-                }
-            });
-    
-            o.defineProperty(this, 'status', {
-                configurable: false,
-    
-                get: function() {
-                    return _p('status');
-                }
-            });
-    
-            o.defineProperty(this, 'statusText', {
-                configurable: false,
-    
-                get: function() {
-                    return _p('statusText');
-                }
-            });
-    
-            o.defineProperty(this, 'responseType', {
-                configurable: false,
-    
-                get: function() {
-                    return _p('responseType');
-                },
-    
-                set: function(value) {
-                    // 1
-                    if (!!~o.inArray(_p('readyState'), [XMLHttpRequest.LOADING, XMLHttpRequest.DONE])) {
-                        throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
-                    }
-    
-                    // 2
-                    if (_sync_flag) {
-                        throw new x.DOMException(x.DOMException.INVALID_ACCESS_ERR);
-                    }
-    
-                    // 3
-                    _p('responseType', value.toLowerCase());
-                }
-            });
-    
-            o.defineProperty(this, 'responseText', {
-                configurable: false,
-    
-                get: function() {
-                    // 1
-                    if (!~o.inArray(_p('responseType'), ['', 'text'])) {
-                        throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
-                    }
-    
-                    // 2-3
-                    if (_p('readyState') !== XMLHttpRequest.DONE && _p('readyState') !== XMLHttpRequest.LOADING || _error_flag) {
-                        throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
-                    }
-    
-                    return _p('responseText');
-                }
-            });
-    
-            o.defineProperty(this, 'responseXML', {
-                configurable: false,
-    
-                get: function() {
-                    // 1
-                    if (!~o.inArray(_p('responseType'), ['', 'document'])) {
-                        throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
-                    }
-    
-                    // 2-3
-                    if (_p('readyState') !== XMLHttpRequest.DONE || _error_flag) {
-                        throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
-                    }
-    
-                    return _p('responseXML');
-                }
-            });
-    
-            o.defineProperty(this, 'response', {
-                configurable: false,
-    
-                get: function() {
-                    if (!!~o.inArray(_p('responseType'), ['', 'text'])) {
-                        if (_p('readyState') !== XMLHttpRequest.DONE && _p('readyState') !== XMLHttpRequest.LOADING || _error_flag) {
-                            return '';
-                        }
-                    }
-    
-                    if (_p('readyState') !== XMLHttpRequest.DONE || _error_flag) {
-                        return null;
-                    }
-    
-                    return _p('response');
-                }
-            });
-    
-            */
+
+             // if supported by JS version, set getters/setters for specific properties
+             o.defineProperty(this, 'readyState', {
+             configurable: false,
+
+             get: function() {
+             return _p('readyState');
+             }
+             });
+
+             o.defineProperty(this, 'timeout', {
+             configurable: false,
+
+             get: function() {
+             return _p('timeout');
+             },
+
+             set: function(value) {
+
+             if (_sync_flag) {
+             throw new x.DOMException(x.DOMException.INVALID_ACCESS_ERR);
+             }
+
+             // timeout still should be measured relative to the start time of request
+             _timeoutset_time = (new Date).getTime();
+
+             _p('timeout', value);
+             }
+             });
+
+             // the withCredentials attribute has no effect when fetching same-origin resources
+             o.defineProperty(this, 'withCredentials', {
+             configurable: false,
+
+             get: function() {
+             return _p('withCredentials');
+             },
+
+             set: function(value) {
+             // 1-2
+             if (!~o.inArray(_p('readyState'), [XMLHttpRequest.UNSENT, XMLHttpRequest.OPENED]) || _send_flag) {
+             throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
+             }
+
+             // 3-4
+             if (_anonymous_flag || _sync_flag) {
+             throw new x.DOMException(x.DOMException.INVALID_ACCESS_ERR);
+             }
+
+             // 5
+             _p('withCredentials', value);
+             }
+             });
+
+             o.defineProperty(this, 'status', {
+             configurable: false,
+
+             get: function() {
+             return _p('status');
+             }
+             });
+
+             o.defineProperty(this, 'statusText', {
+             configurable: false,
+
+             get: function() {
+             return _p('statusText');
+             }
+             });
+
+             o.defineProperty(this, 'responseType', {
+             configurable: false,
+
+             get: function() {
+             return _p('responseType');
+             },
+
+             set: function(value) {
+             // 1
+             if (!!~o.inArray(_p('readyState'), [XMLHttpRequest.LOADING, XMLHttpRequest.DONE])) {
+             throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
+             }
+
+             // 2
+             if (_sync_flag) {
+             throw new x.DOMException(x.DOMException.INVALID_ACCESS_ERR);
+             }
+
+             // 3
+             _p('responseType', value.toLowerCase());
+             }
+             });
+
+             o.defineProperty(this, 'responseText', {
+             configurable: false,
+
+             get: function() {
+             // 1
+             if (!~o.inArray(_p('responseType'), ['', 'text'])) {
+             throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
+             }
+
+             // 2-3
+             if (_p('readyState') !== XMLHttpRequest.DONE && _p('readyState') !== XMLHttpRequest.LOADING || _error_flag) {
+             throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
+             }
+
+             return _p('responseText');
+             }
+             });
+
+             o.defineProperty(this, 'responseXML', {
+             configurable: false,
+
+             get: function() {
+             // 1
+             if (!~o.inArray(_p('responseType'), ['', 'document'])) {
+             throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
+             }
+
+             // 2-3
+             if (_p('readyState') !== XMLHttpRequest.DONE || _error_flag) {
+             throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
+             }
+
+             return _p('responseXML');
+             }
+             });
+
+             o.defineProperty(this, 'response', {
+             configurable: false,
+
+             get: function() {
+             if (!!~o.inArray(_p('responseType'), ['', 'text'])) {
+             if (_p('readyState') !== XMLHttpRequest.DONE && _p('readyState') !== XMLHttpRequest.LOADING || _error_flag) {
+             return '';
+             }
+             }
+
+             if (_p('readyState') !== XMLHttpRequest.DONE || _error_flag) {
+             return null;
+             }
+
+             return _p('response');
+             }
+             });
+
+             */
 
             function _p(prop, value) {
                 if (!props.hasOwnProperty(prop)) {
@@ -5141,11 +5141,11 @@
             }
 
             /*
-            function _toASCII(str, AllowUnassigned, UseSTD3ASCIIRules) {
-                // TODO: http://tools.ietf.org/html/rfc3490#section-4.1
-                return str.toLowerCase();
-            }
-            */
+             function _toASCII(str, AllowUnassigned, UseSTD3ASCIIRules) {
+             // TODO: http://tools.ietf.org/html/rfc3490#section-4.1
+             return str.toLowerCase();
+             }
+             */
 
 
             function _doXHR(data) {
@@ -5469,40 +5469,40 @@
         "moxie/core/utils/Encode"
     ], function (Basic, Dom, x, FileReaderSync, XMLHttpRequest, Runtime, RuntimeClient, Transporter, Env, EventTarget, Blob, File, Encode) {
         /**
-        Image preloading and manipulation utility. Additionally it provides access to image meta info (Exif, GPS) and raw binary data.
-    
-        @class Image
-        @constructor
-        @extends EventTarget
-        */
+         Image preloading and manipulation utility. Additionally it provides access to image meta info (Exif, GPS) and raw binary data.
+
+         @class Image
+         @constructor
+         @extends EventTarget
+         */
         var dispatches = [
             'progress',
 
-            /**
-            Dispatched when loading is complete.
-    
-            @event load
-            @param {Object} event
-            */
+        /**
+         Dispatched when loading is complete.
+
+         @event load
+         @param {Object} event
+         */
             'load',
 
             'error',
 
-            /**
-            Dispatched when resize operation is complete.
-            
-            @event resize
-            @param {Object} event
-            */
+        /**
+         Dispatched when resize operation is complete.
+
+         @event resize
+         @param {Object} event
+         */
             'resize',
 
-            /**
-            Dispatched when visual representation of the image is successfully embedded
-            into the corresponsing container.
-    
-            @event embedded
-            @param {Object} event
-            */
+        /**
+         Dispatched when visual representation of the image is successfully embedded
+         into the corresponsing container.
+
+         @event embedded
+         @param {Object} event
+         */
             'embedded'
         ];
 
@@ -5511,94 +5511,94 @@
 
             Basic.extend(this, {
                 /**
-                Unique id of the component
-    
-                @property uid
-                @type {String}
-                */
+                 Unique id of the component
+
+                 @property uid
+                 @type {String}
+                 */
                 uid: Basic.guid('uid_'),
 
                 /**
-                Unique id of the connected runtime, if any.
-    
-                @property ruid
-                @type {String}
-                */
+                 Unique id of the connected runtime, if any.
+
+                 @property ruid
+                 @type {String}
+                 */
                 ruid: null,
 
                 /**
-                Name of the file, that was used to create an image, if available. If not equals to empty string.
-    
-                @property name
-                @type {String}
-                @default ""
-                */
+                 Name of the file, that was used to create an image, if available. If not equals to empty string.
+
+                 @property name
+                 @type {String}
+                 @default ""
+                 */
                 name: "",
 
                 /**
-                Size of the image in bytes. Actual value is set only after image is preloaded.
-    
-                @property size
-                @type {Number}
-                @default 0
-                */
+                 Size of the image in bytes. Actual value is set only after image is preloaded.
+
+                 @property size
+                 @type {Number}
+                 @default 0
+                 */
                 size: 0,
 
                 /**
-                Width of the image. Actual value is set only after image is preloaded.
-    
-                @property width
-                @type {Number}
-                @default 0
-                */
+                 Width of the image. Actual value is set only after image is preloaded.
+
+                 @property width
+                 @type {Number}
+                 @default 0
+                 */
                 width: 0,
 
                 /**
-                Height of the image. Actual value is set only after image is preloaded.
-    
-                @property height
-                @type {Number}
-                @default 0
-                */
+                 Height of the image. Actual value is set only after image is preloaded.
+
+                 @property height
+                 @type {Number}
+                 @default 0
+                 */
                 height: 0,
 
                 /**
-                Mime type of the image. Currently only image/jpeg and image/png are supported. Actual value is set only after image is preloaded.
-    
-                @property type
-                @type {String}
-                @default ""
-                */
+                 Mime type of the image. Currently only image/jpeg and image/png are supported. Actual value is set only after image is preloaded.
+
+                 @property type
+                 @type {String}
+                 @default ""
+                 */
                 type: "",
 
                 /**
-                Holds meta info (Exif, GPS). Is populated only for image/jpeg. Actual value is set only after image is preloaded.
-    
-                @property meta
-                @type {Object}
-                @default {}
-                */
+                 Holds meta info (Exif, GPS). Is populated only for image/jpeg. Actual value is set only after image is preloaded.
+
+                 @property meta
+                 @type {Object}
+                 @default {}
+                 */
                 meta: {},
 
                 /**
-                Alias for load method, that takes another mOxie.Image object as a source (see load).
-    
-                @method clone
-                @param {Image} src Source for the image
-                @param {Boolean} [exact=false] Whether to activate in-depth clone mode
-                */
+                 Alias for load method, that takes another mOxie.Image object as a source (see load).
+
+                 @method clone
+                 @param {Image} src Source for the image
+                 @param {Boolean} [exact=false] Whether to activate in-depth clone mode
+                 */
                 clone: function () {
                     this.load.apply(this, arguments);
                 },
 
                 /**
-                Loads image from various sources. Currently the source for new image can be: mOxie.Image, mOxie.Blob/mOxie.File, 
-                native Blob/File, dataUrl or URL. Depending on the type of the source, arguments - differ. When source is URL, 
-                Image will be downloaded from remote destination and loaded in memory.
-    
-                @example
-                    var img = new mOxie.Image();
-                    img.onload = function() {
+                 Loads image from various sources. Currently the source for new image can be: mOxie.Image, mOxie.Blob/mOxie.File,
+                 native Blob/File, dataUrl or URL. Depending on the type of the source, arguments - differ. When source is URL,
+                 Image will be downloaded from remote destination and loaded in memory.
+
+                 @example
+                 var img = new mOxie.Image();
+                 img.onload = function() {
                         var blob = img.getAsBlob();
                         
                         var formData = new mOxie.FormData();
@@ -5611,13 +5611,13 @@
                         xhr.open('post', 'upload.php');
                         xhr.send(formData);
                     };
-                    img.load("http://www.moxiecode.com/images/mox-logo.jpg"); // notice file extension (.jpg)
-                
-    
-                @method load
-                @param {Image|Blob|File|String} src Source for the image
-                @param {Boolean|Object} [mixed]
-                */
+                 img.load("http://www.moxiecode.com/images/mox-logo.jpg"); // notice file extension (.jpg)
+
+
+                 @method load
+                 @param {Image|Blob|File|String} src Source for the image
+                 @param {Boolean|Object} [mixed]
+                 */
                 load: function () {
                     // this is here because to bind properly we need an uid first, which is created above
                     this.bind('Load Resize', function () {
@@ -5630,14 +5630,14 @@
                 },
 
                 /**
-                Downsizes the image to fit the specified width/height. If crop is supplied, image will be cropped to exact dimensions.
-    
-                @method downsize
-                @param {Number} width Resulting width
-                @param {Number} [height=width] Resulting height (optional, if not supplied will default to width)
-                @param {Boolean} [crop=false] Whether to crop the image to exact dimensions
-                @param {Boolean} [preserveHeaders=true] Whether to preserve meta headers (on JPEGs after resize)
-                */
+                 Downsizes the image to fit the specified width/height. If crop is supplied, image will be cropped to exact dimensions.
+
+                 @method downsize
+                 @param {Number} width Resulting width
+                 @param {Number} [height=width] Resulting height (optional, if not supplied will default to width)
+                 @param {Boolean} [crop=false] Whether to crop the image to exact dimensions
+                 @param {Boolean} [preserveHeaders=true] Whether to preserve meta headers (on JPEGs after resize)
+                 */
                 downsize: function (width, height, crop, preserveHeaders) {
                     try {
                         if (!this.size) { // only preloaded image objects can be used as source
@@ -5666,13 +5666,13 @@
                 },
 
                 /**
-                Alias for downsize(width, height, true). (see downsize)
-                
-                @method crop
-                @param {Number} width Resulting width
-                @param {Number} [height=width] Resulting height (optional, if not supplied will default to width)
-                @param {Boolean} [preserveHeaders=true] Whether to preserve meta headers (on JPEGs after resize)
-                */
+                 Alias for downsize(width, height, true). (see downsize)
+
+                 @method crop
+                 @param {Number} width Resulting width
+                 @param {Number} [height=width] Resulting height (optional, if not supplied will default to width)
+                 @param {Boolean} [preserveHeaders=true] Whether to preserve meta headers (on JPEGs after resize)
+                 */
                 crop: function (width, height, preserveHeaders) {
                     this.downsize(width, height, true, preserveHeaders);
                 },
@@ -5687,14 +5687,14 @@
                 },
 
                 /**
-                Retrieves image in it's current state as mOxie.Blob object. Cannot be run on empty or image in progress (throws
-                DOMException.INVALID_STATE_ERR).
-    
-                @method getAsBlob
-                @param {String} [type="image/jpeg"] Mime type of resulting blob. Can either be image/jpeg or image/png
-                @param {Number} [quality=90] Applicable only together with mime type image/jpeg
-                @return {Blob} Image as Blob
-                */
+                 Retrieves image in it's current state as mOxie.Blob object. Cannot be run on empty or image in progress (throws
+                 DOMException.INVALID_STATE_ERR).
+
+                 @method getAsBlob
+                 @param {String} [type="image/jpeg"] Mime type of resulting blob. Can either be image/jpeg or image/png
+                 @param {Number} [quality=90] Applicable only together with mime type image/jpeg
+                 @return {Blob} Image as Blob
+                 */
                 getAsBlob: function (type, quality) {
                     if (!this.size) {
                         throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
@@ -5712,14 +5712,14 @@
                 },
 
                 /**
-                Retrieves image in it's current state as dataURL string. Cannot be run on empty or image in progress (throws
-                DOMException.INVALID_STATE_ERR).
-    
-                @method getAsDataURL
-                @param {String} [type="image/jpeg"] Mime type of resulting blob. Can either be image/jpeg or image/png
-                @param {Number} [quality=90] Applicable only together with mime type image/jpeg
-                @return {String} Image as dataURL string
-                */
+                 Retrieves image in it's current state as dataURL string. Cannot be run on empty or image in progress (throws
+                 DOMException.INVALID_STATE_ERR).
+
+                 @method getAsDataURL
+                 @param {String} [type="image/jpeg"] Mime type of resulting blob. Can either be image/jpeg or image/png
+                 @param {Number} [quality=90] Applicable only together with mime type image/jpeg
+                 @return {String} Image as dataURL string
+                 */
                 getAsDataURL: function (type, quality) {
                     if (!this.size) {
                         throw new x.DOMException(x.DOMException.INVALID_STATE_ERR);
@@ -5728,38 +5728,38 @@
                 },
 
                 /**
-                Retrieves image in it's current state as binary string. Cannot be run on empty or image in progress (throws
-                DOMException.INVALID_STATE_ERR).
-    
-                @method getAsBinaryString
-                @param {String} [type="image/jpeg"] Mime type of resulting blob. Can either be image/jpeg or image/png
-                @param {Number} [quality=90] Applicable only together with mime type image/jpeg
-                @return {String} Image as binary string
-                */
+                 Retrieves image in it's current state as binary string. Cannot be run on empty or image in progress (throws
+                 DOMException.INVALID_STATE_ERR).
+
+                 @method getAsBinaryString
+                 @param {String} [type="image/jpeg"] Mime type of resulting blob. Can either be image/jpeg or image/png
+                 @param {Number} [quality=90] Applicable only together with mime type image/jpeg
+                 @return {String} Image as binary string
+                 */
                 getAsBinaryString: function (type, quality) {
                     var dataUrl = this.getAsDataURL(type, quality);
                     return Encode.atob(dataUrl.substring(dataUrl.indexOf('base64,') + 7));
                 },
 
                 /**
-                Embeds the image, or better to say, it's visual representation into the specified node. Depending on the runtime
-                in use, might be a canvas, or image (actual ) element or shim object (Flash or SilverLight - very rare, used for
-                legacy browsers that do not have canvas or proper dataURI support).
-    
-                @method embed
-                @param {DOMElement} el DOM element to insert the image object into
-                @param {Object} options Set of key/value pairs controlling the mime type, dimensions and cropping factor of resulting
-                representation
-                */
+                 Embeds the image, or better to say, it's visual representation into the specified node. Depending on the runtime
+                 in use, might be a canvas, or image (actual ) element or shim object (Flash or SilverLight - very rare, used for
+                 legacy browsers that do not have canvas or proper dataURI support).
+
+                 @method embed
+                 @param {DOMElement} el DOM element to insert the image object into
+                 @param {Object} options Set of key/value pairs controlling the mime type, dimensions and cropping factor of resulting
+                 representation
+                 */
                 embed: function (el) {
                     var self = this
-                    , imgCopy
-                    , type, quality, crop
-                    , options = arguments[1] || {}
-                    , width = this.width
-                    , height = this.height
-                    , runtime // this has to be outside of all the closures to contain proper runtime
-                    ;
+                        , imgCopy
+                        , type, quality, crop
+                        , options = arguments[1] || {}
+                        , width = this.width
+                        , height = this.height
+                        , runtime // this has to be outside of all the closures to contain proper runtime
+                        ;
 
                     function onResize() {
                         // if possible, embed a canvas element directly
@@ -5803,10 +5803,10 @@
                                     // position type changes (in Gecko), but since we basically need this only in IEs 6/7 and
                                     // sometimes 8 and they do not have this problem, we can comment this for now
                                     /*tr.bind("RuntimeInit", function(e, runtime) {
-                                        tr.destroy();
-                                        runtime.destroy();
-                                        onResize.call(self); // re-feed our image data
-                                    });*/
+                                     tr.destroy();
+                                     runtime.destroy();
+                                     onResize.call(self); // re-feed our image data
+                                     });*/
 
                                     runtime = null;
                                 }, 999);
@@ -5875,10 +5875,10 @@
                 },
 
                 /**
-                Properly destroys the image and frees resources in use. If any. Recommended way to dispose mOxie.Image object.
-    
-                @method destroy
-                */
+                 Properly destroys the image and frees resources in use. If any. Recommended way to dispose mOxie.Image object.
+
+                 @method destroy
+                 */
                 destroy: function () {
                     if (this.ruid) {
                         this.getRuntime().exec.call(this, 'Image', 'destroy');
@@ -5918,29 +5918,29 @@
                         }
                         _loadFromImage.apply(this, arguments);
                     }
-                        // if source is o.Blob/o.File
+                    // if source is o.Blob/o.File
                     else if (src instanceof Blob) {
                         if (!~Basic.inArray(src.type, ['image/jpeg', 'image/png'])) {
                             throw new x.ImageError(x.ImageError.WRONG_FORMAT);
                         }
                         _loadFromBlob.apply(this, arguments);
                     }
-                        // if native blob/file
+                    // if native blob/file
                     else if (Basic.inArray(srcType, ['blob', 'file']) !== -1) {
                         _load.call(this, new File(null, src), arguments[1]);
                     }
-                        // if String
+                    // if String
                     else if (srcType === 'string') {
                         // if dataUrl String
                         if (/^data:[^;]*;base64,/.test(src)) {
                             _load.call(this, new Blob(null, { data: src }), arguments[1]);
                         }
-                            // else assume Url, either relative or absolute
+                        // else assume Url, either relative or absolute
                         else {
                             _loadFromUrl.apply(this, arguments);
                         }
                     }
-                        // if source seems to be an img node
+                    // if source seems to be an img node
                     else if (srcType === 'node' && src.nodeName.toLowerCase() === 'img') {
                         _load.call(this, src.src, arguments[1]);
                     }
@@ -6049,11 +6049,11 @@
     /*global File:true */
 
     /**
-    Defines constructor for HTML5 runtime.
-    
-    @class moxie/runtime/html5/Runtime
-    @private
-    */
+     Defines constructor for HTML5 runtime.
+
+     @class moxie/runtime/html5/Runtime
+     @private
+     */
     define("moxie/runtime/html5/Runtime", [
         "moxie/core/utils/Basic",
         "moxie/core/Exceptions",
@@ -6065,67 +6065,67 @@
 
         function Html5Runtime(options) {
             var I = this
-            , Test = Runtime.capTest
-            , True = Runtime.capTrue
-            ;
+                , Test = Runtime.capTest
+                , True = Runtime.capTrue
+                ;
 
             var caps = Basic.extend({
-                access_binary: Test(window.FileReader || window.File && window.File.getAsDataURL),
-                access_image_binary: function () {
-                    return I.can('access_binary') && !!extensions.Image;
+                    access_binary: Test(window.FileReader || window.File && window.File.getAsDataURL),
+                    access_image_binary: function () {
+                        return I.can('access_binary') && !!extensions.Image;
+                    },
+                    display_media: Test(Env.can('create_canvas') || Env.can('use_data_uri_over32kb')),
+                    do_cors: Test(window.XMLHttpRequest && 'withCredentials' in new XMLHttpRequest()),
+                    drag_and_drop: Test(function () {
+                        // this comes directly from Modernizr: http://www.modernizr.com/
+                        var div = document.createElement('div');
+                        // IE has support for drag and drop since version 5, but doesn't support dropping files from desktop
+                        return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && (Env.browser !== 'IE' || Env.version > 9);
+                    }()),
+                    filter_by_extension: Test(function () { // if you know how to feature-detect this, please suggest
+                        return (Env.browser === 'Chrome' && Env.version >= 28) || (Env.browser === 'IE' && Env.version >= 10);
+                    }()),
+                    return_response_headers: True,
+                    return_response_type: function (responseType) {
+                        if (responseType === 'json' && !!window.JSON) { // we can fake this one even if it's not supported
+                            return true;
+                        }
+                        return Env.can('return_response_type', responseType);
+                    },
+                    return_status_code: True,
+                    report_upload_progress: Test(window.XMLHttpRequest && new XMLHttpRequest().upload),
+                    resize_image: function () {
+                        return I.can('access_binary') && Env.can('create_canvas');
+                    },
+                    select_file: function () {
+                        return Env.can('use_fileinput') && window.File;
+                    },
+                    select_folder: function () {
+                        return I.can('select_file') && Env.browser === 'Chrome' && Env.version >= 21;
+                    },
+                    select_multiple: function () {
+                        // it is buggy on Safari Windows and iOS
+                        return I.can('select_file') &&
+                            !(Env.browser === 'Safari' && Env.os === 'Windows') &&
+                            !(Env.os === 'iOS' && Env.verComp(Env.osVersion, "7.0.4", '<'));
+                    },
+                    send_binary_string: Test(window.XMLHttpRequest && (new XMLHttpRequest().sendAsBinary || (window.Uint8Array && window.ArrayBuffer))),
+                    send_custom_headers: Test(window.XMLHttpRequest),
+                    send_multipart: function () {
+                        return !!(window.XMLHttpRequest && new XMLHttpRequest().upload && window.FormData) || I.can('send_binary_string');
+                    },
+                    slice_blob: Test(window.File && (File.prototype.mozSlice || File.prototype.webkitSlice || File.prototype.slice)),
+                    stream_upload: function () {
+                        return I.can('slice_blob') && I.can('send_multipart');
+                    },
+                    summon_file_dialog: Test(function () { // yeah... some dirty sniffing here...
+                        return (Env.browser === 'Firefox' && Env.version >= 4) ||
+                            (Env.browser === 'Opera' && Env.version >= 12) ||
+                            (Env.browser === 'IE' && Env.version >= 10) ||
+                            !!~Basic.inArray(Env.browser, ['Chrome', 'Safari']);
+                    }()),
+                    upload_filesize: True
                 },
-                display_media: Test(Env.can('create_canvas') || Env.can('use_data_uri_over32kb')),
-                do_cors: Test(window.XMLHttpRequest && 'withCredentials' in new XMLHttpRequest()),
-                drag_and_drop: Test(function () {
-                    // this comes directly from Modernizr: http://www.modernizr.com/
-                    var div = document.createElement('div');
-                    // IE has support for drag and drop since version 5, but doesn't support dropping files from desktop
-                    return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && (Env.browser !== 'IE' || Env.version > 9);
-                }()),
-                filter_by_extension: Test(function () { // if you know how to feature-detect this, please suggest
-                    return (Env.browser === 'Chrome' && Env.version >= 28) || (Env.browser === 'IE' && Env.version >= 10);
-                }()),
-                return_response_headers: True,
-                return_response_type: function (responseType) {
-                    if (responseType === 'json' && !!window.JSON) { // we can fake this one even if it's not supported
-                        return true;
-                    }
-                    return Env.can('return_response_type', responseType);
-                },
-                return_status_code: True,
-                report_upload_progress: Test(window.XMLHttpRequest && new XMLHttpRequest().upload),
-                resize_image: function () {
-                    return I.can('access_binary') && Env.can('create_canvas');
-                },
-                select_file: function () {
-                    return Env.can('use_fileinput') && window.File;
-                },
-                select_folder: function () {
-                    return I.can('select_file') && Env.browser === 'Chrome' && Env.version >= 21;
-                },
-                select_multiple: function () {
-                    // it is buggy on Safari Windows and iOS
-                    return I.can('select_file') &&
-						!(Env.browser === 'Safari' && Env.os === 'Windows') &&
-						!(Env.os === 'iOS' && Env.verComp(Env.osVersion, "7.0.4", '<'));
-                },
-                send_binary_string: Test(window.XMLHttpRequest && (new XMLHttpRequest().sendAsBinary || (window.Uint8Array && window.ArrayBuffer))),
-                send_custom_headers: Test(window.XMLHttpRequest),
-                send_multipart: function () {
-                    return !!(window.XMLHttpRequest && new XMLHttpRequest().upload && window.FormData) || I.can('send_binary_string');
-                },
-                slice_blob: Test(window.File && (File.prototype.mozSlice || File.prototype.webkitSlice || File.prototype.slice)),
-                stream_upload: function () {
-                    return I.can('slice_blob') && I.can('send_multipart');
-                },
-                summon_file_dialog: Test(function () { // yeah... some dirty sniffing here...
-                    return (Env.browser === 'Firefox' && Env.version >= 4) ||
-						(Env.browser === 'Opera' && Env.version >= 12) ||
-						(Env.browser === 'IE' && Env.version >= 10) ||
-						!!~Basic.inArray(Env.browser, ['Chrome', 'Safari']);
-                }()),
-                upload_filesize: True
-            },
                 arguments[2]
             );
 
@@ -6167,9 +6167,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/file/Blob
-    @private
-    */
+     @class moxie/runtime/html5/file/Blob
+     @private
+     */
     define("moxie/runtime/html5/file/Blob", [
         "moxie/runtime/html5/Runtime",
         "moxie/file/Blob"
@@ -6230,17 +6230,17 @@
         }
 
         /**
-        Adds an event handler to the specified object and store reference to the handler
-        in objects internal Plupload registry (@see removeEvent).
-        
-        @method addEvent
-        @for Utils
-        @static
-        @param {Object} obj DOM element like object to add handler to.
-        @param {String} name Name to add event listener to.
-        @param {Function} callback Function to call when event occurs.
-        @param {String} [key] that might be used to add specifity to the event record.
-        */
+         Adds an event handler to the specified object and store reference to the handler
+         in objects internal Plupload registry (@see removeEvent).
+
+         @method addEvent
+         @for Utils
+         @static
+         @param {Object} obj DOM element like object to add handler to.
+         @param {String} name Name to add event listener to.
+         @param {Function} callback Function to call when event occurs.
+         @param {String} [key] that might be used to add specifity to the event record.
+         */
         var addEvent = function (obj, name, callback, key) {
             var func, events;
 
@@ -6292,15 +6292,15 @@
 
 
         /**
-        Remove event handler from the specified object. If third argument (callback)
-        is not specified remove all events with the specified name.
-        
-        @method removeEvent
-        @static
-        @param {Object} obj DOM element to remove event listener(s) from.
-        @param {String} name Name of event listener to remove.
-        @param {Function|String} [callback] might be a callback or unique key to match.
-        */
+         Remove event handler from the specified object. If third argument (callback)
+         is not specified remove all events with the specified name.
+
+         @method removeEvent
+         @static
+         @param {Object} obj DOM element to remove event listener(s) from.
+         @param {String} name Name of event listener to remove.
+         @param {Function|String} [callback] might be a callback or unique key to match.
+         */
         var removeEvent = function (obj, name, callback) {
             var type, undef;
 
@@ -6352,13 +6352,13 @@
 
 
         /**
-        Remove all kind of events from the specified object
-        
-        @method removeAllEvents
-        @static
-        @param {Object} obj DOM element to remove event listeners from.
-        @param {String} [key] unique key to match, when removing events.
-        */
+         Remove all kind of events from the specified object
+
+         @method removeAllEvents
+         @static
+         @param {Object} obj DOM element to remove event listeners from.
+         @param {String} [key] unique key to match, when removing events.
+         */
         var removeAllEvents = function (obj, key) {
             if (!obj || !obj[uid]) {
                 return;
@@ -6389,9 +6389,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/file/FileInput
-    @private
-    */
+     @class moxie/runtime/html5/file/FileInput
+     @private
+     */
     define("moxie/runtime/html5/file/FileInput", [
         "moxie/runtime/html5/Runtime",
         "moxie/core/utils/Basic",
@@ -6457,7 +6457,7 @@
                     }
 
                     /* Since we have to place input[type=file] on top of the browse_button for some browsers,
-                    browse_button loses interactivity, so we restore it here */
+                     browse_button loses interactivity, so we restore it here */
                     top = I.can('summon_file_dialog') ? browseButton : shimContainer;
 
                     Events.addEvent(top, 'mouseover', function () {
@@ -6525,9 +6525,9 @@
 
                 destroy: function () {
                     var I = this.getRuntime()
-                    , shim = I.getShim()
-                    , shimContainer = I.getShimContainer()
-                    ;
+                        , shim = I.getShim()
+                        , shimContainer = I.getShimContainer()
+                        ;
 
                     Events.removeAllEvents(shimContainer, this.uid);
                     Events.removeAllEvents(_options && Dom.get(_options.container), this.uid);
@@ -6560,9 +6560,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/file/FileDrop
-    @private
-    */
+     @class moxie/runtime/html5/file/FileDrop
+     @private
+     */
     define("moxie/runtime/html5/file/FileDrop", [
         "moxie/runtime/html5/Runtime",
         "moxie/core/utils/Basic",
@@ -6751,9 +6751,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/file/FileReader
-    @private
-    */
+     @class moxie/runtime/html5/file/FileReader
+     @private
+     */
     define("moxie/runtime/html5/file/FileReader", [
         "moxie/runtime/html5/Runtime",
         "moxie/core/utils/Encode",
@@ -6833,9 +6833,9 @@
     /*global ActiveXObject:true */
 
     /**
-    @class moxie/runtime/html5/xhr/XMLHttpRequest
-    @private
-    */
+     @class moxie/runtime/html5/xhr/XMLHttpRequest
+     @private
+     */
     define("moxie/runtime/html5/xhr/XMLHttpRequest", [
         "moxie/runtime/html5/Runtime",
         "moxie/core/utils/Basic",
@@ -6850,17 +6850,17 @@
 
         function XMLHttpRequest() {
             var self = this
-            , _xhr
-            , _filename
-            ;
+                , _xhr
+                , _filename
+                ;
 
             Basic.extend(this, {
                 send: function (meta, data) {
                     var target = this
-                    , isGecko2_5_6 = (Env.browser === 'Mozilla' && Env.version >= 4 && Env.version < 7)
-                    , isAndroidBrowser = Env.browser === 'Android Browser'
-                    , mustSendAsBinary = false
-                    ;
+                        , isGecko2_5_6 = (Env.browser === 'Mozilla' && Env.version >= 4 && Env.version < 7)
+                        , isAndroidBrowser = Env.browser === 'Android Browser'
+                        , mustSendAsBinary = false
+                        ;
 
                     // extract file name
                     _filename = meta.url.replace(/^.+?\/([\w\-\.]+)$/, '$1').toLowerCase();
@@ -6941,7 +6941,7 @@
                                     // readystatechanged is fired twice for OPENED state (in IE and Mozilla) - neu
                                     break;
 
-                                    // looks like HEADERS_RECEIVED (state 2) is not reported in Opera (or it's old versions) - neu
+                                // looks like HEADERS_RECEIVED (state 2) is not reported in Opera (or it's old versions) - neu
                                 case 2: // XMLHttpRequest.HEADERS_RECEIVED
                                     break;
 
@@ -7155,11 +7155,11 @@
 
             function _prepareMultipart(fd) {
                 var boundary = '----moxieboundary' + new Date().getTime()
-                , dashdash = '--'
-                , crlf = '\r\n'
-                , multipart = ''
-                , I = this.getRuntime()
-                ;
+                    , dashdash = '--'
+                    , crlf = '\r\n'
+                    , multipart = ''
+                    , I = this.getRuntime()
+                    ;
 
                 if (!I.can('send_binary_string')) {
                     throw new x.RuntimeError(x.RuntimeError.NOT_SUPPORTED_ERR);
@@ -7206,9 +7206,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/utils/BinaryReader
-    @private
-    */
+     @class moxie/runtime/html5/utils/BinaryReader
+     @private
+     */
     define("moxie/runtime/html5/utils/BinaryReader", [], function () {
         return function () {
             var II = false, bin;
@@ -7315,9 +7315,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/image/JPEGHeaders
-    @private
-    */
+     @class moxie/runtime/html5/image/JPEGHeaders
+     @private
+     */
     define("moxie/runtime/html5/image/JPEGHeaders", [
         "moxie/runtime/html5/utils/BinaryReader"
     ], function (BinaryReader) {
@@ -7460,9 +7460,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/image/ExifParser
-    @private
-    */
+     @class moxie/runtime/html5/image/ExifParser
+     @private
+     */
     define("moxie/runtime/html5/image/ExifParser", [
         "moxie/core/utils/Basic",
         "moxie/runtime/html5/utils/BinaryReader"
@@ -7477,17 +7477,17 @@
             tags = {
                 tiff: {
                     /*
-                    The image orientation viewed in terms of rows and columns.
-    
-                    1 = The 0th row is at the visual top of the image, and the 0th column is the visual left-hand side.
-                    2 = The 0th row is at the visual top of the image, and the 0th column is the visual right-hand side.
-                    3 = The 0th row is at the visual bottom of the image, and the 0th column is the visual right-hand side.
-                    4 = The 0th row is at the visual bottom of the image, and the 0th column is the visual left-hand side.
-                    5 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual top.
-                    6 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual top.
-                    7 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual bottom.
-                    8 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual bottom.
-                    */
+                     The image orientation viewed in terms of rows and columns.
+
+                     1 = The 0th row is at the visual top of the image, and the 0th column is the visual left-hand side.
+                     2 = The 0th row is at the visual top of the image, and the 0th column is the visual right-hand side.
+                     3 = The 0th row is at the visual bottom of the image, and the 0th column is the visual right-hand side.
+                     4 = The 0th row is at the visual bottom of the image, and the 0th column is the visual left-hand side.
+                     5 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual top.
+                     6 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual top.
+                     7 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual bottom.
+                     8 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual bottom.
+                     */
                     0x0112: 'Orientation',
                     0x010E: 'ImageDescription',
                     0x010F: 'Make',
@@ -7898,9 +7898,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/image/JPEG
-    @private
-    */
+     @class moxie/runtime/html5/image/JPEG
+     @private
+     */
     define("moxie/runtime/html5/image/JPEG", [
         "moxie/core/utils/Basic",
         "moxie/core/Exceptions",
@@ -8030,9 +8030,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/image/PNG
-    @private
-    */
+     @class moxie/runtime/html5/image/PNG
+     @private
+     */
     define("moxie/runtime/html5/image/PNG", [
         "moxie/core/Exceptions",
         "moxie/core/utils/Basic",
@@ -8050,8 +8050,8 @@
             // check if it's png
             (function () {
                 var idx = 0, i = 0
-                , signature = [0x8950, 0x4E47, 0x0D0A, 0x1A0A]
-                ;
+                    , signature = [0x8950, 0x4E47, 0x0D0A, 0x1A0A]
+                    ;
 
                 for (i = 0; i < signature.length; i++, idx += 2) {
                     if (signature[i] != _br.SHORT(idx)) {
@@ -8135,9 +8135,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/image/ImageInfo
-    @private
-    */
+     @class moxie/runtime/html5/image/ImageInfo
+     @private
+     */
     define("moxie/runtime/html5/image/ImageInfo", [
         "moxie/core/utils/Basic",
         "moxie/core/Exceptions",
@@ -8145,17 +8145,17 @@
         "moxie/runtime/html5/image/PNG"
     ], function (Basic, x, JPEG, PNG) {
         /**
-        Optional image investigation tool for HTML5 runtime. Provides the following features:
-        - ability to distinguish image type (JPEG or PNG) by signature
-        - ability to extract image width/height directly from it's internals, without preloading in memory (fast)
-        - ability to extract APP headers from JPEGs (Exif, GPS, etc)
-        - ability to replace width/height tags in extracted JPEG headers
-        - ability to restore APP headers, that were for example stripped during image manipulation
-    
-        @class ImageInfo
-        @constructor
-        @param {String} binstr Image source as binary string
-        */
+         Optional image investigation tool for HTML5 runtime. Provides the following features:
+         - ability to distinguish image type (JPEG or PNG) by signature
+         - ability to extract image width/height directly from it's internals, without preloading in memory (fast)
+         - ability to extract APP headers from JPEGs (Exif, GPS, etc)
+         - ability to replace width/height tags in extracted JPEG headers
+         - ability to restore APP headers, that were for example stripped during image manipulation
+
+         @class ImageInfo
+         @constructor
+         @param {String} binstr Image source as binary string
+         */
         return function (binstr) {
             var _cs = [JPEG, PNG], _img;
 
@@ -8173,77 +8173,77 @@
 
             Basic.extend(this, {
                 /**
-                Image Mime Type extracted from it's depths
-    
-                @property type
-                @type {String}
-                @default ''
-                */
+                 Image Mime Type extracted from it's depths
+
+                 @property type
+                 @type {String}
+                 @default ''
+                 */
                 type: '',
 
                 /**
-                Image size in bytes
-    
-                @property size
-                @type {Number}
-                @default 0
-                */
+                 Image size in bytes
+
+                 @property size
+                 @type {Number}
+                 @default 0
+                 */
                 size: 0,
 
                 /**
-                Image width extracted from image source
-    
-                @property width
-                @type {Number}
-                @default 0
-                */
+                 Image width extracted from image source
+
+                 @property width
+                 @type {Number}
+                 @default 0
+                 */
                 width: 0,
 
                 /**
-                Image height extracted from image source
-    
-                @property height
-                @type {Number}
-                @default 0
-                */
+                 Image height extracted from image source
+
+                 @property height
+                 @type {Number}
+                 @default 0
+                 */
                 height: 0,
 
                 /**
-                Sets Exif tag. Currently applicable only for width and height tags. Obviously works only with JPEGs.
-    
-                @method setExif
-                @param {String} tag Tag to set
-                @param {Mixed} value Value to assign to the tag
-                */
+                 Sets Exif tag. Currently applicable only for width and height tags. Obviously works only with JPEGs.
+
+                 @method setExif
+                 @param {String} tag Tag to set
+                 @param {Mixed} value Value to assign to the tag
+                 */
                 setExif: function () { },
 
                 /**
-                Restores headers to the source.
-    
-                @method writeHeaders
-                @param {String} data Image source as binary string
-                @return {String} Updated binary string
-                */
+                 Restores headers to the source.
+
+                 @method writeHeaders
+                 @param {String} data Image source as binary string
+                 @return {String} Updated binary string
+                 */
                 writeHeaders: function (data) {
                     return data;
                 },
 
                 /**
-                Strip all headers from the source.
-    
-                @method stripHeaders
-                @param {String} data Image source as binary string
-                @return {String} Updated binary string
-                */
+                 Strip all headers from the source.
+
+                 @method stripHeaders
+                 @param {String} data Image source as binary string
+                 @return {String} Updated binary string
+                 */
                 stripHeaders: function (data) {
                     return data;
                 },
 
                 /**
-                Dispose resources.
-    
-                @method purge
-                */
+                 Dispose resources.
+
+                 @method purge
+                 */
                 purge: function () { }
             });
 
@@ -8259,29 +8259,29 @@
     // Included from: src/javascript/runtime/html5/image/MegaPixel.js
 
     /**
-    (The MIT License)
-    
-    Copyright (c) 2012 Shinichi Tomita <shinichi.tomita@gmail.com>;
-    
-    Permission is hereby granted, free of charge, to any person obtaining
-    a copy of this software and associated documentation files (the
-    'Software'), to deal in the Software without restriction, including
-    without limitation the rights to use, copy, modify, merge, publish,
-    distribute, sublicense, and/or sell copies of the Software, and to
-    permit persons to whom the Software is furnished to do so, subject to
-    the following conditions:
-    
-    The above copyright notice and this permission notice shall be
-    included in all copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    */
+     (The MIT License)
+
+     Copyright (c) 2012 Shinichi Tomita <shinichi.tomita@gmail.com>;
+
+     Permission is hereby granted, free of charge, to any person obtaining
+     a copy of this software and associated documentation files (the
+     'Software'), to deal in the Software without restriction, including
+     without limitation the rights to use, copy, modify, merge, publish,
+     distribute, sublicense, and/or sell copies of the Software, and to
+     permit persons to whom the Software is furnished to do so, subject to
+     the following conditions:
+
+     The above copyright notice and this permission notice shall be
+     included in all copies or substantial portions of the Software.
+
+     THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+     IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+     */
 
     /**
      * Mega pixel image rendering library for iOS6 Safari
@@ -8295,9 +8295,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/image/MegaPixel
-    @private
-    */
+     @class moxie/runtime/html5/image/MegaPixel
+     @private
+     */
     define("moxie/runtime/html5/image/MegaPixel", [], function () {
 
         /**
@@ -8406,9 +8406,9 @@
      */
 
     /**
-    @class moxie/runtime/html5/image/Image
-    @private
-    */
+     @class moxie/runtime/html5/image/Image
+     @private
+     */
     define("moxie/runtime/html5/image/Image", [
         "moxie/runtime/html5/Runtime",
         "moxie/core/utils/Basic",
@@ -8423,16 +8423,16 @@
 
         function HTML5Image() {
             var me = this
-            , _img, _imgInfo, _canvas, _binStr, _blob
-            , _modified = false // is set true whenever image is modified
-            , _preserveHeaders = true
-            ;
+                , _img, _imgInfo, _canvas, _binStr, _blob
+                , _modified = false // is set true whenever image is modified
+                , _preserveHeaders = true
+                ;
 
             Basic.extend(this, {
                 loadFromBlob: function (blob) {
                     var comp = this, I = comp.getRuntime()
-                    , asBinary = arguments.length > 1 ? arguments[1] : true
-                    ;
+                        , asBinary = arguments.length > 1 ? arguments[1] : true
+                        ;
 
                     if (!I.can('access_binary')) {
                         throw new x.RuntimeError(x.RuntimeError.NOT_SUPPORTED_ERR);
@@ -8646,15 +8646,15 @@
 
             function _downsize(width, height, crop, preserveHeaders) {
                 var self = this
-                , scale
-                , mathFn
-                , x = 0
-                , y = 0
-                , img
-                , destWidth
-                , destHeight
-                , orientation
-                ;
+                    , scale
+                    , mathFn
+                    , x = 0
+                    , y = 0
+                    , img
+                    , destWidth
+                    , destHeight
+                    , orientation
+                    ;
 
                 _preserveHeaders = preserveHeaders; // we will need to check this on export (see getAsBinaryString())
 
@@ -8735,10 +8735,10 @@
 
 
             /**
-            * Transform canvas coordination according to specified frame size and orientation
-            * Orientation value is from EXIF tag
-            * @author Shinichi Tomita <shinichi.tomita@gmail.com>
-            */
+             * Transform canvas coordination according to specified frame size and orientation
+             * Orientation value is from EXIF tag
+             * @author Shinichi Tomita <shinichi.tomita@gmail.com>
+             */
             function _rotateToOrientaion(width, height, orientation) {
                 switch (orientation) {
                     case 5:
@@ -8754,15 +8754,15 @@
                 }
 
                 /**
-                1 = The 0th row is at the visual top of the image, and the 0th column is the visual left-hand side.
-                2 = The 0th row is at the visual top of the image, and the 0th column is the visual right-hand side.
-                3 = The 0th row is at the visual bottom of the image, and the 0th column is the visual right-hand side.
-                4 = The 0th row is at the visual bottom of the image, and the 0th column is the visual left-hand side.
-                5 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual top.
-                6 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual top.
-                7 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual bottom.
-                8 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual bottom.
-                */
+                 1 = The 0th row is at the visual top of the image, and the 0th column is the visual left-hand side.
+                 2 = The 0th row is at the visual top of the image, and the 0th column is the visual right-hand side.
+                 3 = The 0th row is at the visual bottom of the image, and the 0th column is the visual right-hand side.
+                 4 = The 0th row is at the visual bottom of the image, and the 0th column is the visual left-hand side.
+                 5 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual top.
+                 6 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual top.
+                 7 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual bottom.
+                 8 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual bottom.
+                 */
 
                 var ctx = _canvas.getContext('2d');
                 switch (orientation) {
@@ -8834,11 +8834,11 @@
     /*global ActiveXObject:true */
 
     /**
-    Defines constructor for Flash runtime.
-    
-    @class moxie/runtime/flash/Runtime
-    @private
-    */
+     Defines constructor for Flash runtime.
+
+     @class moxie/runtime/flash/Runtime
+     @private
+     */
     define("moxie/runtime/flash/Runtime", [
         "moxie/core/utils/Basic",
         "moxie/core/utils/Env",
@@ -8850,12 +8850,12 @@
         var type = 'flash', extensions = {};
 
         /**
-        Get the version of the Flash Player
-    
-        @method getShimVersion
-        @private
-        @return {Number} Flash Player version
-        */
+         Get the version of the Flash Player
+
+         @method getShimVersion
+         @private
+         @return {Number} Flash Player version
+         */
         function getShimVersion() {
             var version;
 
@@ -8874,11 +8874,11 @@
         }
 
         /**
-        Constructor for the Flash Runtime
-    
-        @class FlashRuntime
-        @extends Runtime
-        */
+         Constructor for the Flash Runtime
+
+         @class FlashRuntime
+         @extends Runtime
+         */
         function FlashRuntime(options) {
             var I = this, initTimer;
 
@@ -9010,7 +9010,7 @@
                         '<param name="flashvars" value="uid=' + escape(this.uid) + '&target=' + Env.global_event_dispatcher + '" />' +
                         '<param name="wmode" value="transparent" />' +
                         '<param name="allowscriptaccess" value="always" />' +
-                    '</object>';
+                        '</object>';
 
                     if (Env.browser === 'IE') {
                         el = document.createElement('div');
@@ -9058,9 +9058,9 @@
      */
 
     /**
-    @class moxie/runtime/flash/file/Blob
-    @private
-    */
+     @class moxie/runtime/flash/file/Blob
+     @private
+     */
     define("moxie/runtime/flash/file/Blob", [
         "moxie/runtime/flash/Runtime",
         "moxie/file/Blob"
@@ -9107,9 +9107,9 @@
      */
 
     /**
-    @class moxie/runtime/flash/file/FileInput
-    @private
-    */
+     @class moxie/runtime/flash/file/FileInput
+     @private
+     */
     define("moxie/runtime/flash/file/FileInput", [
         "moxie/runtime/flash/Runtime"
     ], function (extensions) {
@@ -9141,9 +9141,9 @@
      */
 
     /**
-    @class moxie/runtime/flash/file/FileReader
-    @private
-    */
+     @class moxie/runtime/flash/file/FileReader
+     @private
+     */
     define("moxie/runtime/flash/file/FileReader", [
         "moxie/runtime/flash/Runtime",
         "moxie/core/utils/Encode"
@@ -9206,9 +9206,9 @@
      */
 
     /**
-    @class moxie/runtime/flash/file/FileReaderSync
-    @private
-    */
+     @class moxie/runtime/flash/file/FileReaderSync
+     @private
+     */
     define("moxie/runtime/flash/file/FileReaderSync", [
         "moxie/runtime/flash/Runtime",
         "moxie/core/utils/Encode"
@@ -9260,9 +9260,9 @@
      */
 
     /**
-    @class moxie/runtime/flash/xhr/XMLHttpRequest
-    @private
-    */
+     @class moxie/runtime/flash/xhr/XMLHttpRequest
+     @private
+     */
     define("moxie/runtime/flash/xhr/XMLHttpRequest", [
         "moxie/runtime/flash/Runtime",
         "moxie/core/utils/Basic",
@@ -9409,9 +9409,9 @@
      */
 
     /**
-    @class moxie/runtime/flash/runtime/Transporter
-    @private
-    */
+     @class moxie/runtime/flash/runtime/Transporter
+     @private
+     */
     define("moxie/runtime/flash/runtime/Transporter", [
         "moxie/runtime/flash/Runtime",
         "moxie/file/Blob"
@@ -9420,8 +9420,8 @@
         var Transporter = {
             getAsBlob: function (type) {
                 var self = this.getRuntime()
-                , blob = self.shimExec.call(this, 'Transporter', 'getAsBlob', type)
-                ;
+                    , blob = self.shimExec.call(this, 'Transporter', 'getAsBlob', type)
+                    ;
                 if (blob) {
                     return new Blob(self.uid, blob);
                 }
@@ -9445,9 +9445,9 @@
      */
 
     /**
-    @class moxie/runtime/flash/image/Image
-    @private
-    */
+     @class moxie/runtime/flash/image/Image
+     @private
+     */
     define("moxie/runtime/flash/image/Image", [
         "moxie/runtime/flash/Runtime",
         "moxie/core/utils/Basic",
@@ -9483,8 +9483,8 @@
 
             getAsBlob: function (type, quality) {
                 var self = this.getRuntime()
-                , blob = self.shimExec.call(this, 'Image', 'getAsBlob', type, quality)
-                ;
+                    , blob = self.shimExec.call(this, 'Image', 'getAsBlob', type, quality)
+                    ;
                 if (blob) {
                     return new Blob(self.uid, blob);
                 }
@@ -9493,9 +9493,9 @@
 
             getAsDataURL: function () {
                 var self = this.getRuntime()
-                , blob = self.Image.getAsBlob.apply(this, arguments)
-                , frs
-                ;
+                    , blob = self.Image.getAsBlob.apply(this, arguments)
+                    , frs
+                    ;
                 if (!blob) {
                     return null;
                 }
@@ -9522,11 +9522,11 @@
     /*global ActiveXObject:true */
 
     /**
-    Defines constructor for Silverlight runtime.
-    
-    @class moxie/runtime/silverlight/Runtime
-    @private
-    */
+     Defines constructor for Silverlight runtime.
+
+     @class moxie/runtime/silverlight/Runtime
+     @private
+     */
     define("moxie/runtime/silverlight/Runtime", [
         "moxie/core/utils/Basic",
         "moxie/core/utils/Env",
@@ -9595,11 +9595,11 @@
         }
 
         /**
-        Constructor for the Silverlight Runtime
-    
-        @class SilverlightRuntime
-        @extends Runtime
-        */
+         Constructor for the Silverlight Runtime
+
+         @class SilverlightRuntime
+         @extends Runtime
+         */
         function SilverlightRuntime(options) {
             var I = this, initTimer;
 
@@ -9690,7 +9690,7 @@
                         '<param name="windowless" value="true"/>' +
                         '<param name="enablehtmlaccess" value="true"/>' +
                         '<param name="initParams" value="uid=' + this.uid + ',target=' + Env.global_event_dispatcher + '"/>' +
-                    '</object>';
+                        '</object>';
 
                     // Init is dispatched by the shim
                     initTimer = setTimeout(function () {
@@ -9729,9 +9729,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/file/Blob
-    @private
-    */
+     @class moxie/runtime/silverlight/file/Blob
+     @private
+     */
     define("moxie/runtime/silverlight/file/Blob", [
         "moxie/runtime/silverlight/Runtime",
         "moxie/core/utils/Basic",
@@ -9753,9 +9753,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/file/FileInput
-    @private
-    */
+     @class moxie/runtime/silverlight/file/FileInput
+     @private
+     */
     define("moxie/runtime/silverlight/file/FileInput", [
         "moxie/runtime/silverlight/Runtime"
     ], function (extensions) {
@@ -9792,9 +9792,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/file/FileDrop
-    @private
-    */
+     @class moxie/runtime/silverlight/file/FileDrop
+     @private
+     */
     define("moxie/runtime/silverlight/file/FileDrop", [
         "moxie/runtime/silverlight/Runtime",
         "moxie/core/utils/Dom",
@@ -9852,9 +9852,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/file/FileReader
-    @private
-    */
+     @class moxie/runtime/silverlight/file/FileReader
+     @private
+     */
     define("moxie/runtime/silverlight/file/FileReader", [
         "moxie/runtime/silverlight/Runtime",
         "moxie/core/utils/Basic",
@@ -9876,9 +9876,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/file/FileReaderSync
-    @private
-    */
+     @class moxie/runtime/silverlight/file/FileReaderSync
+     @private
+     */
     define("moxie/runtime/silverlight/file/FileReaderSync", [
         "moxie/runtime/silverlight/Runtime",
         "moxie/core/utils/Basic",
@@ -9900,9 +9900,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/xhr/XMLHttpRequest
-    @private
-    */
+     @class moxie/runtime/silverlight/xhr/XMLHttpRequest
+     @private
+     */
     define("moxie/runtime/silverlight/xhr/XMLHttpRequest", [
         "moxie/runtime/silverlight/Runtime",
         "moxie/core/utils/Basic",
@@ -9924,9 +9924,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/runtime/Transporter
-    @private
-    */
+     @class moxie/runtime/silverlight/runtime/Transporter
+     @private
+     */
     define("moxie/runtime/silverlight/runtime/Transporter", [
         "moxie/runtime/silverlight/Runtime",
         "moxie/core/utils/Basic",
@@ -9948,9 +9948,9 @@
      */
 
     /**
-    @class moxie/runtime/silverlight/image/Image
-    @private
-    */
+     @class moxie/runtime/silverlight/image/Image
+     @private
+     */
     define("moxie/runtime/silverlight/image/Image", [
         "moxie/runtime/silverlight/Runtime",
         "moxie/core/utils/Basic",
@@ -9960,19 +9960,19 @@
 
             getInfo: function () {
                 var self = this.getRuntime()
-                , grps = ['tiff', 'exif', 'gps']
-                , info = { meta: {} }
-                , rawInfo = self.shimExec.call(this, 'Image', 'getInfo')
-                ;
+                    , grps = ['tiff', 'exif', 'gps']
+                    , info = { meta: {} }
+                    , rawInfo = self.shimExec.call(this, 'Image', 'getInfo')
+                    ;
 
                 if (rawInfo.meta) {
                     Basic.each(grps, function (grp) {
                         var meta = rawInfo.meta[grp]
-                        , tag
-                        , i
-                        , length
-                        , value
-                        ;
+                            , tag
+                            , i
+                            , length
+                            , value
+                            ;
                         if (meta && meta.keys) {
                             info.meta[grp] = {};
                             for (i = 0, length = meta.keys.length; i < length; i++) {
@@ -10018,11 +10018,11 @@
     /*global File:true */
 
     /**
-    Defines constructor for HTML4 runtime.
-    
-    @class moxie/runtime/html4/Runtime
-    @private
-    */
+     Defines constructor for HTML4 runtime.
+
+     @class moxie/runtime/html4/Runtime
+     @private
+     */
     define("moxie/runtime/html4/Runtime", [
         "moxie/core/utils/Basic",
         "moxie/core/Exceptions",
@@ -10034,9 +10034,9 @@
 
         function Html4Runtime(options) {
             var I = this
-            , Test = Runtime.capTest
-            , True = Runtime.capTrue
-            ;
+                , Test = Runtime.capTest
+                , True = Runtime.capTrue
+                ;
 
             Runtime.call(this, options, type, {
                 access_binary: Test(window.FileReader || window.File && File.getAsDataURL),
@@ -10118,9 +10118,9 @@
      */
 
     /**
-    @class moxie/runtime/html4/file/FileInput
-    @private
-    */
+     @class moxie/runtime/html4/file/FileInput
+     @private
+     */
     define("moxie/runtime/html4/file/FileInput", [
         "moxie/runtime/html4/Runtime",
         "moxie/core/utils/Basic",
@@ -10280,7 +10280,7 @@
                         }
 
                         /* Since we have to place input[type=file] on top of the browse_button for some browsers,
-                        browse_button loses interactivity, so we restore it here */
+                         browse_button loses interactivity, so we restore it here */
                         top = I.can('summon_file_dialog') ? browseButton : shimContainer;
 
                         Events.addEvent(top, 'mouseover', function () {
@@ -10327,9 +10327,9 @@
 
                 destroy: function () {
                     var I = this.getRuntime()
-                    , shim = I.getShim()
-                    , shimContainer = I.getShimContainer()
-                    ;
+                        , shim = I.getShim()
+                        , shimContainer = I.getShimContainer()
+                        ;
 
                     Events.removeAllEvents(shimContainer, this.uid);
                     Events.removeAllEvents(_options && Dom.get(_options.container), this.uid);
@@ -10362,9 +10362,9 @@
      */
 
     /**
-    @class moxie/runtime/html4/file/FileReader
-    @private
-    */
+     @class moxie/runtime/html4/file/FileReader
+     @private
+     */
     define("moxie/runtime/html4/file/FileReader", [
         "moxie/runtime/html4/Runtime",
         "moxie/runtime/html5/file/FileReader"
@@ -10385,9 +10385,9 @@
      */
 
     /**
-    @class moxie/runtime/html4/xhr/XMLHttpRequest
-    @private
-    */
+     @class moxie/runtime/html4/xhr/XMLHttpRequest
+     @private
+     */
     define("moxie/runtime/html4/xhr/XMLHttpRequest", [
         "moxie/runtime/html4/Runtime",
         "moxie/core/utils/Basic",
@@ -10460,8 +10460,8 @@
 
                     function createIframe() {
                         var container = I.getShimContainer() || document.body
-                        , temp = document.createElement('div')
-                        ;
+                            , temp = document.createElement('div')
+                            ;
 
                         // IE 6 won't be able to set the name using setAttribute or iframe.name
                         temp.innerHTML = '<iframe id="' + uid + '_iframe" name="' + uid + '_iframe" src="javascript:&quot;&quot;" style="display:none"></iframe>';
@@ -10469,8 +10469,8 @@
                         container.appendChild(_iframe);
 
                         /* _iframe.onreadystatechange = function() {
-                            console.info(_iframe.readyState);
-                        };*/
+                         console.info(_iframe.readyState);
+                         };*/
 
                         Events.addEvent(_iframe, 'load', function () { // _iframe.onload doesn't work in IE lte 8
                             var el;
@@ -10632,9 +10632,9 @@
      */
 
     /**
-    @class moxie/runtime/html4/image/Image
-    @private
-    */
+     @class moxie/runtime/html4/image/Image
+     @private
+     */
     define("moxie/runtime/html4/image/Image", [
         "moxie/runtime/html4/Runtime",
         "moxie/runtime/html5/image/Image"
@@ -10656,12 +10656,12 @@
 /*global moxie:true */
 
 /**
-Globally exposed namespace with the most frequently used public classes and handy methods.
+ Globally exposed namespace with the most frequently used public classes and handy methods.
 
-@class o
-@static
-@private
-*/
+ @class o
+ @static
+ @private
+ */
 (function () {
     "use strict";
 
@@ -10693,3 +10693,2279 @@ Globally exposed namespace with the most frequently used public classes and hand
     }
     return o;
 })();
+
+/**
+ * Plupload.js
+ *
+ * Copyright 2013, Moxiecode Systems AB
+ * Released under GPL License.
+ *
+ * License: http://www.plupload.com/license
+ * Contributing: http://www.plupload.com/contributing
+ */
+
+/*global mOxie:true */
+
+;(function(window, o, undef) {
+
+    var delay = window.setTimeout
+        , fileFilters = {}
+        ;
+
+// convert plupload features to caps acceptable by mOxie
+    function normalizeCaps(settings) {
+        var features = settings.required_features, caps = {};
+
+        function resolve(feature, value, strict) {
+            // Feature notation is deprecated, use caps (this thing here is required for backward compatibility)
+            var map = {
+                chunks: 'slice_blob',
+                jpgresize: 'send_binary_string',
+                pngresize: 'send_binary_string',
+                progress: 'report_upload_progress',
+                multi_selection: 'select_multiple',
+                dragdrop: 'drag_and_drop',
+                drop_element: 'drag_and_drop',
+                headers: 'send_custom_headers',
+                canSendBinary: 'send_binary',
+                triggerDialog: 'summon_file_dialog'
+            };
+
+            if (map[feature]) {
+                caps[map[feature]] = value;
+            } else if (!strict) {
+                caps[feature] = value;
+            }
+        }
+
+        if (typeof(features) === 'string') {
+            plupload.each(features.split(/\s*,\s*/), function(feature) {
+                resolve(feature, true);
+            });
+        } else if (typeof(features) === 'object') {
+            plupload.each(features, function(value, feature) {
+                resolve(feature, value);
+            });
+        } else if (features === true) {
+            // check settings for required features
+            if (!settings.multipart) { // special care for multipart: false
+                caps.send_binary_string = true;
+            }
+
+            if (settings.chunk_size > 0) {
+                caps.slice_blob = true;
+            }
+
+            if (settings.resize.enabled) {
+                caps.send_binary_string = true;
+            }
+
+            plupload.each(settings, function(value, feature) {
+                resolve(feature, !!value, true); // strict check
+            });
+        }
+
+        return caps;
+    }
+
+    /**
+     * @module plupload
+     * @static
+     */
+    var plupload = {
+        /**
+         * Plupload version will be replaced on build.
+         *
+         * @property VERSION
+         * @for Plupload
+         * @static
+         * @final
+         */
+        VERSION : '2.1.1',
+
+        /**
+         * Inital state of the queue and also the state ones it's finished all it's uploads.
+         *
+         * @property STOPPED
+         * @static
+         * @final
+         */
+        STOPPED : 1,
+
+        /**
+         * Upload process is running
+         *
+         * @property STARTED
+         * @static
+         * @final
+         */
+        STARTED : 2,
+
+        /**
+         * File is queued for upload
+         *
+         * @property QUEUED
+         * @static
+         * @final
+         */
+        QUEUED : 1,
+
+        /**
+         * File is being uploaded
+         *
+         * @property UPLOADING
+         * @static
+         * @final
+         */
+        UPLOADING : 2,
+
+        /**
+         * File has failed to be uploaded
+         *
+         * @property FAILED
+         * @static
+         * @final
+         */
+        FAILED : 4,
+
+        /**
+         * File has been uploaded successfully
+         *
+         * @property DONE
+         * @static
+         * @final
+         */
+        DONE : 5,
+
+        // Error constants used by the Error event
+
+        /**
+         * Generic error for example if an exception is thrown inside Silverlight.
+         *
+         * @property GENERIC_ERROR
+         * @static
+         * @final
+         */
+        GENERIC_ERROR : -100,
+
+        /**
+         * HTTP transport error. For example if the server produces a HTTP status other than 200.
+         *
+         * @property HTTP_ERROR
+         * @static
+         * @final
+         */
+        HTTP_ERROR : -200,
+
+        /**
+         * Generic I/O error. For exampe if it wasn't possible to open the file stream on local machine.
+         *
+         * @property IO_ERROR
+         * @static
+         * @final
+         */
+        IO_ERROR : -300,
+
+        /**
+         * Generic I/O error. For exampe if it wasn't possible to open the file stream on local machine.
+         *
+         * @property SECURITY_ERROR
+         * @static
+         * @final
+         */
+        SECURITY_ERROR : -400,
+
+        /**
+         * Initialization error. Will be triggered if no runtime was initialized.
+         *
+         * @property INIT_ERROR
+         * @static
+         * @final
+         */
+        INIT_ERROR : -500,
+
+        /**
+         * File size error. If the user selects a file that is too large it will be blocked and an error of this type will be triggered.
+         *
+         * @property FILE_SIZE_ERROR
+         * @static
+         * @final
+         */
+        FILE_SIZE_ERROR : -600,
+
+        /**
+         * File extension error. If the user selects a file that isn't valid according to the filters setting.
+         *
+         * @property FILE_EXTENSION_ERROR
+         * @static
+         * @final
+         */
+        FILE_EXTENSION_ERROR : -601,
+
+        /**
+         * Duplicate file error. If prevent_duplicates is set to true and user selects the same file again.
+         *
+         * @property FILE_DUPLICATE_ERROR
+         * @static
+         * @final
+         */
+        FILE_DUPLICATE_ERROR : -602,
+
+        /**
+         * Runtime will try to detect if image is proper one. Otherwise will throw this error.
+         *
+         * @property IMAGE_FORMAT_ERROR
+         * @static
+         * @final
+         */
+        IMAGE_FORMAT_ERROR : -700,
+
+        /**
+         * While working on the image runtime will try to detect if the operation may potentially run out of memeory and will throw this error.
+         *
+         * @property IMAGE_MEMORY_ERROR
+         * @static
+         * @final
+         */
+        IMAGE_MEMORY_ERROR : -701,
+
+        /**
+         * Each runtime has an upper limit on a dimension of the image it can handle. If bigger, will throw this error.
+         *
+         * @property IMAGE_DIMENSIONS_ERROR
+         * @static
+         * @final
+         */
+        IMAGE_DIMENSIONS_ERROR : -702,
+
+        /**
+         * Mime type lookup table.
+         *
+         * @property mimeTypes
+         * @type Object
+         * @final
+         */
+        mimeTypes : o.mimes,
+
+        /**
+         * In some cases sniffing is the only way around :(
+         */
+        ua: o.ua,
+
+        /**
+         * Gets the true type of the built-in object (better version of typeof).
+         * @credits Angus Croll (http://javascriptweblog.wordpress.com/)
+         *
+         * @method typeOf
+         * @static
+         * @param {Object} o Object to check.
+         * @return {String} Object [[Class]]
+         */
+        typeOf: o.typeOf,
+
+        /**
+         * Extends the specified object with another object.
+         *
+         * @method extend
+         * @static
+         * @param {Object} target Object to extend.
+         * @param {Object..} obj Multiple objects to extend with.
+         * @return {Object} Same as target, the extended object.
+         */
+        extend : o.extend,
+
+        /**
+         * Generates an unique ID. This is 99.99% unique since it takes the current time and 5 random numbers.
+         * The only way a user would be able to get the same ID is if the two persons at the same exact milisecond manages
+         * to get 5 the same random numbers between 0-65535 it also uses a counter so each call will be guaranteed to be page unique.
+         * It's more probable for the earth to be hit with an ansteriod. You can also if you want to be 100% sure set the plupload.guidPrefix property
+         * to an user unique key.
+         *
+         * @method guid
+         * @static
+         * @return {String} Virtually unique id.
+         */
+        guid : o.guid,
+
+        /**
+         * Get array of DOM Elements by their ids.
+         *
+         * @method get
+         * @for Utils
+         * @param {String} id Identifier of the DOM Element
+         * @return {Array}
+         */
+        get : function get(ids) {
+            var els = [], el;
+
+            if (o.typeOf(ids) !== 'array') {
+                ids = [ids];
+            }
+
+            var i = ids.length;
+            while (i--) {
+                el = o.get(ids[i]);
+                if (el) {
+                    els.push(el);
+                }
+            }
+
+            return els.length ? els : null;
+        },
+
+        /**
+         * Executes the callback function for each item in array/object. If you return false in the
+         * callback it will break the loop.
+         *
+         * @method each
+         * @static
+         * @param {Object} obj Object to iterate.
+         * @param {function} callback Callback function to execute for each item.
+         */
+        each : o.each,
+
+        /**
+         * Returns the absolute x, y position of an Element. The position will be returned in a object with x, y fields.
+         *
+         * @method getPos
+         * @static
+         * @param {Element} node HTML element or element id to get x, y position from.
+         * @param {Element} root Optional root element to stop calculations at.
+         * @return {object} Absolute position of the specified element object with x, y fields.
+         */
+        getPos : o.getPos,
+
+        /**
+         * Returns the size of the specified node in pixels.
+         *
+         * @method getSize
+         * @static
+         * @param {Node} node Node to get the size of.
+         * @return {Object} Object with a w and h property.
+         */
+        getSize : o.getSize,
+
+        /**
+         * Encodes the specified string.
+         *
+         * @method xmlEncode
+         * @static
+         * @param {String} s String to encode.
+         * @return {String} Encoded string.
+         */
+        xmlEncode : function(str) {
+            var xmlEncodeChars = {'<' : 'lt', '>' : 'gt', '&' : 'amp', '"' : 'quot', '\'' : '#39'}, xmlEncodeRegExp = /[<>&\"\']/g;
+
+            return str ? ('' + str).replace(xmlEncodeRegExp, function(chr) {
+                return xmlEncodeChars[chr] ? '&' + xmlEncodeChars[chr] + ';' : chr;
+            }) : str;
+        },
+
+        /**
+         * Forces anything into an array.
+         *
+         * @method toArray
+         * @static
+         * @param {Object} obj Object with length field.
+         * @return {Array} Array object containing all items.
+         */
+        toArray : o.toArray,
+
+        /**
+         * Find an element in array and return it's index if present, otherwise return -1.
+         *
+         * @method inArray
+         * @static
+         * @param {mixed} needle Element to find
+         * @param {Array} array
+         * @return {Int} Index of the element, or -1 if not found
+         */
+        inArray : o.inArray,
+
+        /**
+         * Extends the language pack object with new items.
+         *
+         * @method addI18n
+         * @static
+         * @param {Object} pack Language pack items to add.
+         * @return {Object} Extended language pack object.
+         */
+        addI18n : o.addI18n,
+
+        /**
+         * Translates the specified string by checking for the english string in the language pack lookup.
+         *
+         * @method translate
+         * @static
+         * @param {String} str String to look for.
+         * @return {String} Translated string or the input string if it wasn't found.
+         */
+        translate : o.translate,
+
+        /**
+         * Checks if object is empty.
+         *
+         * @method isEmptyObj
+         * @static
+         * @param {Object} obj Object to check.
+         * @return {Boolean}
+         */
+        isEmptyObj : o.isEmptyObj,
+
+        /**
+         * Checks if specified DOM element has specified class.
+         *
+         * @method hasClass
+         * @static
+         * @param {Object} obj DOM element like object to add handler to.
+         * @param {String} name Class name
+         */
+        hasClass : o.hasClass,
+
+        /**
+         * Adds specified className to specified DOM element.
+         *
+         * @method addClass
+         * @static
+         * @param {Object} obj DOM element like object to add handler to.
+         * @param {String} name Class name
+         */
+        addClass : o.addClass,
+
+        /**
+         * Removes specified className from specified DOM element.
+         *
+         * @method removeClass
+         * @static
+         * @param {Object} obj DOM element like object to add handler to.
+         * @param {String} name Class name
+         */
+        removeClass : o.removeClass,
+
+        /**
+         * Returns a given computed style of a DOM element.
+         *
+         * @method getStyle
+         * @static
+         * @param {Object} obj DOM element like object.
+         * @param {String} name Style you want to get from the DOM element
+         */
+        getStyle : o.getStyle,
+
+        /**
+         * Adds an event handler to the specified object and store reference to the handler
+         * in objects internal Plupload registry (@see removeEvent).
+         *
+         * @method addEvent
+         * @static
+         * @param {Object} obj DOM element like object to add handler to.
+         * @param {String} name Name to add event listener to.
+         * @param {Function} callback Function to call when event occurs.
+         * @param {String} (optional) key that might be used to add specifity to the event record.
+         */
+        addEvent : o.addEvent,
+
+        /**
+         * Remove event handler from the specified object. If third argument (callback)
+         * is not specified remove all events with the specified name.
+         *
+         * @method removeEvent
+         * @static
+         * @param {Object} obj DOM element to remove event listener(s) from.
+         * @param {String} name Name of event listener to remove.
+         * @param {Function|String} (optional) might be a callback or unique key to match.
+         */
+        removeEvent: o.removeEvent,
+
+        /**
+         * Remove all kind of events from the specified object
+         *
+         * @method removeAllEvents
+         * @static
+         * @param {Object} obj DOM element to remove event listeners from.
+         * @param {String} (optional) unique key to match, when removing events.
+         */
+        removeAllEvents: o.removeAllEvents,
+
+        /**
+         * Cleans the specified name from national characters (diacritics). The result will be a name with only a-z, 0-9 and _.
+         *
+         * @method cleanName
+         * @static
+         * @param {String} s String to clean up.
+         * @return {String} Cleaned string.
+         */
+        cleanName : function(name) {
+            var i, lookup;
+
+            // Replace diacritics
+            lookup = [
+                /[\300-\306]/g, 'A', /[\340-\346]/g, 'a',
+                /\307/g, 'C', /\347/g, 'c',
+                /[\310-\313]/g, 'E', /[\350-\353]/g, 'e',
+                /[\314-\317]/g, 'I', /[\354-\357]/g, 'i',
+                /\321/g, 'N', /\361/g, 'n',
+                /[\322-\330]/g, 'O', /[\362-\370]/g, 'o',
+                /[\331-\334]/g, 'U', /[\371-\374]/g, 'u'
+            ];
+
+            for (i = 0; i < lookup.length; i += 2) {
+                name = name.replace(lookup[i], lookup[i + 1]);
+            }
+
+            // Replace whitespace
+            name = name.replace(/\s+/g, '_');
+
+            // Remove anything else
+            name = name.replace(/[^a-z0-9_\-\.]+/gi, '');
+
+            return name;
+        },
+
+        /**
+         * Builds a full url out of a base URL and an object with items to append as query string items.
+         *
+         * @method buildUrl
+         * @static
+         * @param {String} url Base URL to append query string items to.
+         * @param {Object} items Name/value object to serialize as a querystring.
+         * @return {String} String with url + serialized query string items.
+         */
+        buildUrl : function(url, items) {
+            var query = '';
+
+            plupload.each(items, function(value, name) {
+                query += (query ? '&' : '') + encodeURIComponent(name) + '=' + encodeURIComponent(value);
+            });
+
+            if (query) {
+                url += (url.indexOf('?') > 0 ? '&' : '?') + query;
+            }
+
+            return url;
+        },
+
+        /**
+         * Formats the specified number as a size string for example 1024 becomes 1 KB.
+         *
+         * @method formatSize
+         * @static
+         * @param {Number} size Size to format as string.
+         * @return {String} Formatted size string.
+         */
+        formatSize : function(size) {
+
+            if (size === undef || /\D/.test(size)) {
+                return plupload.translate('N/A');
+            }
+
+            function round(num, precision) {
+                return Math.round(num * Math.pow(10, precision)) / Math.pow(10, precision);
+            }
+
+            var boundary = Math.pow(1024, 4);
+
+            // TB
+            if (size > boundary) {
+                return round(size / boundary, 1) + " " + plupload.translate('tb');
+            }
+
+            // GB
+            if (size > (boundary/=1024)) {
+                return round(size / boundary, 1) + " " + plupload.translate('gb');
+            }
+
+            // MB
+            if (size > (boundary/=1024)) {
+                return round(size / boundary, 1) + " " + plupload.translate('mb');
+            }
+
+            // KB
+            if (size > 1024) {
+                return Math.round(size / 1024) + " " + plupload.translate('kb');
+            }
+
+            return size + " " + plupload.translate('b');
+        },
+
+
+        /**
+         * Parses the specified size string into a byte value. For example 10kb becomes 10240.
+         *
+         * @method parseSize
+         * @static
+         * @param {String|Number} size String to parse or number to just pass through.
+         * @return {Number} Size in bytes.
+         */
+        parseSize : o.parseSizeStr,
+
+
+        /**
+         * A way to predict what runtime will be choosen in the current environment with the
+         * specified settings.
+         *
+         * @method predictRuntime
+         * @static
+         * @param {Object|String} config Plupload settings to check
+         * @param {String} [runtimes] Comma-separated list of runtimes to check against
+         * @return {String} Type of compatible runtime
+         */
+        predictRuntime : function(config, runtimes) {
+            var up, runtime;
+
+            up = new plupload.Uploader(config);
+            runtime = o.Runtime.thatCan(up.getOption().required_features, runtimes || config.runtimes);
+            up.destroy();
+            return runtime;
+        },
+
+        /**
+         * Registers a filter that will be executed for each file added to the queue.
+         * If callback returns false, file will not be added.
+         *
+         * Callback receives two arguments: a value for the filter as it was specified in settings.filters
+         * and a file to be filtered. Callback is executed in the context of uploader instance.
+         *
+         * @method addFileFilter
+         * @static
+         * @param {String} name Name of the filter by which it can be referenced in settings.filters
+         * @param {String} cb Callback - the actual routine that every added file must pass
+         */
+        addFileFilter: function(name, cb) {
+            fileFilters[name] = cb;
+        }
+    };
+
+
+    plupload.addFileFilter('mime_types', function(filters, file, cb) {
+        if (filters.length && !filters.regexp.test(file.name)) {
+            this.trigger('Error', {
+                code : plupload.FILE_EXTENSION_ERROR,
+                message : plupload.translate('File extension error.'),
+                file : file
+            });
+            cb(false);
+        } else {
+            cb(true);
+        }
+    });
+
+
+    plupload.addFileFilter('max_file_size', function(maxSize, file, cb) {
+        var undef;
+
+        maxSize = plupload.parseSize(maxSize);
+
+        // Invalid file size
+        if (file.size !== undef && maxSize && file.size > maxSize) {
+            this.trigger('Error', {
+                code : plupload.FILE_SIZE_ERROR,
+                message : plupload.translate('File size error.'),
+                file : file
+            });
+            cb(false);
+        } else {
+            cb(true);
+        }
+    });
+
+
+    plupload.addFileFilter('prevent_duplicates', function(value, file, cb) {
+        if (value) {
+            var ii = this.files.length;
+            while (ii--) {
+                // Compare by name and size (size might be 0 or undefined, but still equivalent for both)
+                if (file.name === this.files[ii].name && file.size === this.files[ii].size) {
+                    this.trigger('Error', {
+                        code : plupload.FILE_DUPLICATE_ERROR,
+                        message : plupload.translate('Duplicate file error.'),
+                        file : file
+                    });
+                    cb(false);
+                    return;
+                }
+            }
+        }
+        cb(true);
+    });
+
+
+    /**
+     @class Uploader
+     @constructor
+
+     @param {Object} settings For detailed information about each option check documentation.
+     @param {String|DOMElement} settings.browse_button id of the DOM element or DOM element itself to use as file dialog trigger.
+     @param {String} settings.url URL of the server-side upload handler.
+     @param {Number|String} [settings.chunk_size=0] Chunk size in bytes to slice the file into. Shorcuts with b, kb, mb, gb, tb suffixes also supported. `e.g. 204800 or "204800b" or "200kb"`. By default - disabled.
+     @param {String} [settings.container] id of the DOM element to use as a container for uploader structures. Defaults to document.body.
+     @param {String|DOMElement} [settings.drop_element] id of the DOM element or DOM element itself to use as a drop zone for Drag-n-Drop.
+     @param {String} [settings.file_data_name="file"] Name for the file field in Multipart formated message.
+     @param {Object} [settings.filters={}] Set of file type filters.
+     @param {Array} [settings.filters.mime_types=[]] List of file types to accept, each one defined by title and list of extensions. `e.g. {title : "Image files", extensions : "jpg,jpeg,gif,png"}`. Dispatches `plupload.FILE_EXTENSION_ERROR`
+     @param {String|Number} [settings.filters.max_file_size=0] Maximum file size that the user can pick, in bytes. Optionally supports b, kb, mb, gb, tb suffixes. `e.g. "10mb" or "1gb"`. By default - not set. Dispatches `plupload.FILE_SIZE_ERROR`.
+     @param {Boolean} [settings.filters.prevent_duplicates=false] Do not let duplicates into the queue. Dispatches `plupload.FILE_DUPLICATE_ERROR`.
+     @param {String} [settings.flash_swf_url] URL of the Flash swf.
+     @param {Object} [settings.headers] Custom headers to send with the upload. Hash of name/value pairs.
+     @param {Number} [settings.max_retries=0] How many times to retry the chunk or file, before triggering Error event.
+     @param {Boolean} [settings.multipart=true] Whether to send file and additional parameters as Multipart formated message.
+     @param {Object} [settings.multipart_params] Hash of key/value pairs to send with every file upload.
+     @param {Boolean} [settings.multi_selection=true] Enable ability to select multiple files at once in file dialog.
+     @param {String|Object} [settings.required_features] Either comma-separated list or hash of required features that chosen runtime should absolutely possess.
+     @param {Object} [settings.resize] Enable resizng of images on client-side. Applies to `image/jpeg` and `image/png` only. `e.g. {width : 200, height : 200, quality : 90, crop: true}`
+     @param {Number} [settings.resize.width] If image is bigger, it will be resized.
+     @param {Number} [settings.resize.height] If image is bigger, it will be resized.
+     @param {Number} [settings.resize.quality=90] Compression quality for jpegs (1-100).
+     @param {Boolean} [settings.resize.crop=false] Whether to crop images to exact dimensions. By default they will be resized proportionally.
+     @param {String} [settings.runtimes="html5,flash,silverlight,html4"] Comma separated list of runtimes, that Plupload will try in turn, moving to the next if previous fails.
+     @param {String} [settings.silverlight_xap_url] URL of the Silverlight xap.
+     @param {Boolean} [settings.unique_names=false] If true will generate unique filenames for uploaded files.
+     */
+    plupload.Uploader = function(options) {
+        /**
+         * Fires when the current RunTime has been initialized.
+         *
+         * @event Init
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         */
+
+        /**
+         * Fires after the init event incase you need to perform actions there.
+         *
+         * @event PostInit
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         */
+
+        /**
+         * Fires when the option is changed in via uploader.setOption().
+         *
+         * @event OptionChanged
+         * @since 2.1
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {String} name Name of the option that was changed
+         * @param {Mixed} value New value for the specified option
+         * @param {Mixed} oldValue Previous value of the option
+         */
+
+        /**
+         * Fires when the silverlight/flash or other shim needs to move.
+         *
+         * @event Refresh
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         */
+
+        /**
+         * Fires when the overall state is being changed for the upload queue.
+         *
+         * @event StateChanged
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         */
+
+        /**
+         * Fires when a file is to be uploaded by the runtime.
+         *
+         * @event UploadFile
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {plupload.File} file File to be uploaded.
+         */
+
+        /**
+         * Fires when just before a file is uploaded. This event enables you to override settings
+         * on the uploader instance before the file is uploaded.
+         *
+         * @event BeforeUpload
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {plupload.File} file File to be uploaded.
+         */
+
+        /**
+         * Fires when the file queue is changed. In other words when files are added/removed to the files array of the uploader instance.
+         *
+         * @event QueueChanged
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         */
+
+        /**
+         * Fires while a file is being uploaded. Use this event to update the current file upload progress.
+         *
+         * @event UploadProgress
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {plupload.File} file File that is currently being uploaded.
+         */
+
+        /**
+         * Fires when file is removed from the queue.
+         *
+         * @event FilesRemoved
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {Array} files Array of files that got removed.
+         */
+
+        /**
+         * Fires for every filtered file before it is added to the queue.
+         *
+         * @event FileFiltered
+         * @since 2.1
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {plupload.File} file Another file that has to be added to the queue.
+         */
+
+        /**
+         * Fires after files were filtered and added to the queue.
+         *
+         * @event FilesAdded
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {Array} files Array of file objects that were added to queue by the user.
+         */
+
+        /**
+         * Fires when a file is successfully uploaded.
+         *
+         * @event FileUploaded
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {plupload.File} file File that was uploaded.
+         * @param {Object} response Object with response properties.
+         */
+
+        /**
+         * Fires when file chunk is uploaded.
+         *
+         * @event ChunkUploaded
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {plupload.File} file File that the chunk was uploaded for.
+         * @param {Object} response Object with response properties.
+         */
+
+        /**
+         * Fires when all files in a queue are uploaded.
+         *
+         * @event UploadComplete
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {Array} files Array of file objects that was added to queue/selected by the user.
+         */
+
+        /**
+         * Fires when a error occurs.
+         *
+         * @event Error
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         * @param {Object} error Contains code, message and sometimes file and other details.
+         */
+
+        /**
+         * Fires when destroy method is called.
+         *
+         * @event Destroy
+         * @param {plupload.Uploader} uploader Uploader instance sending the event.
+         */
+        var uid = plupload.guid()
+            , settings
+            , files = []
+            , preferred_caps = {}
+            , fileInputs = []
+            , fileDrops = []
+            , startTime
+            , total
+            , disabled = false
+            , xhr
+            , parallelUploads = 5
+            , lastIndex = 0
+            ;
+
+
+        // Private methods
+        function uploadNext() {
+            var file, count = 0;
+
+            if (this.state == plupload.STARTED) {
+                // Find first QUEUED file
+                for (lastIndex; lastIndex < parallelUploads; lastIndex++) {
+                    if(files[lastIndex]) {
+                        if (files[lastIndex].percent == 0) {
+                            file = files[lastIndex];
+                            if (this.trigger("BeforeUpload", file)) {
+                                file.status = plupload.UPLOADING;
+                                this.trigger("UploadFile", file);
+                            }
+                        } else if(files[lastIndex].percent === 100 || files[lastIndex].status === plupload.FAILED){
+                            count++;
+                        }
+                    }
+                }
+                parallelUploads += parallelUploads;
+                // All files are DONE or FAILED
+                if (count == files.length) {
+                    if (this.state !== plupload.STOPPED) {
+                        this.state = plupload.STOPPED;
+                        this.trigger("StateChanged");
+                    }
+                    this.trigger("UploadComplete", files);
+                }
+            }
+        }
+
+
+        function calcFile(file) {
+            file.percent = file.size > 0 ? Math.ceil(file.loaded / file.size * 100) : 100;
+            calc();
+        }
+
+
+        function calc() {
+            var i, file;
+
+            // Reset stats
+            total.reset();
+
+            // Check status, size, loaded etc on all files
+            for (i = 0; i < files.length; i++) {
+                file = files[i];
+
+                if (file.size !== undef) {
+                    // We calculate totals based on original file size
+                    total.size += file.origSize;
+
+                    // Since we cannot predict file size after resize, we do opposite and
+                    // interpolate loaded amount to match magnitude of total
+                    total.loaded += file.loaded * file.origSize / file.size;
+                } else {
+                    total.size = undef;
+                }
+
+                if (file.status == plupload.DONE) {
+                    total.uploaded++;
+                } else if (file.status == plupload.FAILED) {
+                    total.failed++;
+                } else {
+                    total.queued++;
+                }
+            }
+
+            // If we couldn't calculate a total file size then use the number of files to calc percent
+            if (total.size === undef) {
+                total.percent = files.length > 0 ? Math.ceil(total.uploaded / files.length * 100) : 0;
+            } else {
+                total.bytesPerSec = Math.ceil(total.loaded / ((+new Date() - startTime || 1) / 1000.0));
+                total.percent = total.size > 0 ? Math.ceil(total.loaded / total.size * 100) : 0;
+            }
+        }
+
+
+        function getRUID() {
+            var ctrl = fileInputs[0] || fileDrops[0];
+            if (ctrl) {
+                return ctrl.getRuntime().uid;
+            }
+            return false;
+        }
+
+
+        function runtimeCan(file, cap) {
+            if (file.ruid) {
+                var info = o.Runtime.getInfo(file.ruid);
+                if (info) {
+                    return info.can(cap);
+                }
+            }
+            return false;
+        }
+
+
+        function bindEventListeners() {
+            this.bind('FilesAdded', onFilesAdded);
+
+            this.bind('CancelUpload', onCancelUpload);
+
+            this.bind('BeforeUpload', onBeforeUpload);
+
+            this.bind('UploadFile', onUploadFile);
+
+            this.bind('UploadProgress', onUploadProgress);
+
+            this.bind('StateChanged', onStateChanged);
+
+            this.bind('QueueChanged', calc);
+
+            this.bind('Error', onError);
+
+            this.bind('FileUploaded', onFileUploaded);
+
+            this.bind('Destroy', onDestroy);
+        }
+
+
+        function initControls(settings, cb) {
+            var self = this, inited = 0, queue = [];
+
+            // common settings
+            var options = {
+                accept: settings.filters.mime_types,
+                runtime_order: settings.runtimes,
+                required_caps: settings.required_features,
+                preferred_caps: preferred_caps,
+                swf_url: settings.flash_swf_url,
+                xap_url: settings.silverlight_xap_url
+            };
+
+            // add runtime specific options if any
+            plupload.each(settings.runtimes.split(/\s*,\s*/), function(runtime) {
+                if (settings[runtime]) {
+                    options[runtime] = settings[runtime];
+                }
+            });
+
+            // initialize file pickers - there can be many
+            if (settings.browse_button) {
+                plupload.each(settings.browse_button, function(el) {
+                    queue.push(function(cb) {
+                        var fileInput = new o.FileInput(plupload.extend({}, options, {
+                            name: settings.file_data_name,
+                            multiple: settings.multi_selection,
+                            container: settings.container,
+                            browse_button: el
+                        }));
+
+                        fileInput.onready = function() {
+                            var info = o.Runtime.getInfo(this.ruid);
+
+                            // for backward compatibility
+                            o.extend(self.features, {
+                                chunks: info.can('slice_blob'),
+                                multipart: info.can('send_multipart'),
+                                multi_selection: info.can('select_multiple')
+                            });
+
+                            inited++;
+                            fileInputs.push(this);
+                            cb();
+                        };
+
+                        fileInput.onchange = function() {
+                            self.addFile(this.files);
+                        };
+
+                        fileInput.bind('mouseenter mouseleave mousedown mouseup', function(e) {
+                            if (!disabled) {
+                                if (settings.browse_button_hover) {
+                                    if ('mouseenter' === e.type) {
+                                        o.addClass(el, settings.browse_button_hover);
+                                    } else if ('mouseleave' === e.type) {
+                                        o.removeClass(el, settings.browse_button_hover);
+                                    }
+                                }
+
+                                if (settings.browse_button_active) {
+                                    if ('mousedown' === e.type) {
+                                        o.addClass(el, settings.browse_button_active);
+                                    } else if ('mouseup' === e.type) {
+                                        o.removeClass(el, settings.browse_button_active);
+                                    }
+                                }
+                            }
+                        });
+
+                        fileInput.bind('error runtimeerror', function() {
+                            fileInput = null;
+                            cb();
+                        });
+
+                        fileInput.init();
+                    });
+                });
+            }
+
+            // initialize drop zones
+            if (settings.drop_element) {
+                plupload.each(settings.drop_element, function(el) {
+                    queue.push(function(cb) {
+                        var fileDrop = new o.FileDrop(plupload.extend({}, options, {
+                            drop_zone: el
+                        }));
+
+                        fileDrop.onready = function() {
+                            var info = o.Runtime.getInfo(this.ruid);
+
+                            self.features.dragdrop = info.can('drag_and_drop'); // for backward compatibility
+
+                            inited++;
+                            fileDrops.push(this);
+                            cb();
+                        };
+
+                        fileDrop.ondrop = function() {
+                            self.addFile(this.files);
+                        };
+
+                        fileDrop.bind('error runtimeerror', function() {
+                            fileDrop = null;
+                            cb();
+                        });
+
+                        fileDrop.init();
+                    });
+                });
+            }
+
+
+            o.inSeries(queue, function() {
+                if (typeof(cb) === 'function') {
+                    cb(inited);
+                }
+            });
+        }
+
+
+        function resizeImage(blob, params, cb) {
+            var img = new o.Image();
+
+            try {
+                img.onload = function() {
+                    img.downsize(params.width, params.height, params.crop, params.preserve_headers);
+                };
+
+                img.onresize = function() {
+                    cb(this.getAsBlob(blob.type, params.quality));
+                    this.destroy();
+                };
+
+                img.onerror = function() {
+                    cb(blob);
+                };
+
+                img.load(blob);
+            } catch(ex) {
+                cb(blob);
+            }
+        }
+
+
+        function setOption(option, value, init) {
+            var self = this, reinitRequired = false;
+
+            function _setOption(option, value, init) {
+                var oldValue = settings[option];
+
+                switch (option) {
+                    case 'max_file_size':
+                        if (option === 'max_file_size') {
+                            settings.max_file_size = settings.filters.max_file_size = value;
+                        }
+                        break;
+
+                    case 'chunk_size':
+                        if (value = plupload.parseSize(value)) {
+                            settings[option] = value;
+                        }
+                        break;
+
+                    case 'filters':
+                        // for sake of backward compatibility
+                        if (plupload.typeOf(value) === 'array') {
+                            value = {
+                                mime_types: value
+                            };
+                        }
+
+                        if (init) {
+                            plupload.extend(settings.filters, value);
+                        } else {
+                            settings.filters = value;
+                        }
+
+                        // if file format filters are being updated, regenerate the matching expressions
+                        if (value.mime_types) {
+                            settings.filters.mime_types.regexp = (function(filters) {
+                                var extensionsRegExp = [];
+
+                                plupload.each(filters, function(filter) {
+                                    plupload.each(filter.extensions.split(/,/), function(ext) {
+                                        if (/^\s*\*\s*$/.test(ext)) {
+                                            extensionsRegExp.push('\\.*');
+                                        } else {
+                                            extensionsRegExp.push('\\.' + ext.replace(new RegExp('[' + ('/^$.*+?|()[]{}\\'.replace(/./g, '\\$&')) + ']', 'g'), '\\$&'));
+                                        }
+                                    });
+                                });
+
+                                return new RegExp('(' + extensionsRegExp.join('|') + ')$', 'i');
+                            }(settings.filters.mime_types));
+                        }
+                        break;
+
+                    case 'resize':
+                        if (init) {
+                            plupload.extend(settings.resize, value, {
+                                enabled: true
+                            });
+                        } else {
+                            settings.resize = value;
+                        }
+                        break;
+
+                    case 'prevent_duplicates':
+                        settings.prevent_duplicates = settings.filters.prevent_duplicates = !!value;
+                        break;
+
+                    case 'browse_button':
+                    case 'drop_element':
+                        value = plupload.get(value);
+
+                    case 'container':
+                    case 'runtimes':
+                    case 'multi_selection':
+                    case 'flash_swf_url':
+                    case 'silverlight_xap_url':
+                        settings[option] = value;
+                        if (!init) {
+                            reinitRequired = true;
+                        }
+                        break;
+
+                    default:
+                        settings[option] = value;
+                }
+
+                if (!init) {
+                    self.trigger('OptionChanged', option, value, oldValue);
+                }
+            }
+
+            if (typeof(option) === 'object') {
+                plupload.each(option, function(value, option) {
+                    _setOption(option, value, init);
+                });
+            } else {
+                _setOption(option, value, init);
+            }
+
+            if (init) {
+                // Normalize the list of required capabilities
+                settings.required_features = normalizeCaps(plupload.extend({}, settings));
+
+                // Come up with the list of capabilities that can affect default mode in a multi-mode runtimes
+                preferred_caps = normalizeCaps(plupload.extend({}, settings, {
+                    required_features: true
+                }));
+            } else if (reinitRequired) {
+                self.trigger('Destroy');
+
+                initControls.call(self, settings, function(inited) {
+                    if (inited) {
+                        self.runtime = o.Runtime.getInfo(getRUID()).type;
+                        self.trigger('Init', { runtime: self.runtime });
+                        self.trigger('PostInit');
+                    } else {
+                        self.trigger('Error', {
+                            code : plupload.INIT_ERROR,
+                            message : plupload.translate('Init error.')
+                        });
+                    }
+                });
+            }
+        }
+
+
+        // Internal event handlers
+        function onFilesAdded(up, filteredFiles) {
+            // Add files to queue				
+            [].push.apply(files, filteredFiles);
+
+            up.trigger('QueueChanged');
+            up.refresh();
+            uploadNext.call(up);
+        }
+
+
+        function onBeforeUpload(up, file) {
+            // Generate unique target filenames
+            if (settings.unique_names) {
+                var matches = file.name.match(/\.([^.]+)$/), ext = "part";
+                if (matches) {
+                    ext = matches[1];
+                }
+                file.target_name = file.id + '.' + ext;
+            }
+        }
+
+
+        function onUploadFile(up, file) {
+            var url = up.settings.url
+                , chunkSize = up.settings.chunk_size
+                , retries = up.settings.max_retries
+                , features = up.features
+                , offset = 0
+                , blob
+                ;
+
+            // make sure we start at a predictable offset
+            if (file.loaded) {
+                offset = file.loaded = chunkSize * Math.floor(file.loaded / chunkSize);
+            }
+
+            function handleError() {
+                if (retries-- > 0) {
+                    delay(uploadNextChunk, 1000);
+                } else {
+                    file.loaded = offset; // reset all progress
+
+                    up.trigger('Error', {
+                        code : plupload.HTTP_ERROR,
+                        message : plupload.translate('HTTP Error.'),
+                        file : file,
+                        response : xhr.responseText,
+                        status : xhr.status,
+                        responseHeaders: xhr.getAllResponseHeaders()
+                    });
+                }
+            }
+
+            function uploadNextChunk() {
+                var chunkBlob, formData, args, curChunkSize;
+
+                // File upload finished
+                if (file.status == plupload.DONE || file.status == plupload.FAILED || up.state == plupload.STOPPED) {
+                    return;
+                }
+
+                // Standard arguments
+                args = {name : file.target_name || file.name};
+
+                if (chunkSize && features.chunks && blob.size > chunkSize) { // blob will be of type string if it was loaded in memory 
+                    curChunkSize = Math.min(chunkSize, blob.size - offset);
+                    chunkBlob = blob.slice(offset, offset + curChunkSize);
+                } else {
+                    curChunkSize = blob.size;
+                    chunkBlob = blob;
+                }
+
+                // If chunking is enabled add corresponding args, no matter if file is bigger than chunk or smaller
+                if (chunkSize && features.chunks) {
+                    // Setup query string arguments
+                    if (up.settings.send_chunk_number) {
+                        args.chunk = Math.ceil(offset / chunkSize);
+                        args.chunks = Math.ceil(blob.size / chunkSize);
+                    } else { // keep support for experimental chunk format, just in case
+                        args.offset = offset;
+                        args.total = blob.size;
+                    }
+                }
+
+                xhr = new o.XMLHttpRequest();
+
+                // Do we have upload progress support
+                if (xhr.upload) {
+                    xhr.upload.onprogress = function(e) {
+                        file.loaded = Math.min(file.size, offset + e.loaded);
+                        up.trigger('UploadProgress', file);
+                    };
+                }
+
+                xhr.onload = function() {
+                    xhr = xhr || this;
+                    // check if upload made itself through
+                    if (xhr.status >= 400) {
+                        handleError();
+                        return;
+                    }
+
+                    retries = up.settings.max_retries; // reset the counter
+
+                    // Handle chunk response
+                    if (curChunkSize < blob.size) {
+                        chunkBlob.destroy();
+
+                        offset += curChunkSize;
+                        file.loaded = Math.min(offset, blob.size);
+
+                        up.trigger('ChunkUploaded', file, {
+                            offset : file.loaded,
+                            total : blob.size,
+                            response : xhr.responseText,
+                            status : xhr.status,
+                            responseHeaders: xhr.getAllResponseHeaders()
+                        });
+
+                        // stock Android browser doesn't fire upload progress events, but in chunking mode we can fake them
+                        if (o.Env.browser === 'Android Browser') {
+                            // doesn't harm in general, but is not required anywhere else
+                            up.trigger('UploadProgress', file);
+                        }
+                    } else {
+                        file.loaded = file.size;
+                    }
+
+                    chunkBlob = formData = null; // Free memory
+
+                    // Check if file is uploaded
+                    if (!offset || offset >= blob.size) {
+                        // If file was modified, destory the copy
+                        if (file.size != file.origSize) {
+                            blob.destroy();
+                            blob = null;
+                        }
+
+                        up.trigger('UploadProgress', file);
+
+                        file.status = plupload.DONE;
+
+                        up.trigger('FileUploaded', file, {
+                            response : xhr.responseText,
+                            status : xhr.status,
+                            responseHeaders: xhr.getAllResponseHeaders()
+                        });
+                    } else {
+                        // Still chunks left
+                        delay(uploadNextChunk, 1); // run detached, otherwise event handlers interfere
+                    }
+                };
+
+                xhr.onerror = function() {
+                    handleError();
+                };
+
+                xhr.onloadend = function() {
+                    this.destroy();
+                    xhr = null;
+                };
+
+                // Build multipart request
+                if (up.settings.multipart && features.multipart) {
+
+                    args.name = file.target_name || file.name;
+
+                    xhr.open("post", url, true);
+
+                    // Set custom headers
+                    plupload.each(up.settings.headers, function(value, name) {
+                        xhr.setRequestHeader(name, value);
+                    });
+
+                    formData = new o.FormData();
+
+                    // Add multipart params
+                    plupload.each(plupload.extend(args, up.settings.multipart_params), function(value, name) {
+                        formData.append(name, value);
+                    });
+
+                    // Add file and send it
+                    formData.append(up.settings.file_data_name, chunkBlob);
+                    xhr.send(formData, {
+                        runtime_order: up.settings.runtimes,
+                        required_caps: up.settings.required_features,
+                        preferred_caps: preferred_caps,
+                        swf_url: up.settings.flash_swf_url,
+                        xap_url: up.settings.silverlight_xap_url
+                    });
+                } else {
+                    // if no multipart, send as binary stream
+                    url = plupload.buildUrl(up.settings.url, plupload.extend(args, up.settings.multipart_params));
+
+                    xhr.open("post", url, true);
+
+                    xhr.setRequestHeader('Content-Type', 'application/octet-stream'); // Binary stream header
+
+                    // Set custom headers
+                    plupload.each(up.settings.headers, function(value, name) {
+                        xhr.setRequestHeader(name, value);
+                    });
+
+                    xhr.send(chunkBlob, {
+                        runtime_order: up.settings.runtimes,
+                        required_caps: up.settings.required_features,
+                        preferred_caps: preferred_caps,
+                        swf_url: up.settings.flash_swf_url,
+                        xap_url: up.settings.silverlight_xap_url
+                    });
+                }
+            }
+
+            blob = file.getSource();
+
+            // Start uploading chunks
+            if (up.settings.resize.enabled && runtimeCan(blob, 'send_binary_string') && !!~o.inArray(blob.type, ['image/jpeg', 'image/png'])) {
+                // Resize if required
+                resizeImage.call(this, blob, up.settings.resize, function(resizedBlob) {
+                    blob = resizedBlob;
+                    file.size = resizedBlob.size;
+                    uploadNextChunk();
+                });
+            } else {
+                uploadNextChunk();
+            }
+        }
+
+
+        function onUploadProgress(up, file) {
+            calcFile(file);
+        }
+
+
+        function onStateChanged(up) {
+            if (up.state == plupload.STARTED) {
+                // Get start time to calculate bps
+                startTime = (+new Date());
+            } else if (up.state == plupload.STOPPED) {
+                // Reset currently uploading files
+                for (var i = up.files.length - 1; i >= 0; i--) {
+                    if (up.files[i].status == plupload.UPLOADING) {
+                        up.files[i].status = plupload.QUEUED;
+                        calc();
+                    }
+                }
+            }
+        }
+
+
+        function onCancelUpload() {
+            if (xhr) {
+                xhr.abort();
+            }
+        }
+
+
+        function onFileUploaded(up) {
+            calc();
+
+            // Upload next file but detach it from the error event
+            // since other custom listeners might want to stop the queue
+            if(lastIndex < up.files.length){
+                uploadNext.call(up);
+            }else {
+                if(up.total.percent === 100 && up.total.queued === 0){
+                    if (this.state !== plupload.STOPPED) {
+                        this.state = plupload.STOPPED;
+                        this.trigger("StateChanged");
+                    }
+                    this.trigger("UploadComplete", files);
+                }
+            }
+        }
+
+
+        function onError(up, err) {
+            // Set failed status if an error occured on a file
+            if (err.file) {
+                err.file.status = plupload.FAILED;
+                calcFile(err.file);
+
+                // Upload next file but detach it from the error event
+                // since other custom listeners might want to stop the queue
+                if (up.state == plupload.STARTED) { // upload in progress
+                    up.trigger('CancelUpload');
+                    delay(function() {
+                        uploadNext.call(up);
+                    }, 1);
+                }
+            }
+        }
+
+
+        function onDestroy(up) {
+            up.stop();
+
+            // Purge the queue
+            plupload.each(files, function(file) {
+                file.destroy();
+            });
+            files = [];
+
+            if (fileInputs.length) {
+                plupload.each(fileInputs, function(fileInput) {
+                    fileInput.destroy();
+                });
+                fileInputs = [];
+            }
+
+            if (fileDrops.length) {
+                plupload.each(fileDrops, function(fileDrop) {
+                    fileDrop.destroy();
+                });
+                fileDrops = [];
+            }
+
+            preferred_caps = {};
+            disabled = false;
+            startTime = xhr = null;
+            total.reset();
+        }
+
+
+        // Default settings
+        settings = {
+            runtimes: o.Runtime.order,
+            max_retries: 0,
+            chunk_size: 0,
+            multipart: true,
+            multi_selection: true,
+            file_data_name: 'file',
+            flash_swf_url: 'js/Moxie.swf',
+            silverlight_xap_url: 'js/Moxie.xap',
+            filters: {
+                mime_types: [],
+                prevent_duplicates: false,
+                max_file_size: 0
+            },
+            resize: {
+                enabled: false,
+                preserve_headers: true,
+                crop: false
+            },
+            send_chunk_number: true // whether to send chunks and chunk numbers, or total and offset bytes
+        };
+
+
+        setOption.call(this, options, null, true);
+
+        // Inital total state
+        total = new plupload.QueueProgress();
+
+        // Add public methods
+        plupload.extend(this, {
+
+            /**
+             * Unique id for the Uploader instance.
+             *
+             * @property id
+             * @type String
+             */
+            id : uid,
+            uid : uid, // mOxie uses this to differentiate between event targets
+
+            /**
+             * Current state of the total uploading progress. This one can either be plupload.STARTED or plupload.STOPPED.
+             * These states are controlled by the stop/start methods. The default value is STOPPED.
+             *
+             * @property state
+             * @type Number
+             */
+            state : plupload.STOPPED,
+
+            /**
+             * Map of features that are available for the uploader runtime. Features will be filled
+             * before the init event is called, these features can then be used to alter the UI for the end user.
+             * Some of the current features that might be in this map is: dragdrop, chunks, jpgresize, pngresize.
+             *
+             * @property features
+             * @type Object
+             */
+            features : {},
+
+            /**
+             * Current runtime name.
+             *
+             * @property runtime
+             * @type String
+             */
+            runtime : null,
+
+            /**
+             * Current upload queue, an array of File instances.
+             *
+             * @property files
+             * @type Array
+             * @see plupload.File
+             */
+            files : files,
+
+            /**
+             * Object with name/value settings.
+             *
+             * @property settings
+             * @type Object
+             */
+            settings : settings,
+
+            /**
+             * Total progess information. How many files has been uploaded, total percent etc.
+             *
+             * @property total
+             * @type plupload.QueueProgress
+             */
+            total : total,
+
+
+            /**
+             * Initializes the Uploader instance and adds internal event listeners.
+             *
+             * @method init
+             */
+            init : function() {
+                var self = this;
+
+                if (typeof(settings.preinit) == "function") {
+                    settings.preinit(self);
+                } else {
+                    plupload.each(settings.preinit, function(func, name) {
+                        self.bind(name, func);
+                    });
+                }
+
+                // Check for required options
+                if (!settings.browse_button || !settings.url) {
+                    this.trigger('Error', {
+                        code : plupload.INIT_ERROR,
+                        message : plupload.translate('Init error.')
+                    });
+                    return;
+                }
+
+                bindEventListeners.call(this);
+
+                initControls.call(this, settings, function(inited) {
+                    if (typeof(settings.init) == "function") {
+                        settings.init(self);
+                    } else {
+                        plupload.each(settings.init, function(func, name) {
+                            self.bind(name, func);
+                        });
+                    }
+
+                    if (inited) {
+                        self.runtime = o.Runtime.getInfo(getRUID()).type;
+                        self.trigger('Init', { runtime: self.runtime });
+                        self.trigger('PostInit');
+                    } else {
+                        self.trigger('Error', {
+                            code : plupload.INIT_ERROR,
+                            message : plupload.translate('Init error.')
+                        });
+                    }
+                });
+            },
+
+            /**
+             * Set the value for the specified option(s).
+             *
+             * @method setOption
+             * @since 2.1
+             * @param {String|Object} option Name of the option to change or the set of key/value pairs
+             * @param {Mixed} [value] Value for the option (is ignored, if first argument is object)
+             */
+            setOption: function(option, value) {
+                setOption.call(this, option, value, !this.runtime); // until runtime not set we do not need to reinitialize
+            },
+
+            /**
+             * Get the value for the specified option or the whole configuration, if not specified.
+             *
+             * @method getOption
+             * @since 2.1
+             * @param {String} [option] Name of the option to get
+             * @return {Mixed} Value for the option or the whole set
+             */
+            getOption: function(option) {
+                if (!option) {
+                    return settings;
+                }
+                return settings[option];
+            },
+
+            /**
+             * Refreshes the upload instance by dispatching out a refresh event to all runtimes.
+             * This would for example reposition flash/silverlight shims on the page.
+             *
+             * @method refresh
+             */
+            refresh : function() {
+                if (fileInputs.length) {
+                    plupload.each(fileInputs, function(fileInput) {
+                        fileInput.trigger('Refresh');
+                    });
+                }
+                this.trigger('Refresh');
+            },
+
+            /**
+             * Starts uploading the queued files.
+             *
+             * @method start
+             */
+            start : function() {
+                if (this.state != plupload.STARTED) {
+                    this.state = plupload.STARTED;
+                    this.trigger('StateChanged');
+
+                    uploadNext.call(this);
+                }
+            },
+
+            /**
+             * Stops the upload of the queued files.
+             *
+             * @method stop
+             */
+            stop : function() {
+                if (this.state != plupload.STOPPED) {
+                    this.state = plupload.STOPPED;
+                    this.trigger('StateChanged');
+                    this.trigger('CancelUpload');
+                }
+            },
+
+
+            /**
+             * Disables/enables browse button on request.
+             *
+             * @method disableBrowse
+             * @param {Boolean} disable Whether to disable or enable (default: true)
+             */
+            disableBrowse : function() {
+                disabled = arguments[0] !== undef ? arguments[0] : true;
+
+                if (fileInputs.length) {
+                    plupload.each(fileInputs, function(fileInput) {
+                        fileInput.disable(disabled);
+                    });
+                }
+
+                this.trigger('DisableBrowse', disabled);
+            },
+
+            /**
+             * Returns the specified file object by id.
+             *
+             * @method getFile
+             * @param {String} id File id to look for.
+             * @return {plupload.File} File object or undefined if it wasn't found;
+             */
+            getFile : function(id) {
+                var i;
+                for (i = files.length - 1; i >= 0; i--) {
+                    if (files[i].id === id) {
+                        return files[i];
+                    }
+                }
+            },
+
+            /**
+             * Adds file to the queue programmatically. Can be native file, instance of Plupload.File,
+             * instance of mOxie.File, input[type="file"] element, or array of these. Fires FilesAdded,
+             * if any files were added to the queue. Otherwise nothing happens.
+             *
+             * @method addFile
+             * @since 2.0
+             * @param {plupload.File|mOxie.File|File|Node|Array} file File or files to add to the queue.
+             * @param {String} [fileName] If specified, will be used as a name for the file
+             */
+            addFile : function(file, fileName) {
+                var self = this
+                    , queue = []
+                    , files = []
+                    , ruid
+                    ;
+
+                function filterFile(file, cb) {
+                    var queue = [];
+                    o.each(self.settings.filters, function(rule, name) {
+                        if (fileFilters[name]) {
+                            queue.push(function(cb) {
+                                fileFilters[name].call(self, rule, file, function(res) {
+                                    cb(!res);
+                                });
+                            });
+                        }
+                    });
+                    o.inSeries(queue, cb);
+                }
+
+                /**
+                 * @method resolveFile
+                 * @private
+                 * @param {o.File|o.Blob|plupload.File|File|Blob|input[type="file"]} file
+                 */
+                function resolveFile(file) {
+                    var type = o.typeOf(file);
+
+                    // o.File
+                    if (file instanceof o.File) {
+                        if (!file.ruid && !file.isDetached()) {
+                            if (!ruid) { // weird case
+                                return false;
+                            }
+                            file.ruid = ruid;
+                            file.connectRuntime(ruid);
+                        }
+                        resolveFile(new plupload.File(file));
+                    }
+                    // o.Blob 
+                    else if (file instanceof o.Blob) {
+                        resolveFile(file.getSource());
+                        file.destroy();
+                    }
+                    // plupload.File - final step for other branches
+                    else if (file instanceof plupload.File) {
+                        if (fileName) {
+                            file.name = fileName;
+                        }
+
+                        queue.push(function(cb) {
+                            // run through the internal and user-defined filters, if any
+                            filterFile(file, function(err) {
+                                if (!err) {
+                                    files.push(file);
+                                    self.trigger("FileFiltered", file);
+                                }
+                                delay(cb, 1); // do not build up recursions or eventually we might hit the limits
+                            });
+                        });
+                    }
+                    // native File or blob
+                    else if (o.inArray(type, ['file', 'blob']) !== -1) {
+                        resolveFile(new o.File(null, file));
+                    }
+                    // input[type="file"]
+                    else if (type === 'node' && o.typeOf(file.files) === 'filelist') {
+                        // if we are dealing with input[type="file"]
+                        o.each(file.files, resolveFile);
+                    }
+                    // mixed array of any supported types (see above)
+                    else if (type === 'array') {
+                        fileName = null; // should never happen, but unset anyway to avoid funny situations
+                        o.each(file, resolveFile);
+                    }
+                }
+
+                ruid = getRUID();
+
+                resolveFile(file);
+
+                if (queue.length) {
+                    o.inSeries(queue, function() {
+                        // if any files left after filtration, trigger FilesAdded
+                        self.trigger("FilesAdded", files);
+                    });
+                }
+            },
+
+            /**
+             * Removes a specific file.
+             *
+             * @method removeFile
+             * @param {plupload.File|String} file File to remove from queue.
+             */
+            removeFile : function(file) {
+                var id = typeof(file) === 'string' ? file : file.id;
+
+                for (var i = files.length - 1; i >= 0; i--) {
+                    if (files[i].id === id) {
+                        return this.splice(i, 1)[0];
+                    }
+                }
+            },
+
+            /**
+             * Removes part of the queue and returns the files removed. This will also trigger the FilesRemoved and QueueChanged events.
+             *
+             * @method splice
+             * @param {Number} start (Optional) Start index to remove from.
+             * @param {Number} length (Optional) Lengh of items to remove.
+             * @return {Array} Array of files that was removed.
+             */
+            splice : function(start, length) {
+                // Splice and trigger events
+                var removed = files.splice(start === undef ? 0 : start, length === undef ? files.length : length);
+
+                // if upload is in progress we need to stop it and restart after files are removed
+                var restartRequired = false;
+                if (this.state == plupload.STARTED) { // upload in progress
+                    restartRequired = true;
+                    this.stop();
+                }
+
+                this.trigger("FilesRemoved", removed);
+
+                // Dispose any resources allocated by those files
+                plupload.each(removed, function(file) {
+                    file.destroy();
+                });
+
+                this.trigger("QueueChanged");
+                this.refresh();
+
+                if (restartRequired) {
+                    this.start();
+                }
+
+                return removed;
+            },
+
+            /**
+             * Dispatches the specified event name and it's arguments to all listeners.
+             *
+             *
+             * @method trigger
+             * @param {String} name Event name to fire.
+             * @param {Object..} Multiple arguments to pass along to the listener functions.
+             */
+
+            /**
+             * Check whether uploader has any listeners to the specified event.
+             *
+             * @method hasEventListener
+             * @param {String} name Event name to check for.
+             */
+
+
+            /**
+             * Adds an event listener by name.
+             *
+             * @method bind
+             * @param {String} name Event name to listen for.
+             * @param {function} func Function to call ones the event gets fired.
+             * @param {Object} scope Optional scope to execute the specified function in.
+             */
+            bind : function(name, func, scope) {
+                var self = this;
+                // adapt moxie EventTarget style to Plupload-like
+                plupload.Uploader.prototype.bind.call(this, name, function() {
+                    var args = [].slice.call(arguments);
+                    args.splice(0, 1, self); // replace event object with uploader instance
+                    return func.apply(this, args);
+                }, 0, scope);
+            },
+
+            /**
+             * Removes the specified event listener.
+             *
+             * @method unbind
+             * @param {String} name Name of event to remove.
+             * @param {function} func Function to remove from listener.
+             */
+
+            /**
+             * Removes all event listeners.
+             *
+             * @method unbindAll
+             */
+
+
+            /**
+             * Destroys Plupload instance and cleans after itself.
+             *
+             * @method destroy
+             */
+            destroy : function() {
+                this.trigger('Destroy');
+                settings = total = null; // purge these exclusively
+                this.unbindAll();
+            }
+        });
+    };
+
+    plupload.Uploader.prototype = o.EventTarget.instance;
+
+    /**
+     * Constructs a new file instance.
+     *
+     * @class File
+     * @constructor
+     *
+     * @param {Object} file Object containing file properties
+     * @param {String} file.name Name of the file.
+     * @param {Number} file.size File size.
+     */
+    plupload.File = (function() {
+        var filepool = {};
+
+        function PluploadFile(file) {
+
+            plupload.extend(this, {
+
+                /**
+                 * File id this is a globally unique id for the specific file.
+                 *
+                 * @property id
+                 * @type String
+                 */
+                id: plupload.guid(),
+
+                /**
+                 * File name for example "myfile.gif".
+                 *
+                 * @property name
+                 * @type String
+                 */
+                name: file.name || file.fileName,
+
+                /**
+                 * File type, `e.g image/jpeg`
+                 *
+                 * @property type
+                 * @type String
+                 */
+                type: file.type || '',
+
+                /**
+                 * File size in bytes (may change after client-side manupilation).
+                 *
+                 * @property size
+                 * @type Number
+                 */
+                size: file.size || file.fileSize,
+
+                /**
+                 * Original file size in bytes.
+                 *
+                 * @property origSize
+                 * @type Number
+                 */
+                origSize: file.size || file.fileSize,
+
+                /**
+                 * Number of bytes uploaded of the files total size.
+                 *
+                 * @property loaded
+                 * @type Number
+                 */
+                loaded: 0,
+
+                /**
+                 * Number of percentage uploaded of the file.
+                 *
+                 * @property percent
+                 * @type Number
+                 */
+                percent: 0,
+
+                /**
+                 * Status constant matching the plupload states QUEUED, UPLOADING, FAILED, DONE.
+                 *
+                 * @property status
+                 * @type Number
+                 * @see plupload
+                 */
+                status: plupload.QUEUED,
+
+                /**
+                 * Date of last modification.
+                 *
+                 * @property lastModifiedDate
+                 * @type {String}
+                 */
+                lastModifiedDate: file.lastModifiedDate || (new Date()).toLocaleString(), // Thu Aug 23 2012 19:40:00 GMT+0400 (GET)
+
+                fullPath: file.fullPath || '',
+
+                /**
+                 * Returns native window.File object, when it's available.
+                 *
+                 * @method getNative
+                 * @return {window.File} or null, if plupload.File is of different origin
+                 */
+                getNative: function() {
+                    var file = this.getSource().getSource();
+                    return o.inArray(o.typeOf(file), ['blob', 'file']) !== -1 ? file : null;
+                },
+
+                /**
+                 * Returns mOxie.File - unified wrapper object that can be used across runtimes.
+                 *
+                 * @method getSource
+                 * @return {mOxie.File} or null
+                 */
+                getSource: function() {
+                    if (!filepool[this.id]) {
+                        return null;
+                    }
+                    return filepool[this.id];
+                },
+
+                /**
+                 * Destroys plupload.File object.
+                 *
+                 * @method destroy
+                 */
+                destroy: function() {
+                    var src = this.getSource();
+                    if (src) {
+                        src.destroy();
+                        delete filepool[this.id];
+                    }
+                }
+            });
+
+            filepool[this.id] = file;
+        }
+
+        return PluploadFile;
+    }());
+
+
+    /**
+     * Constructs a queue progress.
+     *
+     * @class QueueProgress
+     * @constructor
+     */
+    plupload.QueueProgress = function() {
+        var self = this; // Setup alias for self to reduce code size when it's compressed
+
+        /**
+         * Total queue file size.
+         *
+         * @property size
+         * @type Number
+         */
+        self.size = 0;
+
+        /**
+         * Total bytes uploaded.
+         *
+         * @property loaded
+         * @type Number
+         */
+        self.loaded = 0;
+
+        /**
+         * Number of files uploaded.
+         *
+         * @property uploaded
+         * @type Number
+         */
+        self.uploaded = 0;
+
+        /**
+         * Number of files failed to upload.
+         *
+         * @property failed
+         * @type Number
+         */
+        self.failed = 0;
+
+        /**
+         * Number of files yet to be uploaded.
+         *
+         * @property queued
+         * @type Number
+         */
+        self.queued = 0;
+
+        /**
+         * Total percent of the uploaded bytes.
+         *
+         * @property percent
+         * @type Number
+         */
+        self.percent = 0;
+
+        /**
+         * Bytes uploaded per second.
+         *
+         * @property bytesPerSec
+         * @type Number
+         */
+        self.bytesPerSec = 0;
+
+        /**
+         * Resets the progress to it's initial values.
+         *
+         * @method reset
+         */
+        self.reset = function() {
+            self.size = self.loaded = self.uploaded = self.failed = self.queued = self.percent = self.bytesPerSec = 0;
+        };
+    };
+
+    window.plupload = plupload;
+
+}(window, mOxie));
